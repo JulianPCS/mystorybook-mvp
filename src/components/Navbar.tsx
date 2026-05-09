@@ -66,7 +66,7 @@ export default function Navbar() {
             href="/books?gender=female"
             className="flex items-center gap-1.5 text-gray-600 hover:text-teal-600 px-3 py-2 rounded-xl hover:bg-teal-50 transition-colors whitespace-nowrap"
           >
-            <span>👧</span> Female Names
+            Girls&apos; Names
           </Link>
 
           {/* Male Names */}
@@ -74,7 +74,7 @@ export default function Navbar() {
             href="/books?gender=male"
             className="flex items-center gap-1.5 text-gray-600 hover:text-teal-600 px-3 py-2 rounded-xl hover:bg-teal-50 transition-colors whitespace-nowrap"
           >
-            <span>👦</span> Male Names
+            Boys&apos; Names
           </Link>
 
           {/* Celebrations dropdown */}
@@ -82,7 +82,7 @@ export default function Navbar() {
             <button
               className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-colors whitespace-nowrap font-semibold ${celebOpen ? "text-teal-600 bg-teal-50" : "text-gray-600 hover:text-teal-600 hover:bg-teal-50"}`}
             >
-              <span>🎉</span> Celebrations
+              Celebrations
               <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${celebOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
               </svg>
@@ -108,7 +108,6 @@ export default function Navbar() {
                         onClick={() => setCelebOpen(false)}
                         className="flex items-center gap-2.5 px-4 py-2 hover:bg-teal-50 text-gray-700 hover:text-teal-700 transition-colors text-sm font-semibold"
                       >
-                        <span className="text-base w-5 text-center">{item.emoji}</span>
                         {item.name}
                       </Link>
                     ))}
@@ -171,7 +170,7 @@ export default function Navbar() {
             className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            <span>👧</span> Female Names
+            Girls&apos; Names
           </Link>
 
           <Link
@@ -179,7 +178,7 @@ export default function Navbar() {
             className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            <span>👦</span> Male Names
+            Boys&apos; Names
           </Link>
 
           {/* Celebrations accordion */}
@@ -187,7 +186,7 @@ export default function Navbar() {
             className="flex items-center justify-between text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors w-full text-left"
             onClick={() => setMobileCelebOpen((o) => !o)}
           >
-            <span className="flex items-center gap-2"><span>🎉</span> Celebrations</span>
+            <span>Celebrations</span>
             <svg className={`w-4 h-4 transition-transform duration-200 ${mobileCelebOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
             </svg>
@@ -207,7 +206,7 @@ export default function Navbar() {
                       className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold text-gray-700 hover:bg-white hover:text-teal-700 transition-colors"
                       onClick={() => { setMenuOpen(false); setMobileCelebOpen(false); }}
                     >
-                      <span>{item.emoji}</span> {item.name}
+                      {item.name}
                     </Link>
                   ))}
                 </div>
@@ -220,7 +219,7 @@ export default function Navbar() {
             className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            🔬 Why Colouring?
+            Why Colouring?
           </Link>
 
           <div className="mt-2 pt-2 border-t border-teal-50">
@@ -229,7 +228,7 @@ export default function Navbar() {
               className="block bg-teal-500 text-white text-center font-black py-3 rounded-xl"
               onClick={() => setMenuOpen(false)}
             >
-              Find Your Child&apos;s Book 🎨
+              Find Your Child&apos;s Book
             </Link>
           </div>
         </div>
