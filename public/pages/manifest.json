@@ -1,0 +1,14 @@
+{
+  "nature-flowers": {
+    "url": "https://koala.sh/api/image/v2-1d99sz-yi75i.jpg?width=1024&height=1536&dream"
+  },
+  "nature-rainbow": {
+    "url": "https://koala.sh/api/image/v2-1d99um-nsqdf.jpg?width=1024&height=1536&dream"
+  },
+  "nature-ocean": {
+    "url": "https://koala.sh/api/image/v2-1d99wd-pwihn.jpg?width=1024&height=1536&dream"
+  },
+  "nature-forest": {
+    "url": "https://koala.sh/api/image/v2-1d99y0-oy4n9.jpg?width=1024&height=1536&dream"
+  }
+}
