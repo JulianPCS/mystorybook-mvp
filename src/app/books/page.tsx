@@ -57,18 +57,17 @@ function BooksContent() {
           <div className="flex justify-center gap-2 mb-4">
             <a
               href="/books"
-              className="text-xs font-bold text-gray-400 hover:text-teal-600 transition-colors"
+              className="text-xs font-bold text-gray-400 hover:text-emerald-800 transition-colors"
             >
               All Books
             </a>
             <span className="text-gray-300">›</span>
-            <span className="text-xs font-bold text-teal-600">
+            <span className="text-xs font-bold text-emerald-800">
               {gender === "female" ? "Female Names" : "Male Names"}
             </span>
           </div>
         )}
         <h1 className="text-4xl font-black text-gray-800 mb-2">
-          {gender === "female" ? "👧 " : gender === "male" ? "👦 " : ""}
           {pageTitle}
         </h1>
         <p className="text-gray-500 font-semibold text-lg">{pageSubtitle}</p>
@@ -77,16 +76,16 @@ function BooksContent() {
         <div className="flex justify-center gap-2 mt-5">
           {[
             { label: "All", href: "/books", active: !gender },
-            { label: "👧 Girls", href: "/books?gender=female", active: gender === "female" },
-            { label: "👦 Boys", href: "/books?gender=male", active: gender === "male" },
+            { label: "Girls' Names", href: "/books?gender=female", active: gender === "female" },
+            { label: "Boys' Names", href: "/books?gender=male", active: gender === "male" },
           ].map((t) => (
             <a
               key={t.label}
               href={t.href}
               className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
                 t.active
-                  ? "bg-teal-500 text-white shadow"
-                  : "bg-white border-2 border-teal-100 text-gray-600 hover:border-teal-300"
+                  ? "bg-emerald-700 text-white shadow"
+                  : "bg-white border-2 border-emerald-100 text-gray-600 hover:border-emerald-300"
               }`}
             >
               {t.label}
@@ -115,11 +114,11 @@ function BooksContent() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search any name — e.g. Zainab, Oliver, Priya..."
-            className="flex-1 border-2 border-teal-100 focus:border-teal-400 rounded-2xl px-5 py-3 font-semibold text-gray-800 outline-none transition-colors"
+            className="flex-1 border-2 border-emerald-100 focus:border-emerald-500 rounded-2xl px-5 py-3 font-semibold text-gray-800 outline-none transition-colors"
           />
           <button
             type="submit"
-            className="bg-teal-500 hover:bg-teal-600 text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
+            className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
           >
             Find Book
           </button>
@@ -142,7 +141,7 @@ function BooksContent() {
             </p>
             <button
               onClick={handleSearch}
-              className="bg-teal-500 hover:bg-teal-600 text-white font-bold px-8 py-3 rounded-2xl transition-all"
+              className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3 rounded-2xl transition-all"
             >
               Create a Book for &ldquo;{search}&rdquo;
             </button>
@@ -159,12 +158,12 @@ function BooksContent() {
           </p>
 
           <div className="flex flex-col gap-10">
-            {OCCASION_GROUPS.map(({ key, label, emoji }) => {
+            {OCCASION_GROUPS.map(({ key, label }) => {
               const books = OCCASIONS.filter((o) => o.occasionGroup === key && o.listed);
               return (
                 <div key={key}>
-                  <h3 className="text-lg font-black text-gray-700 mb-4 flex items-center gap-2">
-                    <span>{emoji}</span> {label}
+                  <h3 className="text-lg font-black text-gray-700 mb-4">
+                    {label}
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
                     {books.map((book) => (
@@ -183,7 +182,7 @@ function BooksContent() {
 
 export default function BooksPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-teal-500 font-bold text-xl">Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-emerald-700 font-bold text-xl">Loading...</div>}>
       <BooksContent />
     </Suspense>
   );

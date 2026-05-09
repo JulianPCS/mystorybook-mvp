@@ -50,7 +50,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="bg-white/95 backdrop-blur-sm border-b border-teal-100 sticky top-0 z-40">
+    <nav className="bg-white/95 backdrop-blur-sm border-b border-emerald-100 sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
         {/* Logo */}
@@ -64,25 +64,25 @@ export default function Navbar() {
           {/* Female Names */}
           <Link
             href="/books?gender=female"
-            className="flex items-center gap-1.5 text-gray-600 hover:text-teal-600 px-3 py-2 rounded-xl hover:bg-teal-50 transition-colors whitespace-nowrap"
+            className="flex items-center gap-1.5 text-gray-600 hover:text-emerald-800 px-3 py-2 rounded-xl hover:bg-emerald-50 transition-colors whitespace-nowrap"
           >
-            <span>👧</span> Female Names
+            Girls&apos; Names
           </Link>
 
           {/* Male Names */}
           <Link
             href="/books?gender=male"
-            className="flex items-center gap-1.5 text-gray-600 hover:text-teal-600 px-3 py-2 rounded-xl hover:bg-teal-50 transition-colors whitespace-nowrap"
+            className="flex items-center gap-1.5 text-gray-600 hover:text-emerald-800 px-3 py-2 rounded-xl hover:bg-emerald-50 transition-colors whitespace-nowrap"
           >
-            <span>👦</span> Male Names
+            Boys&apos; Names
           </Link>
 
           {/* Celebrations dropdown */}
           <div className="relative" onMouseEnter={openCeleb} onMouseLeave={closeCeleb}>
             <button
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-colors whitespace-nowrap font-semibold ${celebOpen ? "text-teal-600 bg-teal-50" : "text-gray-600 hover:text-teal-600 hover:bg-teal-50"}`}
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition-colors whitespace-nowrap font-semibold ${celebOpen ? "text-emerald-800 bg-emerald-50" : "text-gray-600 hover:text-emerald-800 hover:bg-emerald-50"}`}
             >
-              <span>🎉</span> Celebrations
+              Celebrations
               <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${celebOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
               </svg>
@@ -91,7 +91,7 @@ export default function Navbar() {
             {/* Dropdown panel */}
             {celebOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-72 bg-white border border-teal-100 rounded-2xl shadow-xl py-3 z-50"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-72 bg-white border border-emerald-100 rounded-2xl shadow-xl py-3 z-50"
                 onMouseEnter={openCeleb}
                 onMouseLeave={closeCeleb}
               >
@@ -106,9 +106,8 @@ export default function Navbar() {
                         key={item.slug}
                         href={`/books/${item.slug}`}
                         onClick={() => setCelebOpen(false)}
-                        className="flex items-center gap-2.5 px-4 py-2 hover:bg-teal-50 text-gray-700 hover:text-teal-700 transition-colors text-sm font-semibold"
+                        className="flex items-center gap-2.5 px-4 py-2 hover:bg-emerald-50 text-gray-700 hover:text-emerald-900 transition-colors text-sm font-semibold"
                       >
-                        <span className="text-base w-5 text-center">{item.emoji}</span>
                         {item.name}
                       </Link>
                     ))}
@@ -118,7 +117,7 @@ export default function Navbar() {
                   <Link
                     href="/books#occasions"
                     onClick={() => setCelebOpen(false)}
-                    className="flex items-center justify-center gap-1 text-xs font-black text-teal-500 hover:text-teal-700 py-1 transition-colors"
+                    className="flex items-center justify-center gap-1 text-xs font-black text-emerald-700 hover:text-emerald-900 py-1 transition-colors"
                   >
                     View all celebrations →
                   </Link>
@@ -130,7 +129,7 @@ export default function Navbar() {
           {/* Why Colouring */}
           <Link
             href="/why"
-            className="text-gray-600 hover:text-teal-600 px-3 py-2 rounded-xl hover:bg-teal-50 transition-colors whitespace-nowrap"
+            className="text-gray-600 hover:text-emerald-800 px-3 py-2 rounded-xl hover:bg-emerald-50 transition-colors whitespace-nowrap"
           >
             Why Colouring?
           </Link>
@@ -138,7 +137,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             href="/books"
-            className="ml-2 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded-xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
+            className="ml-2 bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
           >
             Find Your Child&apos;s Book
           </Link>
@@ -164,37 +163,37 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="lg:hidden bg-white border-t border-teal-50 px-4 py-3 flex flex-col gap-1">
+        <div className="lg:hidden bg-white border-t border-emerald-50 px-4 py-3 flex flex-col gap-1">
 
           <Link
             href="/books?gender=female"
-            className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors"
+            className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-900 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            <span>👧</span> Female Names
+            Girls&apos; Names
           </Link>
 
           <Link
             href="/books?gender=male"
-            className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors"
+            className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-900 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            <span>👦</span> Male Names
+            Boys&apos; Names
           </Link>
 
           {/* Celebrations accordion */}
           <button
-            className="flex items-center justify-between text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors w-full text-left"
+            className="flex items-center justify-between text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-900 transition-colors w-full text-left"
             onClick={() => setMobileCelebOpen((o) => !o)}
           >
-            <span className="flex items-center gap-2"><span>🎉</span> Celebrations</span>
+            <span>Celebrations</span>
             <svg className={`w-4 h-4 transition-transform duration-200 ${mobileCelebOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
             </svg>
           </button>
 
           {mobileCelebOpen && (
-            <div className="ml-4 flex flex-col gap-0.5 bg-teal-50/60 rounded-2xl p-2">
+            <div className="ml-4 flex flex-col gap-0.5 bg-emerald-50/60 rounded-2xl p-2">
               {CELEBRATIONS.map((section) => (
                 <div key={section.group}>
                   <p className="px-3 pt-2 pb-1 text-[10px] font-black uppercase tracking-widest text-gray-400">
@@ -204,10 +203,10 @@ export default function Navbar() {
                     <Link
                       key={item.slug}
                       href={`/books/${item.slug}`}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold text-gray-700 hover:bg-white hover:text-teal-700 transition-colors"
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-semibold text-gray-700 hover:bg-white hover:text-emerald-900 transition-colors"
                       onClick={() => { setMenuOpen(false); setMobileCelebOpen(false); }}
                     >
-                      <span>{item.emoji}</span> {item.name}
+                      {item.name}
                     </Link>
                   ))}
                 </div>
@@ -217,19 +216,19 @@ export default function Navbar() {
 
           <Link
             href="/why"
-            className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-teal-50 hover:text-teal-700 transition-colors"
+            className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-900 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            🔬 Why Colouring?
+            Why Colouring?
           </Link>
 
-          <div className="mt-2 pt-2 border-t border-teal-50">
+          <div className="mt-2 pt-2 border-t border-emerald-50">
             <Link
               href="/books"
-              className="block bg-teal-500 text-white text-center font-black py-3 rounded-xl"
+              className="block bg-emerald-700 text-white text-center font-black py-3 rounded-xl"
               onClick={() => setMenuOpen(false)}
             >
-              Find Your Child&apos;s Book 🎨
+              Find Your Child&apos;s Book
             </Link>
           </div>
         </div>

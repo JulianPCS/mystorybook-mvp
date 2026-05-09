@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import PromoBanner from "@/components/PromoBanner";
 
 export const metadata: Metadata = {
   title: "Learn with Coloring — Personalised Colouring Books for Children",
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <body className="antialiased bg-cream min-h-screen flex flex-col">
+        <PromoBanner />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

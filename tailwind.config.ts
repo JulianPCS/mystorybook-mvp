@@ -25,6 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Nunito", "system-ui", "sans-serif"],
+        display: ["Playfair Display", "Georgia", "serif"],
       },
       borderRadius: {
         "4xl": "2rem",

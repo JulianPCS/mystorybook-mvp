@@ -64,7 +64,7 @@ export default function AdminPage() {
   if (!authed) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center px-4">
-        <div className="bg-white rounded-3xl shadow-sm border border-teal-50 p-8 w-full max-w-sm">
+        <div className="bg-white rounded-3xl shadow-sm border border-emerald-50 p-8 w-full max-w-sm">
           <h1 className="text-2xl font-black text-gray-800 mb-6 text-center">Admin Access</h1>
           <form onSubmit={handleLogin} className="space-y-4">
             <input
@@ -72,14 +72,14 @@ export default function AdminPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
-              className="w-full border-2 border-teal-100 focus:border-teal-400 rounded-2xl px-4 py-3 font-semibold text-gray-800 outline-none transition-colors"
+              className="w-full border-2 border-emerald-100 focus:border-emerald-500 rounded-2xl px-4 py-3 font-semibold text-gray-800 outline-none transition-colors"
               required
             />
             {error && <p className="text-red-500 text-sm font-semibold">{error}</p>}
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-2xl transition-all"
+              className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 rounded-2xl transition-all"
             >
               {loading ? "Checking..." : "Login"}
             </button>
@@ -108,7 +108,7 @@ export default function AdminPage() {
       {/* KPI cards */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
         {[
-          { label: "Total Signups", value: stats.totalSignups, icon: "📧", color: "bg-teal-50 border-teal-200" },
+          { label: "Total Signups", value: stats.totalSignups, icon: "📧", color: "bg-emerald-50 border-emerald-200" },
           { label: "CTA Clicks", value: stats.totalClicks, icon: "👆", color: "bg-amber-50 border-amber-200" },
           { label: "Conversion Rate", value: `${conversionPct}%`, icon: "📈", color: conversionPct >= 10 ? "bg-green-50 border-green-200" : "bg-red-50 border-red-200" },
           { label: "Unique Books", value: stats.bySlug.length, icon: "📚", color: "bg-purple-50 border-purple-200" },
@@ -122,7 +122,7 @@ export default function AdminPage() {
       </div>
 
       {/* Conversion target */}
-      <div className="bg-white rounded-2xl border border-teal-100 p-4 mb-8 flex items-center gap-3">
+      <div className="bg-white rounded-2xl border border-emerald-100 p-4 mb-8 flex items-center gap-3">
         <span className="text-2xl">{conversionPct >= 10 ? "✅" : "⏳"}</span>
         <div>
           <p className="font-bold text-gray-700 text-sm">
@@ -136,7 +136,7 @@ export default function AdminPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         {/* By slug */}
-        <div className="bg-white rounded-2xl border border-teal-100 p-5">
+        <div className="bg-white rounded-2xl border border-emerald-100 p-5">
           <h2 className="font-black text-gray-800 mb-4">Signups by Book</h2>
           {stats.bySlug.length === 0 ? (
             <p className="text-gray-400 text-sm font-semibold">No signups yet</p>
@@ -149,9 +149,9 @@ export default function AdminPage() {
                       <span>{row.slug}</span>
                       <span>{row.count}</span>
                     </div>
-                    <div className="h-1.5 bg-teal-50 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-emerald-50 rounded-full overflow-hidden">
                       <div
-                        className="h-full bg-teal-400 rounded-full"
+                        className="h-full bg-emerald-500 rounded-full"
                         style={{ width: `${(row.count / stats.bySlug[0].count) * 100}%` }}
                       />
                     </div>
@@ -163,7 +163,7 @@ export default function AdminPage() {
         </div>
 
         {/* By date */}
-        <div className="bg-white rounded-2xl border border-teal-100 p-5">
+        <div className="bg-white rounded-2xl border border-emerald-100 p-5">
           <h2 className="font-black text-gray-800 mb-4">Signups by Day</h2>
           {stats.byDate.length === 0 ? (
             <p className="text-gray-400 text-sm font-semibold">No signups yet</p>
@@ -191,8 +191,8 @@ export default function AdminPage() {
       </div>
 
       {/* Raw signups table */}
-      <div className="bg-white rounded-2xl border border-teal-100 overflow-hidden">
-        <div className="p-5 border-b border-teal-50 flex items-center justify-between">
+      <div className="bg-white rounded-2xl border border-emerald-100 overflow-hidden">
+        <div className="p-5 border-b border-emerald-50 flex items-center justify-between">
           <h2 className="font-black text-gray-800">All Signups</h2>
           <span className="text-xs text-gray-400 font-semibold">Auto-refreshes every 30s</span>
         </div>
@@ -212,13 +212,13 @@ export default function AdminPage() {
               </thead>
               <tbody>
                 {stats.signups.map((s) => (
-                  <tr key={s.id} className="border-t border-gray-50 hover:bg-teal-50/30 transition-colors">
+                  <tr key={s.id} className="border-t border-gray-50 hover:bg-emerald-50/30 transition-colors">
                     <td className="px-4 py-3 text-gray-500 whitespace-nowrap">
                       {new Date(s.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
                     </td>
                     <td className="px-4 py-3 font-bold text-gray-800">{s.child_name}</td>
                     <td className="px-4 py-3 text-gray-600">{s.parent_email}</td>
-                    <td className="px-4 py-3 text-teal-600 font-semibold">{s.book_slug}</td>
+                    <td className="px-4 py-3 text-emerald-800 font-semibold">{s.book_slug}</td>
                     <td className="px-4 py-3 text-gray-500">{s.utm_source || "—"}</td>
                     <td className="px-4 py-3 text-gray-500">{s.utm_campaign || "—"}</td>
                   </tr>

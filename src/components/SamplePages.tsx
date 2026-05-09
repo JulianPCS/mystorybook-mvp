@@ -2,8 +2,8 @@ const SAMPLES = [
   {
     label: "Animals & Nature",
     emoji: "🦋",
-    bg: "bg-teal-50",
-    border: "border-teal-200",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
     pattern: "M10 50 Q30 10 50 50 Q70 90 90 50",
     desc: "Butterflies, flowers & leaves",
   },

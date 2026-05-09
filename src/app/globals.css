@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -43,14 +43,22 @@ body {
   animation: nudge-right 1s ease-in-out infinite;
 }
 
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
 @layer components {
   .btn-primary {
-    @apply bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-3 px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
   .btn-gold {
     @apply bg-gold-400 hover:bg-gold-500 text-white font-bold py-3 px-6 rounded-2xl transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0;
   }
   .card {
-    @apply bg-white rounded-3xl shadow-sm border border-teal-50 overflow-hidden;
+    @apply bg-white rounded-3xl shadow-sm border border-emerald-50 overflow-hidden;
   }
 }

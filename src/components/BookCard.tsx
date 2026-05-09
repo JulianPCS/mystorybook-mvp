@@ -23,10 +23,10 @@ export default function BookCard({ book }: BookCardProps) {
         isOccasion={book.type === "occasion"}
       />
       <div className="text-center">
-        <p className="font-bold text-gray-800 text-sm group-hover:text-teal-600 transition-colors">
+        <p className="font-bold text-gray-800 text-sm group-hover:text-emerald-800 transition-colors">
           {title}
         </p>
-        <p className="text-xs text-teal-600 font-semibold">£9.99</p>
+        <p className="text-xs text-emerald-800 font-semibold">£9.99</p>
       </div>
     </Link>
   );

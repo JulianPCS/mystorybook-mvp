@@ -16,14 +16,14 @@ function ConfirmedContent() {
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center px-4 sm:px-6 py-16 text-center">
       {/* Big success icon */}
-      <div className="w-24 h-24 bg-teal-100 rounded-full flex items-center justify-center text-5xl mb-6 animate-bounce">
+      <div className="w-24 h-24 bg-emerald-100 rounded-full flex items-center justify-center text-5xl mb-6 animate-bounce">
         🎉
       </div>
 
       <div className="max-w-lg">
         <h1 className="text-3xl sm:text-4xl font-black text-gray-800 mb-4 leading-tight">
           We&apos;re putting the finishing touches on{" "}
-          <span className="text-teal-500">{name}&apos;s</span> book!
+          <span className="text-emerald-700">{name}&apos;s</span> book!
         </h1>
 
         <p className="text-gray-500 font-semibold text-lg mb-2">
@@ -52,7 +52,7 @@ function ConfirmedContent() {
 
         <Link
           href="/books"
-          className="inline-block text-teal-600 font-bold hover:text-teal-700 transition-colors border-b-2 border-teal-200 hover:border-teal-400"
+          className="inline-block text-emerald-800 font-bold hover:text-emerald-900 transition-colors border-b-2 border-emerald-200 hover:border-emerald-500"
         >
           Browse more books →
         </Link>
@@ -68,7 +68,7 @@ function ConfirmedContent() {
 
 export default function WaitlistConfirmedPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-teal-500 font-bold text-xl">Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-emerald-700 font-bold text-xl">Loading...</div>}>
       <ConfirmedContent />
     </Suspense>
   );

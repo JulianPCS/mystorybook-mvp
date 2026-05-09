@@ -60,12 +60,12 @@ export default function HeroCarousel() {
       <div
         className={`flex items-center gap-2 mb-3 transition-all duration-500 lg:hidden ${hinted ? "opacity-0 pointer-events-none" : "opacity-100"}`}
       >
-        <ChevronLeft className="w-4 h-4 text-teal-400 animate-pulse-left" />
-        <span className="flex items-center gap-1.5 text-xs font-bold text-teal-600 bg-teal-50 border border-teal-200 px-3 py-1 rounded-full">
+        <ChevronLeft className="w-4 h-4 text-emerald-500 animate-pulse-left" />
+        <span className="flex items-center gap-1.5 text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
           <SwipeIcon className="w-4 h-4" />
           Swipe to explore books
         </span>
-        <ChevronRight className="w-4 h-4 text-teal-400 animate-pulse-right" />
+        <ChevronRight className="w-4 h-4 text-emerald-500 animate-pulse-right" />
       </div>
 
       {/* Book display */}
@@ -74,7 +74,7 @@ export default function HeroCarousel() {
         <button
           onClick={() => navigate("prev")}
           aria-label="Previous book"
-          className="absolute -left-5 sm:-left-7 bottom-1/2 translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-teal-600 hover:bg-teal-50 hover:border-teal-200 transition-all duration-150 active:scale-90"
+          className="absolute -left-5 sm:-left-7 bottom-1/2 translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-emerald-800 hover:bg-emerald-50 hover:border-emerald-200 transition-all duration-150 active:scale-90"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -108,7 +108,7 @@ export default function HeroCarousel() {
                 size="lg"
               />
               {/* "Tap to view" label on the center book */}
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-teal-500 text-white text-[10px] font-black px-3 py-0.5 rounded-full whitespace-nowrap shadow">
+              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-emerald-700 text-white text-[10px] font-black px-3 py-0.5 rounded-full whitespace-nowrap shadow">
                 Tap to view →
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function HeroCarousel() {
         <button
           onClick={() => navigate("next")}
           aria-label="Next book"
-          className="absolute -right-5 sm:-right-7 bottom-1/2 translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-teal-600 hover:bg-teal-50 hover:border-teal-200 transition-all duration-150 active:scale-90"
+          className="absolute -right-5 sm:-right-7 bottom-1/2 translate-y-1/2 z-20 w-9 h-9 rounded-full bg-white shadow-md border border-gray-100 flex items-center justify-center text-emerald-800 hover:bg-emerald-50 hover:border-emerald-200 transition-all duration-150 active:scale-90"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -148,14 +148,14 @@ export default function HeroCarousel() {
             onClick={() => { setHinted(true); setActive(i); }}
             aria-label={`Go to ${BOOKS[i].name}`}
             className={`rounded-full transition-all duration-200 ${
-              i === active ? "w-5 h-2 bg-teal-500" : "w-2 h-2 bg-teal-200 hover:bg-teal-300"
+              i === active ? "w-5 h-2 bg-emerald-700" : "w-2 h-2 bg-emerald-200 hover:bg-emerald-300"
             }`}
           />
         ))}
       </div>
 
       {/* Book name label */}
-      <p className={`mt-2 text-sm font-black text-teal-700 transition-opacity duration-100 ${fading ? "opacity-0" : "opacity-100"}`}>
+      <p className={`mt-2 text-sm font-black text-emerald-900 transition-opacity duration-100 ${fading ? "opacity-0" : "opacity-100"}`}>
         {BOOKS[active].name}&apos;s Book
       </p>
     </div>
