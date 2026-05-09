@@ -8,9 +8,8 @@ import SamplePages from "@/components/SamplePages";
 import HeroCarousel from "@/components/HeroCarousel";
 import { NAMES, OCCASIONS } from "@/lib/data";
 
-// Lead with Muslim names (have real covers) then pad with others
-const FEATURED_NAMES = NAMES.filter(n => n.community === "muslim").slice(0, 8);
-const FEATURED_OCCASIONS = OCCASIONS.slice(0, 4);
+const FEATURED_NAMES = NAMES.filter(n => n.listed && n.coverImage).slice(0, 8);
+const FEATURED_OCCASIONS = OCCASIONS.filter(o => o.listed && o.coverImage).slice(0, 4);
 
 const TRUST_SIGNALS = [
   { icon: "🇬🇧", text: "Printed & shipped in the UK" },

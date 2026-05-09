@@ -18,7 +18,8 @@ function BooksContent() {
 
   const [search, setSearch] = useState("");
 
-  const allNames = gender ? NAMES.filter((n) => n.gender === gender) : NAMES;
+  const listedNames = NAMES.filter((n) => n.listed);
+  const allNames = gender ? listedNames.filter((n) => n.gender === gender) : listedNames;
   const filtered = search.trim()
     ? allNames.filter((b) => b.name.toLowerCase().includes(search.toLowerCase()))
     : allNames;
@@ -159,7 +160,7 @@ function BooksContent() {
 
           <div className="flex flex-col gap-10">
             {OCCASION_GROUPS.map(({ key, label, emoji }) => {
-              const books = OCCASIONS.filter((o) => o.occasionGroup === key);
+              const books = OCCASIONS.filter((o) => o.occasionGroup === key && o.listed);
               return (
                 <div key={key}>
                   <h3 className="text-lg font-black text-gray-700 mb-4 flex items-center gap-2">
