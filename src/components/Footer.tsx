@@ -11,6 +11,10 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500 font-semibold">
+            <Link href="/why" className="hover:text-teal-600 transition-colors">
+              Why Colouring?
+            </Link>
+            <span>·</span>
             <Link href="/books" className="hover:text-teal-600 transition-colors">
               Browse Books
             </Link>

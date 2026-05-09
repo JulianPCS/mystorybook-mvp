@@ -16,6 +16,9 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden sm:flex items-center gap-6 text-sm font-semibold">
+          <Link href="/why" className="text-gray-600 hover:text-teal-600 transition-colors">
+            Why Colouring?
+          </Link>
           <Link href="/books" className="text-gray-600 hover:text-teal-600 transition-colors">
             Browse Books
           </Link>
@@ -47,6 +50,13 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="sm:hidden bg-white border-t border-teal-50 px-4 py-4 flex flex-col gap-3">
+          <Link
+            href="/why"
+            className="text-gray-700 font-semibold py-2"
+            onClick={() => setMenuOpen(false)}
+          >
+            Why Colouring?
+          </Link>
           <Link
             href="/books"
             className="text-gray-700 font-semibold py-2"
