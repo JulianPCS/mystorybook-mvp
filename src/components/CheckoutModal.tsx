@@ -126,7 +126,7 @@ export default function CheckoutModal({
             <span className="text-red-500 font-bold">22 left</span>
           </div>
           <div className="w-full bg-gray-100 rounded-full h-1.5">
-            <div className="bg-teal-500 h-1.5 rounded-full" style={{ width: "78%" }} />
+            <div className="bg-emerald-700 h-1.5 rounded-full" style={{ width: "78%" }} />
           </div>
         </div>
 
@@ -141,7 +141,7 @@ export default function CheckoutModal({
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Maryam"
               required
-              className="w-full border-2 border-teal-100 rounded-2xl px-4 py-3 text-gray-800 font-semibold focus:outline-none focus:border-teal-400 transition-colors"
+              className="w-full border-2 border-emerald-100 rounded-2xl px-4 py-3 text-gray-800 font-semibold focus:outline-none focus:border-emerald-500 transition-colors"
             />
           </div>
 
@@ -155,7 +155,7 @@ export default function CheckoutModal({
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               required
-              className="w-full border-2 border-teal-100 rounded-2xl px-4 py-3 text-gray-800 font-semibold focus:outline-none focus:border-teal-400 transition-colors"
+              className="w-full border-2 border-emerald-100 rounded-2xl px-4 py-3 text-gray-800 font-semibold focus:outline-none focus:border-emerald-500 transition-colors"
             />
           </div>
 
@@ -166,7 +166,7 @@ export default function CheckoutModal({
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-teal-500 hover:bg-teal-600 disabled:bg-teal-300 text-white font-black py-4 rounded-2xl text-lg transition-all duration-200 hover:-translate-y-0.5 shadow-md"
+            className="w-full bg-emerald-700 hover:bg-emerald-800 disabled:bg-emerald-300 text-white font-black py-4 rounded-2xl text-lg transition-all duration-200 hover:-translate-y-0.5 shadow-md"
           >
             {loading ? "Reserving..." : "Reserve My Copy 🎉"}
           </button>

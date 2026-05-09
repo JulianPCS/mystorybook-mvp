@@ -8,7 +8,7 @@ import { getBookBySlug, generateNameBook } from "@/lib/data";
 import type { BookEntry } from "@/lib/data";
 
 const SAMPLE_SPREADS = [
-  { emoji: "🦋", bg: "bg-teal-50", border: "border-teal-200", label: "Page 4–5" },
+  { emoji: "🦋", bg: "bg-emerald-50", border: "border-emerald-200", label: "Page 4–5" },
   { emoji: "⭐", bg: "bg-amber-50", border: "border-amber-200", label: "Page 8–9" },
   { emoji: "🌸", bg: "bg-pink-50", border: "border-pink-200", label: "Page 14–15" },
   { emoji: "🌿", bg: "bg-green-50", border: "border-green-200", label: "Page 22–23" },
@@ -70,9 +70,9 @@ function BookDetailContent({ slug }: { slug: string }) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-16">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-400 font-semibold mb-8">
-          <a href="/" className="hover:text-teal-600 transition-colors">Home</a>
+          <a href="/" className="hover:text-emerald-800 transition-colors">Home</a>
           <span className="mx-2">›</span>
-          <a href="/books" className="hover:text-teal-600 transition-colors">Books</a>
+          <a href="/books" className="hover:text-emerald-800 transition-colors">Books</a>
           <span className="mx-2">›</span>
           <span className="text-gray-600">{book.name}</span>
         </nav>
@@ -111,7 +111,7 @@ function BookDetailContent({ slug }: { slug: string }) {
           {/* Right: details + CTA */}
           <div className="flex flex-col gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 bg-teal-50 text-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-3">
+              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-900 text-xs font-bold px-3 py-1 rounded-full mb-3">
                 ✨ Personalised Edition
               </div>
               <h1 className="text-3xl sm:text-4xl font-black text-gray-800 leading-tight mb-2">
@@ -145,13 +145,13 @@ function BookDetailContent({ slug }: { slug: string }) {
                 <span className="text-sm font-black text-gray-900">78 / 100</span>
               </div>
               <div className="w-full bg-gray-100 rounded-full h-2 mb-2">
-                <div className="bg-teal-500 h-2 rounded-full" style={{ width: "78%" }} />
+                <div className="bg-emerald-700 h-2 rounded-full" style={{ width: "78%" }} />
               </div>
               <p className="text-xs text-gray-500 font-semibold">Only 22 spots remaining at the launch price of £9.99</p>
             </div>
 
             {/* Book details */}
-            <div className="bg-teal-50 rounded-2xl p-5 grid grid-cols-2 gap-3">
+            <div className="bg-emerald-50 rounded-2xl p-5 grid grid-cols-2 gap-3">
               {[
                 { icon: "📄", label: "32 pages" },
                 { icon: "📐", label: "A4 format" },
@@ -168,7 +168,7 @@ function BookDetailContent({ slug }: { slug: string }) {
             {/* CTA */}
             <button
               onClick={handleCTAClick}
-              className="w-full bg-teal-500 hover:bg-teal-600 text-white font-black text-xl py-5 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-teal-200"
+              className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xl py-5 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
             >
               Get {book.name}&apos;s Book —{" "}
               <span className="line-through opacity-60 text-lg">£19.99</span>{" "}
@@ -180,7 +180,7 @@ function BookDetailContent({ slug }: { slug: string }) {
             </p>
 
             {/* Social proof */}
-            <div className="border-t border-teal-50 pt-4 flex flex-col gap-2">
+            <div className="border-t border-emerald-50 pt-4 flex flex-col gap-2">
               {[
                 "\"My daughter absolutely loves her personalised book!\"",
                 "\"Such a thoughtful and unique gift — will be ordering again.\"",
@@ -210,7 +210,7 @@ function BookDetailContent({ slug }: { slug: string }) {
 
 export default function BookDetailPage({ params }: { params: { slug: string } }) {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-teal-500 font-bold text-xl">Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-emerald-700 font-bold text-xl">Loading...</div>}>
       <BookDetailContent slug={params.slug} />
     </Suspense>
   );

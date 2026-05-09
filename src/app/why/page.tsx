@@ -19,10 +19,10 @@ const BENEFITS = [
     emoji: "✏️",
     title: "Fine Motor Skills & Pre-Writing",
     colour: "teal",
-    bg: "bg-teal-50",
-    border: "border-teal-200",
-    accent: "text-teal-700",
-    badge: "bg-teal-100 text-teal-700",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
+    accent: "text-emerald-900",
+    badge: "bg-emerald-100 text-emerald-900",
     summary: "Colouring is one of the best pre-writing exercises children can do.",
     detail: "Gripping a crayon, applying controlled pressure, and staying within lines directly trains the small muscles of the hand and wrist. Research from the American Journal of Occupational Therapy shows that children who colour regularly develop pencil grip and hand strength significantly faster — giving them a head start when they begin writing letters.",
     studies: [
@@ -133,8 +133,8 @@ const AGES = [
   {
     range: "Ages 6–8",
     icon: "👧",
-    bg: "bg-teal-50",
-    border: "border-teal-200",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
     points: [
       "Reinforces fine motor skills alongside handwriting",
       "Develops creative decision-making",
@@ -147,14 +147,14 @@ export default function WhyColoringPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-br from-teal-50 via-white to-amber-50 pt-14 pb-20 px-4 sm:px-6">
+      <section className="bg-gradient-to-br from-emerald-50 via-white to-amber-50 pt-14 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-900 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
             🔬 Evidence-Based Learning
           </div>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-800 leading-tight mb-5">
             Why Colouring Is One of the{" "}
-            <span className="text-teal-500">Best Things</span>{" "}
+            <span className="text-emerald-700">Best Things</span>{" "}
             Your Child Can Do
           </h1>
           <p className="text-gray-500 text-lg sm:text-xl font-semibold max-w-2xl mx-auto mb-10">
@@ -162,7 +162,7 @@ export default function WhyColoringPage() {
           </p>
           <Link
             href="/books"
-            className="inline-block bg-teal-500 hover:bg-teal-600 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-teal-200"
+            className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
           >
             Find Your Child&apos;s Book 🎨
           </Link>
@@ -170,13 +170,13 @@ export default function WhyColoringPage() {
       </section>
 
       {/* ── Stats strip ── */}
-      <section className="bg-teal-600 py-10 px-4 sm:px-6">
+      <section className="bg-emerald-800 py-10 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
           {STATS.map((s) => (
             <div key={s.value} className="text-center">
               <div className="text-3xl sm:text-4xl font-black text-white mb-1">{s.value}</div>
-              <div className="text-teal-100 text-sm font-semibold leading-snug mb-1">{s.label}</div>
-              <div className="text-teal-300 text-xs font-bold">{s.source}</div>
+              <div className="text-emerald-100 text-sm font-semibold leading-snug mb-1">{s.label}</div>
+              <div className="text-emerald-300 text-xs font-bold">{s.source}</div>
             </div>
           ))}
         </div>
@@ -229,7 +229,7 @@ export default function WhyColoringPage() {
       </section>
 
       {/* ── Age breakdown ── */}
-      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-amber-50 to-teal-50">
+      <section className="py-20 px-4 sm:px-6 bg-gradient-to-br from-amber-50 to-emerald-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-800 mb-3">
@@ -247,7 +247,7 @@ export default function WhyColoringPage() {
                 <ul className="flex flex-col gap-2">
                   {a.points.map((p) => (
                     <li key={p} className="flex gap-2 text-sm font-semibold text-gray-700">
-                      <span className="text-teal-500 flex-shrink-0 mt-0.5">✓</span>
+                      <span className="text-emerald-700 flex-shrink-0 mt-0.5">✓</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -261,7 +261,7 @@ export default function WhyColoringPage() {
       {/* ── Personalisation note ── */}
       <section className="py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
-          <div className="bg-teal-50 border-2 border-teal-200 rounded-3xl p-8 sm:p-10 text-center">
+          <div className="bg-emerald-50 border-2 border-emerald-200 rounded-3xl p-8 sm:p-10 text-center">
             <div className="text-5xl mb-5">💡</div>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-800 mb-4">
               Why Personalisation Multiplies the Benefits
@@ -281,17 +281,17 @@ export default function WhyColoringPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-16 px-4 sm:px-6 bg-teal-500">
+      <section className="py-16 px-4 sm:px-6 bg-emerald-700">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
             Give Them the Gift of Learning Through Colour 🎨
           </h2>
-          <p className="text-teal-100 font-semibold mb-8 text-lg">
+          <p className="text-emerald-100 font-semibold mb-8 text-lg">
             A personalised colouring book that&apos;s fun, meaningful, and genuinely good for them.
           </p>
           <Link
             href="/books"
-            className="inline-block bg-white text-teal-600 font-black text-lg px-10 py-4 rounded-2xl hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
+            className="inline-block bg-white text-emerald-800 font-black text-lg px-10 py-4 rounded-2xl hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
           >
             Find Your Child&apos;s Book →
           </Link>

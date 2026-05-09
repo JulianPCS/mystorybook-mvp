@@ -57,12 +57,12 @@ function BooksContent() {
           <div className="flex justify-center gap-2 mb-4">
             <a
               href="/books"
-              className="text-xs font-bold text-gray-400 hover:text-teal-600 transition-colors"
+              className="text-xs font-bold text-gray-400 hover:text-emerald-800 transition-colors"
             >
               All Books
             </a>
             <span className="text-gray-300">›</span>
-            <span className="text-xs font-bold text-teal-600">
+            <span className="text-xs font-bold text-emerald-800">
               {gender === "female" ? "Female Names" : "Male Names"}
             </span>
           </div>
@@ -84,8 +84,8 @@ function BooksContent() {
               href={t.href}
               className={`px-4 py-1.5 rounded-full text-sm font-bold transition-all ${
                 t.active
-                  ? "bg-teal-500 text-white shadow"
-                  : "bg-white border-2 border-teal-100 text-gray-600 hover:border-teal-300"
+                  ? "bg-emerald-700 text-white shadow"
+                  : "bg-white border-2 border-emerald-100 text-gray-600 hover:border-emerald-300"
               }`}
             >
               {t.label}
@@ -114,11 +114,11 @@ function BooksContent() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search any name — e.g. Zainab, Oliver, Priya..."
-            className="flex-1 border-2 border-teal-100 focus:border-teal-400 rounded-2xl px-5 py-3 font-semibold text-gray-800 outline-none transition-colors"
+            className="flex-1 border-2 border-emerald-100 focus:border-emerald-500 rounded-2xl px-5 py-3 font-semibold text-gray-800 outline-none transition-colors"
           />
           <button
             type="submit"
-            className="bg-teal-500 hover:bg-teal-600 text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
+            className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
           >
             Find Book
           </button>
@@ -141,7 +141,7 @@ function BooksContent() {
             </p>
             <button
               onClick={handleSearch}
-              className="bg-teal-500 hover:bg-teal-600 text-white font-bold px-8 py-3 rounded-2xl transition-all"
+              className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-8 py-3 rounded-2xl transition-all"
             >
               Create a Book for &ldquo;{search}&rdquo;
             </button>
@@ -182,7 +182,7 @@ function BooksContent() {
 
 export default function BooksPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-teal-500 font-bold text-xl">Loading...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-emerald-700 font-bold text-xl">Loading...</div>}>
       <BooksContent />
     </Suspense>
   );

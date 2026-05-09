@@ -69,7 +69,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.name}
-                  className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-teal-600 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
+                  className="w-9 h-9 rounded-lg bg-gray-800 hover:bg-emerald-800 flex items-center justify-center text-gray-400 hover:text-white transition-colors"
                 >
                   {s.icon}
                 </a>
@@ -94,7 +94,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="hover:text-teal-400 transition-colors"
+                    className="hover:text-emerald-500 transition-colors"
                     dangerouslySetInnerHTML={{ __html: l.label }}
                   />
                 </li>
@@ -118,7 +118,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="hover:text-teal-400 transition-colors"
+                    className="hover:text-emerald-500 transition-colors"
                     dangerouslySetInnerHTML={{ __html: l.label }}
                   />
                 </li>
@@ -143,7 +143,7 @@ export default function Footer() {
                 <li key={l.label}>
                   <Link
                     href={l.href}
-                    className="hover:text-teal-400 transition-colors"
+                    className="hover:text-emerald-500 transition-colors"
                     dangerouslySetInnerHTML={{ __html: l.label }}
                   />
                 </li>

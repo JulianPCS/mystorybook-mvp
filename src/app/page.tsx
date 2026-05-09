@@ -33,21 +33,21 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-cream to-amber-50 pt-12 pb-20 px-4 sm:px-6">
+      <section className="relative overflow-hidden bg-gradient-to-br from-emerald-50 via-cream to-amber-50 pt-12 pb-20 px-4 sm:px-6">
         {/* Decorative blobs */}
-        <div className="absolute -top-20 -left-20 w-72 h-72 bg-teal-200/30 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute -top-20 -left-20 w-72 h-72 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-gold-200/30 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12 relative">
           {/* Text */}
           <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-teal-100 text-teal-700 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-900 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
               ✨ Personalised just for your child
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-800 leading-tight mb-4">
               A Colouring Book<br />
               Made Just For{" "}
-              <span className="text-teal-500 relative">
+              <span className="text-emerald-700 relative">
                 [Name]
                 <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
                   <path d="M2 6 Q100 2 198 6" stroke="#14b8a6" strokeWidth="3" strokeLinecap="round" />
@@ -61,13 +61,13 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <Link
                 href="/books"
-                className="bg-teal-500 hover:bg-teal-600 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-teal-200"
+                className="bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
               >
                 Find Your Child&apos;s Book 🎨
               </Link>
               <Link
                 href="#browse-names"
-                className="bg-white text-teal-600 font-bold text-lg px-8 py-4 rounded-2xl border-2 border-teal-100 hover:border-teal-300 transition-all duration-200"
+                className="bg-white text-emerald-800 font-bold text-lg px-8 py-4 rounded-2xl border-2 border-emerald-100 hover:border-emerald-300 transition-all duration-200"
               >
                 Browse Names
               </Link>
@@ -90,7 +90,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Search bar ── */}
-      <section className="bg-white py-10 px-4 sm:px-6 border-b border-teal-50">
+      <section className="bg-white py-10 px-4 sm:px-6 border-b border-emerald-50">
         <div className="max-w-2xl mx-auto text-center">
           <p className="text-gray-500 font-semibold mb-4">Don&apos;t see your child&apos;s name? Search for it:</p>
           <form onSubmit={handleSearch} className="flex gap-2">
@@ -99,11 +99,11 @@ export default function HomePage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Enter any name — e.g. Zainab, Oliver, Priya..."
-              className="flex-1 border-2 border-teal-100 focus:border-teal-400 rounded-2xl px-5 py-3 font-semibold text-gray-800 outline-none transition-colors"
+              className="flex-1 border-2 border-emerald-100 focus:border-emerald-500 rounded-2xl px-5 py-3 font-semibold text-gray-800 outline-none transition-colors"
             />
             <button
               type="submit"
-              className="bg-teal-500 hover:bg-teal-600 text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
+              className="bg-emerald-700 hover:bg-emerald-800 text-white font-bold px-6 py-3 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
             >
               Find Book
             </button>
@@ -121,7 +121,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/books"
-              className="text-teal-600 font-bold hover:text-teal-700 transition-colors text-sm whitespace-nowrap"
+              className="text-emerald-800 font-bold hover:text-emerald-900 transition-colors text-sm whitespace-nowrap"
             >
               See all →
             </Link>
@@ -145,7 +145,7 @@ export default function HomePage() {
             </div>
             <Link
               href="/books#occasions"
-              className="text-teal-600 font-bold hover:text-teal-700 transition-colors text-sm whitespace-nowrap"
+              className="text-emerald-800 font-bold hover:text-emerald-900 transition-colors text-sm whitespace-nowrap"
             >
               See all →
             </Link>
@@ -163,7 +163,7 @@ export default function HomePage() {
       <SamplePages />
 
       {/* ── How it works ── */}
-      <section className="py-16 px-4 sm:px-6 bg-gradient-to-br from-teal-50 to-cream">
+      <section className="py-16 px-4 sm:px-6 bg-gradient-to-br from-emerald-50 to-cream">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-black text-gray-800 mb-2">How It Works</h2>
           <p className="text-gray-500 font-semibold mb-10">Simple, personal, beautiful</p>
@@ -174,8 +174,8 @@ export default function HomePage() {
               { step: "2", icon: "📧", title: "Reserve Your Copy", desc: "Leave your email and we'll notify you the moment it's ready." },
               { step: "3", icon: "📦", title: "Delivered to You", desc: "A beautiful, personalised book printed and shipped across the UK." },
             ].map((s) => (
-              <div key={s.step} className="bg-white rounded-3xl p-6 shadow-sm border border-teal-50">
-                <div className="w-10 h-10 bg-teal-500 text-white font-black rounded-xl flex items-center justify-center text-sm mb-4 mx-auto">
+              <div key={s.step} className="bg-white rounded-3xl p-6 shadow-sm border border-emerald-50">
+                <div className="w-10 h-10 bg-emerald-700 text-white font-black rounded-xl flex items-center justify-center text-sm mb-4 mx-auto">
                   {s.step}
                 </div>
                 <div className="text-4xl mb-3">{s.icon}</div>
@@ -188,17 +188,17 @@ export default function HomePage() {
       </section>
 
       {/* ── Final CTA ── */}
-      <section className="py-16 px-4 sm:px-6 bg-teal-500">
+      <section className="py-16 px-4 sm:px-6 bg-emerald-700">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
             Ready to make their day? 🎨
           </h2>
-          <p className="text-teal-100 font-semibold mb-8 text-lg">
+          <p className="text-emerald-100 font-semibold mb-8 text-lg">
             Find your child&apos;s name and reserve your personalised colouring book today.
           </p>
           <Link
             href="/books"
-            className="inline-block bg-white text-teal-600 font-black text-lg px-10 py-4 rounded-2xl hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
+            className="inline-block bg-white text-emerald-800 font-black text-lg px-10 py-4 rounded-2xl hover:-translate-y-0.5 transition-all duration-200 shadow-lg"
           >
             Find Your Child&apos;s Book →
           </Link>
