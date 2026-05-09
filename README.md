@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MyStoryBook — Personalised Children's Colouring Books
 
-## Getting Started
+Fake-door MVP to validate demand for personalised children's colouring books targeting UK parents.
 
-First, run the development server:
+## Stack
+- **Next.js 14** (App Router, TypeScript)
+- **Tailwind CSS**
+- **Supabase** (email capture + click tracking)
+- **Vercel** (deployment)
 
+## Pages
+| Route | Purpose |
+|---|---|
+| `/` | Homepage — hero, name grid, occasion grid, sample pages |
+| `/books` | Browse — searchable name grid + occasion grid |
+| `/books/[slug]` | Book detail — cover mockup, price, CTA |
+| `/waitlist-confirmed` | Post-signup confirmation + WhatsApp share |
+| `/admin` | Password-protected dashboard (signups, clicks, conversion rate) |
+
+## Setup
+
+### 1. Install
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd coloring-book
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Create Supabase tables
+1. Go to [supabase.com](https://supabase.com) → New project
+2. Open **Database → SQL Editor → New Query**
+3. Paste and run `supabase-schema.sql`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Environment variables
+```bash
+cp .env.example .env.local
+```
+Fill in `.env.local`:
+```
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+ADMIN_PASSWORD=choose-a-password
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run locally
+```bash
+npm run dev
+```
 
-## Learn More
+## Deploy to Vercel
+```bash
+npm i -g vercel
+vercel --prod
+```
+Add the 3 env vars in Vercel → Project Settings → Environment Variables.
 
-To learn more about Next.js, take a look at the following resources:
+## UTM Tracking
+All UTM params are captured on signup. Example ad URL:
+```
+https://yourdomain.com/books/maryam?utm_source=facebook&utm_campaign=muslim-eid&utm_medium=paid
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Success Metric
+**Target: >10% conversion** (signups ÷ CTA clicks) — tracked live on `/admin`.
