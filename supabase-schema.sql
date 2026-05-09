@@ -48,3 +48,28 @@ create policy "Allow anon reads" on public.page_events
 create index if not exists signups_book_slug_idx on public.signups (book_slug);
 create index if not exists signups_created_at_idx on public.signups (created_at desc);
 create index if not exists page_events_event_type_idx on public.page_events (event_type);
+
+
+-- Personalised book orders (Create Your Book flow)
+create table if not exists public.custom_orders (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz default now() not null,
+  child_name text not null,
+  parent_email text not null,
+  gender text,                  -- 'girl' | 'boy'
+  cover_options jsonb,          -- { skin, color_scheme, bg_theme }
+  cover_image_url text,         -- AI-generated preview image URL
+  page_ids text[],              -- e.g. ['animals-bunny', 'fantasy-dragon', 'adventure-rocket']
+  status text default 'pending' -- 'pending' | 'fulfilled'
+);
+
+alter table public.custom_orders enable row level security;
+
+create policy "Allow anon inserts" on public.custom_orders
+  for insert with check (true);
+
+create policy "Allow anon reads" on public.custom_orders
+  for select using (true);
+
+create index if not exists custom_orders_created_at_idx on public.custom_orders (created_at desc);
+create index if not exists custom_orders_status_idx on public.custom_orders (status);

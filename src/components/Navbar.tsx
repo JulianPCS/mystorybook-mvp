@@ -134,7 +134,15 @@ export default function Navbar() {
             Why Colouring?
           </Link>
 
-          {/* CTA */}
+          {/* Create CTA */}
+          <Link
+            href="/create"
+            className="ml-2 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap font-bold"
+          >
+            ✨ Create Your Book
+          </Link>
+
+          {/* Browse CTA */}
           <Link
             href="/books"
             className="ml-2 bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
@@ -222,7 +230,14 @@ export default function Navbar() {
             Why Colouring?
           </Link>
 
-          <div className="mt-2 pt-2 border-t border-emerald-50">
+          <div className="mt-2 pt-2 border-t border-emerald-50 flex flex-col gap-2">
+            <Link
+              href="/create"
+              className="block bg-purple-500 text-white text-center font-black py-3 rounded-xl"
+              onClick={() => setMenuOpen(false)}
+            >
+              ✨ Create Your Book — £30
+            </Link>
             <Link
               href="/books"
               className="block bg-emerald-700 text-white text-center font-black py-3 rounded-xl"

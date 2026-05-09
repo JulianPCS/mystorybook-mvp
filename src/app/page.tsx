@@ -60,6 +60,12 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <Link
+                href="/create"
+                className="bg-purple-600 hover:bg-purple-700 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-purple-200"
+              >
+                ✨ Create Your Book — £30
+              </Link>
+              <Link
                 href="/books"
                 className="bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
               >
