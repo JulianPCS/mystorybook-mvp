@@ -125,9 +125,29 @@ function BookDetailContent({ slug }: { slug: string }) {
             </div>
 
             {/* Price */}
-            <div className="flex items-baseline gap-3">
-              <span className="text-4xl font-black text-teal-600">£9.99</span>
-              <span className="text-sm text-gray-400 font-semibold">incl. UK delivery</span>
+            <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="bg-amber-400 text-gray-900 text-xs font-black px-2 py-0.5 rounded uppercase tracking-wide">
+                  Launch Offer — 50% Off
+                </span>
+              </div>
+              <div className="flex items-baseline gap-3 flex-wrap">
+                <span className="text-4xl font-black text-gray-900">£9.99</span>
+                <span className="text-xl text-gray-400 line-through font-semibold">£19.99</span>
+                <span className="text-sm text-gray-500 font-semibold">incl. UK delivery</span>
+              </div>
+            </div>
+
+            {/* Launch counter */}
+            <div className="border border-gray-200 rounded-2xl p-4 bg-white">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm font-bold text-gray-700">Launch spots claimed</span>
+                <span className="text-sm font-black text-gray-900">78 / 100</span>
+              </div>
+              <div className="w-full bg-gray-100 rounded-full h-2 mb-2">
+                <div className="bg-teal-500 h-2 rounded-full" style={{ width: "78%" }} />
+              </div>
+              <p className="text-xs text-gray-500 font-semibold">Only 22 spots remaining at the launch price of £9.99</p>
             </div>
 
             {/* Book details */}
@@ -150,7 +170,9 @@ function BookDetailContent({ slug }: { slug: string }) {
               onClick={handleCTAClick}
               className="w-full bg-teal-500 hover:bg-teal-600 text-white font-black text-xl py-5 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-teal-200"
             >
-              Get {book.name}&apos;s Book — £9.99 🎨
+              Get {book.name}&apos;s Book —{" "}
+              <span className="line-through opacity-60 text-lg">£19.99</span>{" "}
+              £9.99
             </button>
 
             <p className="text-center text-xs text-gray-400 font-semibold">
