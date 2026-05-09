@@ -39,17 +39,17 @@ export const NAMES: BookEntry[] = [
   { slug: "hana",    name: "Hana",    type: "name", gender: "female", community: "muslim", coverAccent: "bg-rose-200",   emoji: "🌸", coverImage: "/covers/hana.png",   listed: true },
   { slug: "zahra",   name: "Zahra",   type: "name", gender: "female", community: "muslim", coverAccent: "bg-orange-200", emoji: "🌹", coverImage: "/covers/zahra.png",  listed: true },
   { slug: "layla",   name: "Layla",   type: "name", gender: "female", community: "muslim", coverAccent: "bg-indigo-200", emoji: "🌙", coverImage: "/covers/layla.png",  listed: true },
-  { slug: "zara",    name: "Zara",    type: "name", gender: "female", community: "muslim", coverAccent: "bg-purple-200", emoji: "⭐", listed: true },
+  { slug: "zara",    name: "Zara",    type: "name", gender: "female", community: "muslim", coverAccent: "bg-purple-200", emoji: "⭐", coverImage: "/covers/zara.png",     listed: true },
   // Muslim/Arabic — top 10 UK boys
-  { slug: "muhammad", name: "Muhammad", type: "name", gender: "male", community: "muslim", coverAccent: "bg-teal-300",   emoji: "🌙", listed: true },
-  { slug: "adam",     name: "Adam",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-green-200",  emoji: "🌿", listed: true },
-  { slug: "ali",      name: "Ali",      type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-200",   emoji: "🦁", listed: true },
-  { slug: "ibrahim",  name: "Ibrahim",  type: "name", gender: "male", community: "muslim", coverAccent: "bg-indigo-200", emoji: "⭐", listed: true },
-  { slug: "musa",     name: "Musa",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-200",   emoji: "💧", listed: true },
-  { slug: "yahya",    name: "Yahya",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-green-200",  emoji: "🌿", listed: true },
-  { slug: "yusuf",    name: "Yusuf",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-teal-300",   emoji: "⭐", listed: true },
-  { slug: "omar",     name: "Omar",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-amber-200",  emoji: "📚", listed: true },
-  { slug: "ahmad",    name: "Ahmad",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-300",   emoji: "🌙", listed: true },
+  { slug: "muhammad", name: "Muhammad", type: "name", gender: "male", community: "muslim", coverAccent: "bg-teal-300",   emoji: "🌙", coverImage: "/covers/muhammad.png", listed: true },
+  { slug: "adam",     name: "Adam",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-green-200",  emoji: "🌿", coverImage: "/covers/adam.png",     listed: true },
+  { slug: "ali",      name: "Ali",      type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-200",   emoji: "🦁", coverImage: "/covers/ali.png",      listed: true },
+  { slug: "ibrahim",  name: "Ibrahim",  type: "name", gender: "male", community: "muslim", coverAccent: "bg-indigo-200", emoji: "⭐", coverImage: "/covers/ibrahim.png",  listed: true },
+  { slug: "musa",     name: "Musa",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-200",   emoji: "💧", coverImage: "/covers/musa.png",     listed: true },
+  { slug: "yahya",    name: "Yahya",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-green-200",  emoji: "🌿", coverImage: "/covers/yahya.png",    listed: true },
+  { slug: "yusuf",    name: "Yusuf",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-teal-300",   emoji: "⭐", coverImage: "/covers/yusuf.png",    listed: true },
+  { slug: "omar",     name: "Omar",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-amber-200",  emoji: "📚", coverImage: "/covers/omar.png",     listed: true },
+  { slug: "ahmad",    name: "Ahmad",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-300",   emoji: "🌙", coverImage: "/covers/ahmad.png",    listed: true },
   { slug: "ayaan",    name: "Ayaan",    type: "name", gender: "male", community: "muslim", coverAccent: "bg-amber-200",  emoji: "🌅", listed: true },
   // Legacy entries — searchable but not listed
   { slug: "zainab",  name: "Zainab",  type: "name", gender: "female", community: "muslim", coverAccent: "bg-green-300", emoji: "🌿" },
@@ -70,7 +70,7 @@ export const NAMES: BookEntry[] = [
 
 export const OCCASIONS: BookEntry[] = [
   // Festivals
-  { slug: "my-first-christmas",  name: "My First Christmas",  type: "occasion", occasionGroup: "festival",  coverAccent: "bg-red-300",    emoji: "🎄", occasionLabel: "Christmas", listed: true },
+  { slug: "my-first-christmas",  name: "My First Christmas",  type: "occasion", occasionGroup: "festival",  coverAccent: "bg-red-300",    emoji: "🎄", occasionLabel: "Christmas", coverImage: "/covers/my-first-christmas.png", listed: true },
   { slug: "my-first-easter",     name: "My First Easter",     type: "occasion", occasionGroup: "festival",  coverAccent: "bg-yellow-200", emoji: "🐣", occasionLabel: "Easter" },
   { slug: "my-first-halloween",  name: "My First Halloween",  type: "occasion", occasionGroup: "festival",  coverAccent: "bg-orange-300", emoji: "🎃", occasionLabel: "Halloween" },
   { slug: "my-first-ramadan",    name: "My First Ramadan",    type: "occasion", occasionGroup: "festival",  coverAccent: "bg-teal-300",   emoji: "🌙", occasionLabel: "Islamic",   coverImage: "/covers/my-first-ramadan.png", listed: true },
@@ -79,12 +79,12 @@ export const OCCASIONS: BookEntry[] = [
   { slug: "my-first-holi",       name: "My First Holi",       type: "occasion", occasionGroup: "festival",  coverAccent: "bg-pink-300",   emoji: "🌈", occasionLabel: "Hindu" },
   { slug: "my-first-hanukkah",   name: "My First Hanukkah",   type: "occasion", occasionGroup: "festival",  coverAccent: "bg-blue-300",   emoji: "✨", occasionLabel: "Hanukkah",  listed: true },
   // Milestones
-  { slug: "my-first-birthday",   name: "My First Birthday",   type: "occasion", occasionGroup: "milestone", coverAccent: "bg-pink-300",   emoji: "🎂", occasionLabel: "Birthday",  listed: true },
-  { slug: "starting-school",     name: "Starting School",     type: "occasion", occasionGroup: "milestone", coverAccent: "bg-green-200",  emoji: "🎒", occasionLabel: "Milestone", listed: true },
+  { slug: "my-first-birthday",   name: "My First Birthday",   type: "occasion", occasionGroup: "milestone", coverAccent: "bg-pink-300",   emoji: "🎂", occasionLabel: "Birthday",  coverImage: "/covers/my-first-birthday.png",  listed: true },
+  { slug: "starting-school",     name: "Starting School",     type: "occasion", occasionGroup: "milestone", coverAccent: "bg-green-200",  emoji: "🎒", occasionLabel: "Milestone", coverImage: "/covers/starting-school.png",     listed: true },
   { slug: "nursery-graduation",  name: "Nursery Graduation",  type: "occasion", occasionGroup: "milestone", coverAccent: "bg-blue-200",   emoji: "🎓", occasionLabel: "Milestone" },
   // Family
-  { slug: "big-brother",         name: "Big Brother",         type: "occasion", occasionGroup: "family",    coverAccent: "bg-blue-200",   emoji: "🦁", occasionLabel: "Family",    listed: true },
-  { slug: "big-sister",          name: "Big Sister",          type: "occasion", occasionGroup: "family",    coverAccent: "bg-purple-200", emoji: "🦋", occasionLabel: "Family",    listed: true },
+  { slug: "big-brother",         name: "Big Brother",         type: "occasion", occasionGroup: "family",    coverAccent: "bg-blue-200",   emoji: "🦁", occasionLabel: "Family",    coverImage: "/covers/big-brother.png",  listed: true },
+  { slug: "big-sister",          name: "Big Sister",          type: "occasion", occasionGroup: "family",    coverAccent: "bg-purple-200", emoji: "🦋", occasionLabel: "Family",    coverImage: "/covers/big-sister.png",   listed: true },
 ];
 
 export function getBookBySlug(slug: string): BookEntry | undefined {
