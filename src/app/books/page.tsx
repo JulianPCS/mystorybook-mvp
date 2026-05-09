@@ -68,7 +68,6 @@ function BooksContent() {
           </div>
         )}
         <h1 className="text-4xl font-black text-gray-800 mb-2">
-          {gender === "female" ? "👧 " : gender === "male" ? "👦 " : ""}
           {pageTitle}
         </h1>
         <p className="text-gray-500 font-semibold text-lg">{pageSubtitle}</p>
@@ -77,8 +76,8 @@ function BooksContent() {
         <div className="flex justify-center gap-2 mt-5">
           {[
             { label: "All", href: "/books", active: !gender },
-            { label: "👧 Girls", href: "/books?gender=female", active: gender === "female" },
-            { label: "👦 Boys", href: "/books?gender=male", active: gender === "male" },
+            { label: "Girls' Names", href: "/books?gender=female", active: gender === "female" },
+            { label: "Boys' Names", href: "/books?gender=male", active: gender === "male" },
           ].map((t) => (
             <a
               key={t.label}
@@ -159,12 +158,12 @@ function BooksContent() {
           </p>
 
           <div className="flex flex-col gap-10">
-            {OCCASION_GROUPS.map(({ key, label, emoji }) => {
+            {OCCASION_GROUPS.map(({ key, label }) => {
               const books = OCCASIONS.filter((o) => o.occasionGroup === key && o.listed);
               return (
                 <div key={key}>
-                  <h3 className="text-lg font-black text-gray-700 mb-4 flex items-center gap-2">
-                    <span>{emoji}</span> {label}
+                  <h3 className="text-lg font-black text-gray-700 mb-4">
+                    {label}
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5">
                     {books.map((book) => (
