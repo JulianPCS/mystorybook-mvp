@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import BookCard from "@/components/BookCard";
 import SamplePages from "@/components/SamplePages";
-import BookCover from "@/components/BookCover";
+import HeroCarousel from "@/components/HeroCarousel";
 import { NAMES, OCCASIONS } from "@/lib/data";
 
 // Lead with Muslim names (have real covers) then pad with others
@@ -85,18 +85,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Hero book stack */}
-          <div className="flex-shrink-0 flex items-end gap-4 relative">
-            <div className="rotate-[-6deg] translate-y-4 opacity-80">
-              <BookCover name="Maryam" emoji="🌸" accent="bg-green-200" coverImage="/covers/maryam.png" size="md" />
-            </div>
-            <div className="relative z-10 drop-shadow-2xl">
-              <BookCover name="Fatima" emoji="🌸" accent="bg-pink-200" coverImage="/covers/fatima.png" size="lg" />
-            </div>
-            <div className="rotate-[6deg] translate-y-4 opacity-80">
-              <BookCover name="Muhammad" emoji="🌙" accent="bg-teal-300" coverImage="/covers/muhammad.png" size="md" />
-            </div>
-          </div>
+          {/* Hero carousel */}
+          <HeroCarousel />
         </div>
       </section>
 
