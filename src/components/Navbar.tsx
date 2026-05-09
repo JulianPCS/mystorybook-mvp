@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -9,9 +10,8 @@ export default function Navbar() {
   return (
     <nav className="bg-white/90 backdrop-blur-sm border-b border-teal-100 sticky top-0 z-40">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-        <Link href="/" className="flex items-center gap-2 font-black text-xl text-teal-700">
-          <span className="text-2xl">📖</span>
-          <span>MyStoryBook</span>
+        <Link href="/" className="flex items-center gap-2">
+          <Image src="/logo.svg" alt="Learn with Coloring" width={200} height={44} className="h-10 w-auto" priority />
         </Link>
 
         {/* Desktop nav */}

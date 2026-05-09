@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" fill="none">
+  <!-- Pencil icon -->
+  <g transform="translate(2, 6)">
+    <!-- Pencil body -->
+    <rect x="4" y="8" width="26" height="9" rx="2" fill="#14b8a6"/>
+    <!-- Pencil eraser end -->
+    <rect x="0" y="9" width="6" height="7" rx="1.5" fill="#f59e0b"/>
+    <!-- Pencil tip triangle -->
+    <polygon points="30,8 38,12.5 30,17" fill="#0d9488"/>
+    <!-- Pencil tip coloured point -->
+    <polygon points="36,11.5 42,12.5 36,13.5" fill="#f59e0b"/>
+    <!-- Star burst at tip -->
+    <circle cx="43" cy="12.5" r="3.5" fill="#f59e0b" opacity="0.9"/>
+    <text x="43" y="15" font-size="6" text-anchor="middle" fill="white" font-weight="bold">✦</text>
+  </g>
+  <!-- Brand name text -->
+  <text x="56" y="33" font-family="'Nunito', 'Poppins', system-ui, sans-serif" font-weight="800" font-size="20" fill="#0f766e" letter-spacing="-0.3">Learn with Coloring</text>
+</svg>

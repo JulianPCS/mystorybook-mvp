@@ -4,10 +4,10 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "MyStoryBook — Personalised Colouring Books for Children",
+  title: "Learn with Coloring — Personalised Colouring Books for Children",
   description:
     "Beautifully illustrated colouring books personalised with your child's name. Printed and shipped in the UK. Perfect for ages 3–8.",
-  keywords: "personalised colouring book, children's book UK, personalised gift kids",
+  keywords: "personalised colouring book, children's book UK, personalised gift kids, learn with coloring",
 };
 
 export default function RootLayout({
