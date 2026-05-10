@@ -72,11 +72,6 @@ export default function CreateBookWizard() {
   const [step, setStep] = useState(0);
   const router = useRouter();
 
-  function canAdvance() {
-    if (step === 0) return !!config.generatedCoverUrl;
-    return true;
-  }
-
   async function handleSubmit(parentName: string, email: string) {
     const res = await fetch("/api/custom-order", {
       method: "POST",
