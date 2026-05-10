@@ -16,6 +16,7 @@ type Props = {
   generatedCoverUrl: string | null;
   onChange: (options: CoverOptions) => void;
   onCoverGenerated: (url: string) => void;
+  onNext: () => void;
 };
 
 const NAME_MAX = 14;
@@ -94,11 +95,19 @@ const BG_THEME_GROUPS: BgGroup[] = [
 
 const ALL_BG_THEMES = BG_THEME_GROUPS.flatMap((g) => g.themes);
 
-export default function StepCover({ options, generatedCoverUrl, onChange, onCoverGenerated }: Props) {
+export default function StepCover({ options, generatedCoverUrl, onChange, onCoverGenerated, onNext }: Props) {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState("");
   const [generationsUsed, setGenerationsUsed] = useState(0);
   const [activeBgGroup, setActiveBgGroup] = useState(0);
+
+  const LOADING_MESSAGES = [
+    "Sketching your character…",
+    "Painting the background…",
+    "Adding the finishing touches…",
+    "Almost there — polishing the cover…",
+  ];
+  const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
 
   const nameLen = options.name.length;
   const nameTooLong = nameLen > NAME_MAX;
@@ -114,6 +123,12 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
     if (!canGenerate || generating) return;
     setGenerating(true);
     setError("");
+    setLoadingMsgIdx(0);
+
+    // Cycle through loading messages every 7s
+    const msgInterval = setInterval(() => {
+      setLoadingMsgIdx((i) => Math.min(i + 1, LOADING_MESSAGES.length - 1));
+    }, 7000);
 
     try {
       const res = await fetch("/api/generate-cover", {
@@ -125,6 +140,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
           skin: options.skin,
           colorScheme: options.colorScheme,
           bgTheme: options.bgTheme,
+          bgGroup: BG_THEME_GROUPS[activeBgGroup].label,
         }),
       });
 
@@ -137,6 +153,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
+      clearInterval(msgInterval);
       setGenerating(false);
     }
   }
@@ -316,7 +333,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         </button>
 
         {generating && (
-          <p className="text-xs text-center text-gray-400 animate-pulse">
+          <p className="text-xs text-center text-gray-400">
             This usually takes 20–30 seconds — hang tight!
           </p>
         )}
@@ -334,9 +351,38 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         )}
       </div>
 
+      {/* Loading skeleton */}
+      {generating && (
+        <div className="space-y-4">
+          <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
+          <div className="relative max-w-xs mx-auto">
+            {/* Book-shaped shimmer skeleton */}
+            <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[2/3] bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 animate-pulse">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_1.5s_infinite]" style={{ backgroundSize: "200% 100%" }} />
+              {/* Skeleton content hints */}
+              <div className="absolute inset-0 flex flex-col items-center justify-between p-6 pointer-events-none">
+                <div className="w-3/4 h-6 bg-gray-300/60 rounded-full mt-4" />
+                <div className="w-16 h-16 bg-gray-300/60 rounded-full" />
+                <div className="space-y-2 w-full">
+                  <div className="w-1/2 h-3 bg-gray-300/60 rounded-full mx-auto" />
+                  <div className="w-1/3 h-3 bg-gray-300/60 rounded-full mx-auto" />
+                </div>
+              </div>
+            </div>
+            {/* Wand icon overlay */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg text-center">
+                <div className="text-3xl mb-2 animate-bounce">✨</div>
+                <p className="text-sm font-bold text-gray-700">{LOADING_MESSAGES[loadingMsgIdx]}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Cover preview */}
-      {generatedCoverUrl && (
-        <div className="space-y-3">
+      {!generating && generatedCoverUrl && (
+        <div className="space-y-4">
           <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
           <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white max-w-xs mx-auto">
             <Image
@@ -354,8 +400,14 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
             </div>
           </div>
           <p className="text-xs text-center text-gray-400">
-            Happy with this? Click &ldquo;Choose Pages&rdquo; below to continue.
+            Happy with this? Choose your pages below.
           </p>
+          <button
+            onClick={onNext}
+            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md"
+          >
+            Choose Pages →
+          </button>
         </div>
       )}
     </div>

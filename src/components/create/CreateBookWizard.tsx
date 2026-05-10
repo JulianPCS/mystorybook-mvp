@@ -146,6 +146,7 @@ export default function CreateBookWizard() {
           generatedCoverUrl={config.generatedCoverUrl}
           onChange={(cover) => dispatch({ type: "SET_COVER", cover })}
           onCoverGenerated={(url) => dispatch({ type: "SET_COVER_URL", url })}
+          onNext={() => setStep(1)}
         />
       )}
       {step === 1 && (
@@ -163,33 +164,22 @@ export default function CreateBookWizard() {
         />
       )}
 
-      {/* Navigation */}
-      {step < 2 && (
+      {/* Navigation — only shown on step 1 (step 0 has its own button inside StepCover) */}
+      {step === 1 && (
         <div className="mt-8 flex gap-3 justify-between">
-          {step > 0 ? (
-            <button
-              onClick={() => setStep((s) => s - 1)}
-              className="px-5 py-3 rounded-xl border border-gray-200 text-gray-600 font-semibold hover:bg-gray-50 transition-colors"
-            >
-              ← Back
-            </button>
-          ) : (
-            <div />
-          )}
+          <button
+            onClick={() => setStep((s) => s - 1)}
+            className="px-5 py-3 rounded-xl border border-gray-200 text-gray-600 font-semibold hover:bg-gray-50 transition-colors"
+          >
+            ← Back
+          </button>
           <button
             onClick={() => setStep((s) => s + 1)}
-            disabled={!canAdvance()}
-            className="flex-1 sm:flex-none sm:px-8 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold transition-all shadow-sm"
+            className="flex-1 sm:flex-none sm:px-8 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-all shadow-sm"
           >
-            {step === 0 ? "Choose Pages →" : "Review Book →"}
+            Review Book →
           </button>
         </div>
-      )}
-
-      {step === 0 && !config.generatedCoverUrl && (
-        <p className="text-xs text-center text-gray-400 mt-3">
-          Generate your cover to continue
-        </p>
       )}
 
       {step === 2 && (

@@ -4,38 +4,88 @@ export type CoverConfig = {
   name: string;
   gender: "boy" | "girl";
   skin: string;
-  colorScheme: string;    // e.g. "midnight blue and gold"
-  bgTheme: string;        // e.g. "illuminated mosque cityscape at night"
+  colorScheme: string;
+  bgTheme: string;
+  bgGroup: "Islamic" | "Everyday" | "Fantasy";
 };
 
-function buildPrompt(config: CoverConfig): string {
+function characterDesc(gender: "boy" | "girl", skin: string, colorScheme: string) {
+  const color = colorScheme.split(" ")[0];
+  return gender === "boy"
+    ? `a cute Muslim boy with large expressive kawaii-style eyes and a warm smile, wearing a white kufi cap and a ${color} traditional thobe, with ${skin} skin tone`
+    : `a cute Muslim girl with large expressive kawaii-style eyes and a warm smile, wearing a ${color} hijab and a cream modest dress, with ${skin} skin tone`;
+}
+
+function buildIslamicPrompt(config: CoverConfig): string {
   const { name, gender, skin, colorScheme, bgTheme } = config;
-  const title = `${name.toUpperCase()}'S`;
+  const char = characterDesc(gender, skin, colorScheme);
+  return `Create a luxurious Islamic children's coloring book cover in a rich ${colorScheme} palette, inspired by premium Ramadan storybooks and elegant mosque architecture. Magical, warm, educational, highly professional.
 
-  const characterDesc =
-    gender === "boy"
-      ? `A cute Muslim boy with large expressive kawaii-style eyes and a warm smile, wearing a white kufi cap and a ${colorScheme.split(" ")[0]} traditional thobe, with ${skin} skin tone`
-      : `A cute Muslim girl with large expressive kawaii-style eyes and a warm smile, wearing a ${colorScheme.split(" ")[0]} hijab and a cream modest dress, with ${skin} skin tone`;
-
-  return `Create a luxurious Islamic children's coloring book cover in a rich ${colorScheme} palette, inspired by premium Ramadan storybooks and elegant mosque architecture. The cover should feel magical, warm, educational, and highly professional for Amazon KDP publishing.
-
-Main title in large ornate gold typography: "${title}"
-Subtitle beneath: "FIRST COLOURING BOOK"
-Additional small text badge: "Fun & Easy Colouring Pages for Little Muslims"
+Main title in large ornate gold typography: "${name.toUpperCase()}'S"
+Subtitle: "FIRST COLOURING BOOK"
+Badge: "Fun & Easy Colouring Pages for Little Muslims"
 Age badge: "Ages 4–6 Years"
-Bottom tagline: "Learn • Colour • Grow"
+Tagline: "Learn • Colour • Grow"
 
-Scene composition: ${characterDesc}, sitting on the floor coloring inside an open Islamic coloring book. Open coloring pages contain mosque sketches, crescent moons, stars, arabesque patterns, and Islamic motifs. Background features ${bgTheme} with glowing domes, minarets, arches, and palace-like architecture. Grand Islamic arch framing the entire composition. Hanging crescent moon and stars from the top center. Two glowing ornate Ramadan lanterns hanging symmetrically on both sides. Rich geometric Islamic patterns decorating borders and floor. Colored pencils and small lantern props near the child.
+Scene: ${char}, sitting on the floor colouring inside an open Islamic coloring book. Pages show mosque sketches, crescent moons, arabesque patterns. Background: ${bgTheme}. Grand Islamic arch framing the composition. Hanging crescent moon and stars. Two glowing ornate Ramadan lanterns on both sides. Rich geometric Islamic border patterns. Coloured pencils and a small lantern near the child.
 
-Visual style: Premium digital illustration, Pixar-inspired children's book art, soft painterly rendering, detailed Islamic architecture, warm cinematic lighting, ${colorScheme} color scheme, symmetrical composition, magical atmosphere, high-end publishing quality, highly detailed ornamental borders, elegant embossed-looking typography.
+Style: Premium Pixar-inspired children's book art, soft painterly rendering, warm cinematic lighting, ${colorScheme} scheme, symmetrical, magical, high-end KDP publishing quality, ornamental borders, embossed gold typography.
 
-Typography style: Bold vintage serif title, metallic gold embossed effect, strong hierarchy and centered composition, professional bookstore-quality layout.
+Mood: Spiritual, cosy, educational, wonder-filled.
 
-Mood: Spiritual, cozy, educational, wonder-filled, inspirational for Muslim children.
+Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
 
-Technical: Portrait orientation 8.5 x 11 inch coloring book cover, ultra high resolution, print-ready, crisp readable typography.
+Negative: photorealistic, blurry text, distorted anatomy, extra fingers, watermark, asymmetrical layout, random Arabic text, poor typography.`;
+}
 
-Negative prompt: photorealistic humans, blurry text, distorted anatomy, extra fingers, messy composition, low detail, flat lighting, modern cartoon simplicity, horror elements, washed-out colors, random Arabic text, watermark, cropped elements, poor typography, asymmetrical layout.`;
+function buildEverydayPrompt(config: CoverConfig): string {
+  const { name, gender, skin, colorScheme, bgTheme } = config;
+  const char = characterDesc(gender, skin, colorScheme);
+  return `Create a charming, warm children's coloring book cover in a ${colorScheme} palette. Professional, joyful, educational — suitable for Amazon KDP publishing.
+
+Main title in bold friendly gold typography: "${name.toUpperCase()}'S"
+Subtitle: "FIRST COLOURING BOOK"
+Badge: "Fun & Easy Colouring Pages"
+Age badge: "Ages 4–6 Years"
+Tagline: "Learn • Colour • Grow"
+
+Scene: ${char}, happily colouring inside an open book filled with simple illustrations. Background setting: ${bgTheme}. The environment feels cosy, cheerful and inviting. Bright natural lighting fills the scene. Coloured pencils, crayons, and open books as props near the child. Decorative illustrated border framing the cover.
+
+Style: Premium Pixar-inspired children's book illustration, soft painterly rendering, bright warm lighting, ${colorScheme} colour scheme, symmetrical composition, high-end publishing quality, clean readable typography with gold emboss effect.
+
+Mood: Joyful, cosy, educational, warm, approachable.
+
+Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
+
+Negative: Islamic architecture, minarets, mosques, Arabic calligraphy, photorealistic, blurry text, distorted anatomy, watermark, random text, poor typography, dark or scary elements.`;
+}
+
+function buildFantasyPrompt(config: CoverConfig): string {
+  const { name, gender, skin, colorScheme, bgTheme } = config;
+  const char = characterDesc(gender, skin, colorScheme);
+  return `Create a magical, enchanting children's coloring book cover in a ${colorScheme} palette. Whimsical, adventurous, and highly professional for Amazon KDP publishing.
+
+Main title in large ornate gold typography: "${name.toUpperCase()}'S"
+Subtitle: "FIRST COLOURING BOOK"
+Badge: "Fun & Easy Colouring Pages"
+Age badge: "Ages 4–6 Years"
+Tagline: "Learn • Colour • Grow"
+
+Scene: ${char}, wide-eyed with wonder, holding an open colouring book filled with fantastical illustrations. Background setting: ${bgTheme}. The scene feels truly magical, epic and awe-inspiring. Glowing light, sparkles, and magical particles fill the air. Illustrated decorative border framing the cover, themed to match the setting.
+
+Style: Premium Pixar-inspired children's book art, soft painterly rendering, dramatic cinematic lighting with glowing magical effects, ${colorScheme} colour scheme, symmetrical composition, high-end KDP quality, ornate embossed gold typography.
+
+Mood: Wonder-filled, adventurous, magical, exciting, imaginative.
+
+Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
+
+Negative: Islamic architecture, minarets, photorealistic, blurry text, distorted anatomy, extra fingers, watermark, poor typography, horror elements, dark themes.`;
+}
+
+function buildPrompt(config: CoverConfig): string {
+  if (config.bgGroup === "Everyday") return buildEverydayPrompt(config);
+  if (config.bgGroup === "Fantasy") return buildFantasyPrompt(config);
+  return buildIslamicPrompt(config);
 }
 
 export async function POST(req: NextRequest) {
@@ -46,13 +96,13 @@ export async function POST(req: NextRequest) {
 
   try {
     const body: CoverConfig = await req.json();
-    const { name, gender, skin, colorScheme, bgTheme } = body;
+    const { name, gender, skin, colorScheme, bgTheme, bgGroup } = body;
 
     if (!name || !gender) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const prompt = buildPrompt({ name, gender, skin, colorScheme, bgTheme });
+    const prompt = buildPrompt({ name, gender, skin, colorScheme, bgTheme, bgGroup: bgGroup ?? "Islamic" });
 
     const koalaRes = await fetch("https://koala.sh/api/image-generation/", {
       method: "POST",
