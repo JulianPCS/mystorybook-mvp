@@ -13,15 +13,15 @@ export type BookEntry = {
 };
 
 export const NAMES: BookEntry[] = [
-  // British/European
-  { slug: "oliver",  name: "Oliver",  type: "name", gender: "male",   community: "british",    coverAccent: "bg-teal-200",   emoji: "🦊" },
-  { slug: "george",  name: "George",  type: "name", gender: "male",   community: "british",    coverAccent: "bg-blue-200",   emoji: "🐻" },
-  { slug: "harry",   name: "Harry",   type: "name", gender: "male",   community: "british",    coverAccent: "bg-green-200",  emoji: "🐢" },
-  { slug: "amelia",  name: "Amelia",  type: "name", gender: "female", community: "british",    coverAccent: "bg-pink-200",   emoji: "🦋" },
-  { slug: "isla",    name: "Isla",    type: "name", gender: "female", community: "british",    coverAccent: "bg-purple-200", emoji: "🌸" },
-  { slug: "poppy",   name: "Poppy",   type: "name", gender: "female", community: "british",    coverAccent: "bg-red-200",    emoji: "🌺" },
-  { slug: "lily",    name: "Lily",    type: "name", gender: "female", community: "british",    coverAccent: "bg-yellow-200", emoji: "🌼" },
-  { slug: "grace",   name: "Grace",   type: "name", gender: "female", community: "british",    coverAccent: "bg-teal-100",   emoji: "🕊️" },
+  // U.S./European
+  { slug: "oliver",  name: "Oliver",  type: "name", gender: "male",   community: "american",   coverAccent: "bg-teal-200",   emoji: "🦊" },
+  { slug: "george",  name: "George",  type: "name", gender: "male",   community: "american",   coverAccent: "bg-blue-200",   emoji: "🐻" },
+  { slug: "harry",   name: "Harry",   type: "name", gender: "male",   community: "american",   coverAccent: "bg-green-200",  emoji: "🐢" },
+  { slug: "amelia",  name: "Amelia",  type: "name", gender: "female", community: "american",   coverAccent: "bg-pink-200",   emoji: "🦋" },
+  { slug: "isla",    name: "Isla",    type: "name", gender: "female", community: "american",   coverAccent: "bg-purple-200", emoji: "🌸" },
+  { slug: "poppy",   name: "Poppy",   type: "name", gender: "female", community: "american",   coverAccent: "bg-red-200",    emoji: "🌺" },
+  { slug: "lily",    name: "Lily",    type: "name", gender: "female", community: "american",   coverAccent: "bg-yellow-200", emoji: "🌼" },
+  { slug: "grace",   name: "Grace",   type: "name", gender: "female", community: "american",   coverAccent: "bg-teal-100",   emoji: "🕊️" },
   // South Asian
   { slug: "arjun",   name: "Arjun",   type: "name", gender: "male",   community: "south-asian", coverAccent: "bg-orange-200", emoji: "🦁" },
   { slug: "priya",   name: "Priya",   type: "name", gender: "female", community: "south-asian", coverAccent: "bg-pink-200",   emoji: "🌺" },
@@ -29,7 +29,7 @@ export const NAMES: BookEntry[] = [
   { slug: "rohan",   name: "Rohan",   type: "name", gender: "male",   community: "south-asian", coverAccent: "bg-blue-200",   emoji: "🐘" },
   { slug: "aanya",   name: "Aanya",   type: "name", gender: "female", community: "south-asian", coverAccent: "bg-rose-200",   emoji: "🌷" },
   { slug: "riya",    name: "Riya",    type: "name", gender: "female", community: "south-asian", coverAccent: "bg-amber-200",  emoji: "🦋" },
-  // Muslim/Arabic — top 10 UK girls
+  // Muslim/Arabic — top U.S. girls
   { slug: "maryam",  name: "Maryam",  type: "name", gender: "female", community: "muslim", coverAccent: "bg-green-200",  emoji: "🌺", coverImage: "/covers/maryam.png", listed: true },
   { slug: "fatima",  name: "Fatima",  type: "name", gender: "female", community: "muslim", coverAccent: "bg-pink-200",   emoji: "🌸", coverImage: "/covers/fatima.png", listed: true },
   { slug: "anaya",   name: "Anaya",   type: "name", gender: "female", community: "muslim", coverAccent: "bg-purple-200", emoji: "⭐", coverImage: "/covers/anaya.png",  listed: true },
@@ -40,7 +40,7 @@ export const NAMES: BookEntry[] = [
   { slug: "zahra",   name: "Zahra",   type: "name", gender: "female", community: "muslim", coverAccent: "bg-orange-200", emoji: "🌹", coverImage: "/covers/zahra.png",  listed: true },
   { slug: "layla",   name: "Layla",   type: "name", gender: "female", community: "muslim", coverAccent: "bg-indigo-200", emoji: "🌙", coverImage: "/covers/layla.png",  listed: true },
   { slug: "zara",    name: "Zara",    type: "name", gender: "female", community: "muslim", coverAccent: "bg-purple-200", emoji: "⭐", coverImage: "/covers/zara.png",     listed: true },
-  // Muslim/Arabic — top 10 UK boys
+  // Muslim/Arabic — top U.S. boys
   { slug: "muhammad", name: "Muhammad", type: "name", gender: "male", community: "muslim", coverAccent: "bg-teal-300",   emoji: "🌙", coverImage: "/covers/muhammad.png", listed: true },
   { slug: "adam",     name: "Adam",     type: "name", gender: "male", community: "muslim", coverAccent: "bg-green-200",  emoji: "🌿", coverImage: "/covers/adam.png",     listed: true },
   { slug: "ali",      name: "Ali",      type: "name", gender: "male", community: "muslim", coverAccent: "bg-blue-200",   emoji: "🦁", coverImage: "/covers/ali.png",      listed: true },

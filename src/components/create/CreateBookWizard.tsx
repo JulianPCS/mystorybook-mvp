@@ -72,7 +72,7 @@ const STEPS = [
 ];
 
 export default function CreateBookWizard() {
-  const [config, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [config, updateConfig] = useReducer(reducer, INITIAL_STATE);
   const [step, setStep] = useState(0);
   const router = useRouter();
 
@@ -135,7 +135,7 @@ export default function CreateBookWizard() {
         <p className="text-sm text-gray-500 mt-1">
           {step === 0 && "Pick your child's features and generate a unique AI cover."}
           {step === 1 && "We've suggested a starter set. Swap any page you'd like to change."}
-          {step === 2 && "Happy with everything? Reserve your personalised book below."}
+          {step === 2 && "Happy with everything? Reserve your personalized book below."}
         </p>
       </div>
 
@@ -144,15 +144,15 @@ export default function CreateBookWizard() {
         <StepCover
           options={config.cover}
           generatedCoverUrl={config.generatedCoverUrl}
-          onChange={(cover) => dispatch({ type: "SET_COVER", cover })}
-          onCoverGenerated={(url) => dispatch({ type: "SET_COVER_URL", url })}
+          onChange={(cover) => updateConfig({ type: "SET_COVER", cover })}
+          onCoverGenerated={(url) => updateConfig({ type: "SET_COVER_URL", url })}
           onNext={() => setStep(1)}
         />
       )}
       {step === 1 && (
         <StepPages
           pages={config.pages}
-          onPageChange={(slotIndex, pageId) => dispatch({ type: "SET_PAGE", slotIndex, pageId })}
+          onPageChange={(slotIndex, pageId) => updateConfig({ type: "SET_PAGE", slotIndex, pageId })}
         />
       )}
       {step === 2 && (

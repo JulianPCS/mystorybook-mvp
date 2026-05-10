@@ -26,7 +26,7 @@ export default function BookCard({ book }: BookCardProps) {
         <p className="font-bold text-gray-800 text-sm group-hover:text-emerald-800 transition-colors">
           {title}
         </p>
-        <p className="text-xs text-emerald-800 font-semibold">£9.99</p>
+        <p className="text-xs text-emerald-800 font-semibold">$9.99</p>
       </div>
     </Link>
   );

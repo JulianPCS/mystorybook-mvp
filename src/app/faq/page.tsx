@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | Learn with Coloring",
   description:
-    "Got a question about our personalised children's colouring books? Find answers about ordering, delivery, payment, returns, and our launch offer.",
+    "Got a question about our personalized children's coloring books? Find answers about ordering, delivery, payment, returns, and our launch offer.",
   keywords:
-    "personalised colouring book FAQ, children's book UK questions, delivery, returns, launch offer",
+    "personalized coloring book FAQ, children's book US questions, delivery, returns, launch offer",
 };
 
 const FAQ_CATEGORIES = [
@@ -19,20 +19,20 @@ const FAQ_CATEGORIES = [
     divider: "border-emerald-100",
     questions: [
       {
-        q: "What is a personalised colouring book?",
-        a: "A personalised colouring book from Learn with Coloring is a beautifully illustrated, 32-page book that features your child's name throughout. Each page is designed to be coloured in with crayons, pencils, or felt tips, giving your child a creative activity that truly feels made just for them.",
+        q: "What is a personalized coloring book?",
+        a: "A personalized coloring book from Learn with Coloring is a beautifully illustrated, 32-page book that features your child's name throughout. Each page is designed to be colored in with crayons, pencils, or markers, giving your child a creative activity that truly feels made just for them.",
       },
       {
         q: "How is my child's name included in the book?",
-        a: "Your child's name is woven into the illustrations and story across the pages — it appears on the cover and is integrated into the artwork throughout, so your child sees their own name as part of the adventure. This is not a simple name-on-the-cover sticker; the personalisation is built into every spread.",
+        a: "Your child's name is woven into the illustrations and story across the pages — it appears on the cover and is integrated into the artwork throughout, so your child sees their own name as part of the adventure. This is not a simple name-on-the-cover sticker; the personalization is built into every spread.",
       },
       {
         q: "What ages are the books suitable for?",
-        a: "Our books are designed for children aged 3 to 8. Younger children (3–5) will love the bold, simple illustrations and the delight of seeing their name. Older children (6–8) will appreciate the more detailed pages and the creative challenge of colouring within finer lines.",
+        a: "Our books are designed for children aged 3 to 8. Younger children (3–5) will love the bold, simple illustrations and the delight of seeing their name. Older children (6–8) will appreciate the more detailed pages and the creative challenge of coloring within finer lines.",
       },
       {
         q: "Are the books available for any name?",
-        a: "We support a very wide range of names, including traditional British names, names from South Asian, Arabic, African, and European communities, and many more. If you can't find your child's name listed, use the search on our books page — we may well have it. If not, get in touch and we'll do our best to add it.",
+        a: "We support a very wide range of names, including traditional American names, names from South Asian, Arabic, African, and European communities, and many more. If you can't find your child's name listed, use the search on our books page — we may well have it. If not, get in touch and we'll do our best to add it.",
       },
     ],
   },
@@ -58,29 +58,29 @@ const FAQ_CATEGORIES = [
       },
       {
         q: "Can I order as a gift?",
-        a: "Absolutely — our books make wonderful gifts. During checkout you can add a personalised gift message which will be printed on a card and included with the book. You can also ship directly to the recipient's address.",
+        a: "Absolutely — our books make wonderful gifts. During checkout you can add a personalized gift message which will be printed on a card and included with the book. You can also ship directly to the recipient's address.",
       },
     ],
   },
   {
     id: "delivery",
-    title: "Delivery & Shipping",
+    title: "Shipping & Delivery",
     icon: "📦",
     iconBg: "bg-blue-50",
     iconBorder: "border-blue-200",
     divider: "border-blue-100",
     questions: [
       {
-        q: "How long does delivery take?",
-        a: "Standard delivery within the UK takes 3–5 business days from the date your order is placed. Because each book is personalised and printed to order, we cannot offer same-day or next-day delivery at this time. We'll send you an email confirmation as soon as your book has been dispatched.",
+        q: "How long does shipping take?",
+        a: "Standard shipping within the U.S. takes 3–5 business days from the date your order is placed. Because each book is personalized and printed to order, we cannot offer same-day or next-day delivery at this time. We'll send you an email confirmation as soon as your book has been shipped.",
       },
       {
-        q: "Do you deliver outside the UK?",
-        a: "Currently we ship exclusively within the United Kingdom. International shipping is something we plan to offer in the future. If you are based outside the UK and would like to be notified when international shipping becomes available, please contact us and we'll add you to our list.",
+        q: "Do you deliver outside the U.S.?",
+        a: "Currently we ship exclusively within the United States. International shipping is something we plan to offer in the future. If you are based outside the U.S. and would like to be notified when international shipping becomes available, please contact us and we'll add you to our list.",
       },
       {
         q: "How will my order be packaged?",
-        a: "Your book is packaged in a rigid, board-backed envelope to ensure it arrives flat and undamaged. We also use protective wrap inside the envelope. The packaging is designed to keep your book in pristine condition for gifting.",
+        a: "Your book is packaged in a rigid, rigid mailer to ensure it arrives flat and undamaged. We also use protective wrap inside the envelope. The packaging is designed to keep your book in pristine condition for gifting.",
       },
     ],
   },
@@ -93,16 +93,16 @@ const FAQ_CATEGORIES = [
     divider: "border-rose-100",
     questions: [
       {
-        q: "Can I return a personalised book?",
-        a: "Because every book is printed specifically for your child, we are unable to accept returns for change of mind — this is standard practice for personalised goods and is covered by UK consumer law. However, if there is any issue with your order, please do contact us and we will always work to put things right.",
+        q: "Can I return a personalized book?",
+        a: "Because every book is printed specifically for your child, we are unable to accept returns for change of mind — this is standard practice for personalized, customized, made-to-order products. However, if there is any issue with your order, please do contact us and we will always work to put things right.",
       },
       {
         q: "What if my book arrives damaged?",
-        a: "We're sorry if your book arrives in anything less than perfect condition. Please take a photo of the damage and email us at hello@learnwithcoloring.co.uk within 14 days of receiving your order. We will send you a replacement free of charge, no quibbles.",
+        a: "We're sorry if your book arrives in anything less than perfect condition. Please take a photo of the damage and email us at hello@learnwithcoloring.com within 14 days of receiving your order. We will send you a replacement free of charge, no hassle.",
       },
       {
         q: "How do I contact you about an issue?",
-        a: "The easiest way is to email us at hello@learnwithcoloring.co.uk. Please include your order number and a brief description of the issue, and we will respond within 24 hours on business days. You can also use the contact form on our contact page.",
+        a: "The easiest way is to email us at hello@learnwithcoloring.com. Please include your order number and a brief description of the issue, and we will respond within 24 hours on business days. You can also use the contact form on our contact page.",
       },
     ],
   },
@@ -116,15 +116,15 @@ const FAQ_CATEGORIES = [
     questions: [
       {
         q: "What is the launch offer?",
-        a: "To celebrate the launch of Learn with Coloring, we are offering all books at 50% off — just £9.99 instead of the full price of £19.99. This is our way of saying thank you to our earliest customers who are helping us bring personalised colouring books to families across the UK.",
+        a: "To celebrate the launch of Learn with Coloring, we are offering all books at 50% off — just $9.99 instead of the full price of $19.99. This is our way of saying thank you to our earliest customers who are helping us bring personalized coloring books to families across the U.S.",
       },
       {
         q: "How long does the launch offer last?",
-        a: "The launch price of £9.99 is available for a limited time only. We haven't set a fixed end date, but once the launch period closes the price will return to £19.99. We recommend ordering sooner rather than later to take advantage of the saving.",
+        a: "The launch price of $9.99 is available for a limited time only. We haven't set a fixed end date, but once the launch period closes the price will return to $19.99. We recommend ordering sooner rather than later to take advantage of the saving.",
       },
       {
         q: "Is this a pre-order?",
-        a: "Yes — we are currently in our pre-launch phase, which means we are taking orders ahead of our official opening. Your book will be printed and dispatched within 3–5 business days of our launch date. You'll receive a confirmation email with the expected dispatch date when you place your order.",
+        a: "Yes — we are currently in our pre-launch phase, which means we are taking orders ahead of our official opening. Your book will be printed and shipped within 3–5 business days of our launch date. You'll receive a confirmation email with the expected shipping date when you place your order.",
       },
     ],
   },
@@ -146,10 +146,10 @@ export default function FaqPage() {
           <p className="text-gray-500 text-lg font-semibold max-w-xl mx-auto">
             Can&apos;t find what you&apos;re looking for? Drop us a line at{" "}
             <a
-              href="mailto:hello@learnwithcoloring.co.uk"
+              href="mailto:hello@learnwithcoloring.com"
               className="text-emerald-800 hover:text-emerald-900 transition-colors"
             >
-              hello@learnwithcoloring.co.uk
+              hello@learnwithcoloring.com
             </a>{" "}
             and we&apos;ll get back to you within 24 hours.
           </p>
@@ -222,7 +222,7 @@ export default function FaqPage() {
                 Still have a question?
               </h2>
               <p className="text-gray-500 font-semibold leading-relaxed">
-                We&apos;re a small UK team and we genuinely love hearing from
+                We&apos;re a small U.S. team and we genuinely love hearing from
                 parents. Send us a message and we&apos;ll reply within 24 hours.
               </p>
             </div>
@@ -234,10 +234,10 @@ export default function FaqPage() {
                 Contact Us
               </Link>
               <a
-                href="mailto:hello@learnwithcoloring.co.uk"
+                href="mailto:hello@learnwithcoloring.com"
                 className="text-center text-emerald-800 font-bold text-sm hover:text-emerald-900 transition-colors"
               >
-                hello@learnwithcoloring.co.uk
+                hello@learnwithcoloring.com
               </a>
             </div>
           </div>

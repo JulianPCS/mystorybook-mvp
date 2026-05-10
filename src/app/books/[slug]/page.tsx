@@ -63,7 +63,7 @@ function BookDetailContent({ slug }: { slug: string }) {
   const title =
     book.type === "occasion"
       ? book.name
-      : `${book.name}'s Colouring Book`;
+      : `${book.name}'s Coloring Book`;
 
   return (
     <>
@@ -112,15 +112,15 @@ function BookDetailContent({ slug }: { slug: string }) {
           <div className="flex flex-col gap-6">
             <div>
               <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-900 text-xs font-bold px-3 py-1 rounded-full mb-3">
-                ✨ Personalised Edition
+                ✨ Personalized Edition
               </div>
               <h1 className="text-3xl sm:text-4xl font-black text-gray-800 leading-tight mb-2">
                 {title}
               </h1>
               <p className="text-gray-500 font-semibold">
                 {book.type === "occasion"
-                  ? `A beautiful personalised colouring book to celebrate ${book.name}.`
-                  : `A beautiful personalised colouring book made just for ${book.name}.`}
+                  ? `A beautiful personalized coloring book to celebrate ${book.name}.`
+                  : `A beautiful personalized coloring book made just for ${book.name}.`}
               </p>
             </div>
 
@@ -132,9 +132,9 @@ function BookDetailContent({ slug }: { slug: string }) {
                 </span>
               </div>
               <div className="flex items-baseline gap-3 flex-wrap">
-                <span className="text-4xl font-black text-gray-900">£9.99</span>
-                <span className="text-xl text-gray-400 line-through font-semibold">£19.99</span>
-                <span className="text-sm text-gray-500 font-semibold">incl. UK delivery</span>
+                <span className="text-4xl font-black text-gray-900">$9.99</span>
+                <span className="text-xl text-gray-400 line-through font-semibold">$19.99</span>
+                <span className="text-sm text-gray-500 font-semibold">incl. U.S. shipping</span>
               </div>
             </div>
 
@@ -147,16 +147,16 @@ function BookDetailContent({ slug }: { slug: string }) {
               <div className="w-full bg-gray-100 rounded-full h-2 mb-2">
                 <div className="bg-emerald-700 h-2 rounded-full" style={{ width: "78%" }} />
               </div>
-              <p className="text-xs text-gray-500 font-semibold">Only 22 spots remaining at the launch price of £9.99</p>
+              <p className="text-xs text-gray-500 font-semibold">Only 22 spots remaining at the launch price of $9.99</p>
             </div>
 
             {/* Book details */}
             <div className="bg-emerald-50 rounded-2xl p-5 grid grid-cols-2 gap-3">
               {[
                 { icon: "📄", label: "32 pages" },
-                { icon: "📐", label: "A4 format" },
+                { icon: "📐", label: "8.5 x 11 inch format" },
                 { icon: "🖨️", label: "High-quality print" },
-                { icon: "🇬🇧", label: "UK delivery" },
+                { icon: "🇺🇸", label: "U.S. shipping" },
               ].map((d) => (
                 <div key={d.label} className="flex items-center gap-2 text-sm font-semibold text-gray-700">
                   <span>{d.icon}</span>
@@ -171,8 +171,8 @@ function BookDetailContent({ slug }: { slug: string }) {
               className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-black text-xl py-5 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
             >
               Get {book.name}&apos;s Book —{" "}
-              <span className="line-through opacity-60 text-lg">£19.99</span>{" "}
-              £9.99
+              <span className="line-through opacity-60 text-lg">$19.99</span>{" "}
+              $9.99
             </button>
 
             <p className="text-center text-xs text-gray-400 font-semibold">
@@ -182,7 +182,7 @@ function BookDetailContent({ slug }: { slug: string }) {
             {/* Social proof */}
             <div className="border-t border-emerald-50 pt-4 flex flex-col gap-2">
               {[
-                "\"My daughter absolutely loves her personalised book!\"",
+                "\"My daughter absolutely loves her personalized book!\"",
                 "\"Such a thoughtful and unique gift — will be ordering again.\"",
               ].map((q) => (
                 <div key={q} className="bg-white rounded-xl p-3 text-sm text-gray-600 font-semibold border border-gray-100">

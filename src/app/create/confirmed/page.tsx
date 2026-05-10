@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Book Reserved! — Your Personalised Colouring Book",
+  title: "Book Reserved! — Your Personalized Coloring Book",
 };
 
 type Props = {
@@ -22,7 +22,7 @@ export default function CreateConfirmedPage({ searchParams }: Props) {
             Book reserved for {name}!
           </h1>
           <p className="text-gray-500 text-base">
-            We&apos;ve noted all your personalisation choices. We&apos;ll be in touch by email to confirm the details and arrange payment before we print and post your book.
+            We&apos;ve noted all your personalization choices. We&apos;ll be in touch by email to confirm the details and arrange payment before we print and mail your book.
           </p>
         </div>
 
@@ -30,15 +30,15 @@ export default function CreateConfirmedPage({ searchParams }: Props) {
           <p className="text-sm font-semibold text-purple-700">What happens next?</p>
           <ul className="space-y-1.5 text-sm text-purple-600">
             <li className="flex items-start gap-2"><span>1.</span><span>We&apos;ll email you within 24 hours to confirm your order.</span></li>
-            <li className="flex items-start gap-2"><span>2.</span><span>Once you pay (£30), we&apos;ll create and print your unique book.</span></li>
-            <li className="flex items-start gap-2"><span>3.</span><span>Your personalised book arrives by post within 5–7 days.</span></li>
+            <li className="flex items-start gap-2"><span>2.</span><span>Once you pay ($30), we&apos;ll create and print your unique book.</span></li>
+            <li className="flex items-start gap-2"><span>3.</span><span>Your personalized book arrives by mail within 5–7 days.</span></li>
           </ul>
         </div>
 
         <div className="flex flex-col gap-3">
           <a
             href={`https://wa.me/?text=${encodeURIComponent(
-              `I just made a personalised colouring book for ${name}! 🎨📚 Check it out at ${typeof window !== "undefined" ? window.location.origin : ""}`,
+              `I just made a personalized coloring book for ${name}! 🎨📚 Check it out at ${typeof window !== "undefined" ? window.location.origin : ""}`,
             )}`}
             target="_blank"
             rel="noopener noreferrer"

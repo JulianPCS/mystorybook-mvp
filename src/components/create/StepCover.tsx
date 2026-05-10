@@ -69,11 +69,11 @@ const BG_THEME_GROUPS: BgGroup[] = [
     label: "Everyday",
     emoji: "🌍",
     themes: [
-      { value: "a beautiful blooming garden with colourful flowers, butterflies, and a sunny blue sky with fluffy clouds", label: "Flower Garden", emoji: "🌸" },
-      { value: "a cosy warm living room with bookshelves, a fireplace, soft rugs, and afternoon sunlight streaming through the window", label: "At Home", emoji: "🏠" },
+      { value: "a beautiful blooming garden with colorful flowers, butterflies, and a sunny blue sky with fluffy clouds", label: "Flower Garden", emoji: "🌸" },
+      { value: "a cozy warm living room with bookshelves, a fireplace, soft rugs, and afternoon sunlight streaming through the window", label: "At Home", emoji: "🏠" },
       { value: "a sunny park with green rolling hills, a pond with ducks, picnic blankets, and children playing in the distance", label: "At the Park", emoji: "🌳" },
-      { value: "a golden sandy beach with gentle waves, a bright sun, colourful beach umbrellas, and a clear turquoise sea", label: "At the Beach", emoji: "🏖️" },
-      { value: "a vibrant school classroom with colourful posters on the walls, bookshelves full of books, and warm sunlight", label: "At School", emoji: "🎒" },
+      { value: "a golden sandy beach with gentle waves, a bright sun, colorful beach umbrellas, and a clear turquoise sea", label: "At the Beach", emoji: "🏖️" },
+      { value: "a vibrant school classroom with colorful posters on the walls, bookshelves full of books, and warm sunlight", label: "At School", emoji: "🎒" },
       { value: "a magical library with towering shelves of glowing books, spiral staircases, and soft reading lamps", label: "The Library", emoji: "📚" },
     ],
   },
@@ -81,12 +81,12 @@ const BG_THEME_GROUPS: BgGroup[] = [
     label: "Fantasy",
     emoji: "✨",
     themes: [
-      { value: "a grand enchanted castle with tall turrets, a glowing drawbridge, colourful banners, and a magical sunset sky", label: "Enchanted Castle", emoji: "🏰" },
+      { value: "a grand enchanted castle with tall turrets, a glowing drawbridge, colorful banners, and a magical sunset sky", label: "Enchanted Castle", emoji: "🏰" },
       { value: "a dazzling ice kingdom with towering crystal ice spires, frozen waterfalls, and a shimmering aurora borealis sky", label: "Ice Kingdom", emoji: "❄️" },
       { value: "the interior of a futuristic starship with glowing control panels, large windows showing stars and galaxies, and blinking lights", label: "Starship", emoji: "🚀" },
-      { value: "a vibrant underwater kingdom with colourful coral reefs, glowing sea creatures, friendly dolphins, and shafts of sunlight from above", label: "Underwater", emoji: "🌊" },
+      { value: "a vibrant underwater kingdom with colorful coral reefs, glowing sea creatures, friendly dolphins, and shafts of sunlight from above", label: "Underwater", emoji: "🌊" },
       { value: "a magical glowing forest with giant luminous mushrooms, fireflies, sparkling fairy lights between ancient trees, and a moonlit sky", label: "Magic Forest", emoji: "🌲" },
-      { value: "a lush jungle adventure scene with towering ancient ruins, exotic tropical flowers, colourful parrots, and golden treasure chests", label: "Jungle Ruins", emoji: "🗺️" },
+      { value: "a lush jungle adventure scene with towering ancient ruins, exotic tropical flowers, colorful parrots, and golden treasure chests", label: "Jungle Ruins", emoji: "🗺️" },
       { value: "a whimsical candy land with rainbow lollipop trees, chocolate rivers, gumdrop mountains, and a bright sugary sky", label: "Candy Land", emoji: "🍭" },
       { value: "a high-altitude cloud kingdom with fluffy cloud platforms, rainbow bridges, sun rays breaking through, and friendly sky creatures", label: "Cloud Kingdom", emoji: "☁️" },
     ],
@@ -333,9 +333,9 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         </div>
       </div>
 
-      {/* Cover colour scheme */}
+      {/* Cover color scheme */}
       <div className="space-y-2">
-        <p className="text-sm font-semibold text-gray-700">Cover Colour</p>
+        <p className="text-sm font-semibold text-gray-700">Cover Color</p>
         <div className="flex flex-wrap gap-3">
           {COLOR_SCHEMES.map((c) => (
             <button

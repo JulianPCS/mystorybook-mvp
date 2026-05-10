@@ -10,7 +10,7 @@ function ConfirmedContent() {
   const book = searchParams.get("book") || "their book";
 
   const whatsappText = encodeURIComponent(
-    `🎨 Just found the most adorable personalised colouring book for ${name}! Check it out: ${typeof window !== "undefined" ? window.location.origin : ""}/books`
+    `🎨 Just found the most adorable personalized coloring book for ${name}! Check it out: ${typeof window !== "undefined" ? window.location.origin : ""}/books`
   );
 
   return (

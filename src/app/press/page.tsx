@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Press and Media | Learn with Coloring",
   description:
-    "Press information for Learn with Coloring — a UK startup creating personalised colouring books for children that celebrate diverse names and cultural moments. Contact press@learnwithcoloring.co.uk.",
+    "Press information for Learn with Coloring — a U.S. startup creating personalized coloring books for children that celebrate diverse names and cultural moments. Contact press@learnwithcoloring.com.",
   keywords:
-    "Learn with Coloring press, personalised children's book startup UK, media kit, press contact",
+    "Learn with Coloring press, personalized children's book startup US, media kit, press contact",
 };
 
 const STATS = [
@@ -32,8 +32,8 @@ const STATS = [
     accent: "text-purple-600",
   },
   {
-    value: "UK",
-    label: "Designed and printed in the UK",
+    value: "US",
+    label: "Designed and printed in the U.S.",
     bg: "bg-green-50",
     border: "border-green-200",
     accent: "text-green-600",
@@ -44,17 +44,17 @@ const BRAND_POINTS = [
   {
     icon: "📖",
     heading: "What We Do",
-    body: "Learn with Coloring creates personalised colouring books for children aged 3–8. Each book is printed to order with a child's name woven throughout the illustrations — on the cover and across every spread. We are not a vanity-press name stamp. The personalisation is integral to the design.",
+    body: "Learn with Coloring creates personalized coloring books for children aged 3–8. Each book is printed to order with a child's name woven throughout the illustrations — on the cover and across every spread. We are not a vanity-press name stamp. The personalization is integral to the design.",
   },
   {
     icon: "🌍",
     heading: "Why We Exist",
-    body: "British families are beautifully diverse, but the personalised book market has not kept up. Names like Maryam, Zainab, Idris, Dawud, Priya, and Amara deserve to be on bookshelves just as much as any other. We built this company because those children — and their families — deserve better.",
+    body: "American families are beautifully diverse, but the personalized book market has not kept up. Names like Maryam, Zainab, Idris, Dawud, Priya, and Amara deserve to be on bookshelves just as much as any other. We built this company because those children — and their families — deserve better.",
   },
   {
     icon: "🖨️",
     heading: "How It Works",
-    body: "Every book is made to order. A customer selects their child's name, places an order, and we print and dispatch the book within 3–5 business days. We work with a trusted UK printing partner and use premium matte paper. Delivery is free across the UK.",
+    body: "Every book is made to order. A customer selects their child's name, places an order, and we print and ship the book within 3–5 business days. We work with a trusted U.S. printing partner and use premium matte paper. Delivery is free across the U.S.",
   },
 ];
 
@@ -72,12 +72,12 @@ export default function PressPage() {
             <span className="text-emerald-700">Press Information</span>
           </h1>
           <p className="text-gray-500 text-lg sm:text-xl font-semibold max-w-2xl mx-auto mb-8">
-            We are a small UK startup with a clear mission: every child — regardless
+            We are a small U.S. startup with a clear mission: every child — regardless
             of background or name — should be able to find a book made just for them.
             If you are covering us, we would love to help.
           </p>
           <a
-            href="mailto:press@learnwithcoloring.co.uk"
+            href="mailto:press@learnwithcoloring.com"
             className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
           >
             Contact the Press Team
@@ -92,7 +92,7 @@ export default function PressPage() {
             Learn with Coloring at a Glance
           </h2>
           <p className="text-gray-500 font-semibold text-center mb-10">
-            Founded in 2024, UK-based, and growing fast.
+            Founded in 2024, U.S.-based, and growing fast.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {STATS.map((stat) => (
@@ -149,7 +149,7 @@ export default function PressPage() {
               from that.&rdquo;
             </p>
             <footer className="text-emerald-900 font-bold text-sm">
-              The Founder, Learn with Coloring — UK, 2024
+              The Founder, Learn with Coloring — U.S., 2024
             </footer>
           </blockquote>
         </div>
@@ -171,7 +171,7 @@ export default function PressPage() {
               {
                 icon: "🖼️",
                 title: "Logo Files",
-                body: "High-resolution logo in PNG and SVG formats, in full colour and white variants. Available on request.",
+                body: "High-resolution logo in PNG and SVG formats, in full color and white variants. Available on request.",
               },
               {
                 icon: "📸",
@@ -204,10 +204,10 @@ export default function PressPage() {
               within one business day.
             </p>
             <a
-              href="mailto:press@learnwithcoloring.co.uk"
+              href="mailto:press@learnwithcoloring.com"
               className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
             >
-              press@learnwithcoloring.co.uk
+              press@learnwithcoloring.com
             </a>
           </div>
         </div>
@@ -222,7 +222,7 @@ export default function PressPage() {
             </h2>
             <p className="text-gray-600 font-semibold leading-relaxed mb-4">
               For interview requests, product reviews, editorial coverage, or
-              any other media enquiry, please email our press address. We are a
+              any other media inquiry, please email our press address. We are a
               small team and we respond quickly — typically within one business
               day.
             </p>
@@ -237,10 +237,10 @@ export default function PressPage() {
                   Press Enquiries
                 </p>
                 <a
-                  href="mailto:press@learnwithcoloring.co.uk"
+                  href="mailto:press@learnwithcoloring.com"
                   className="text-gray-800 font-black hover:text-emerald-800 transition-colors"
                 >
-                  press@learnwithcoloring.co.uk
+                  press@learnwithcoloring.com
                 </a>
               </div>
               <div className="flex-1 bg-white border-2 border-emerald-200 rounded-2xl p-5">
@@ -248,10 +248,10 @@ export default function PressPage() {
                   General Contact
                 </p>
                 <a
-                  href="mailto:hello@learnwithcoloring.co.uk"
+                  href="mailto:hello@learnwithcoloring.com"
                   className="text-gray-800 font-black hover:text-emerald-800 transition-colors"
                 >
-                  hello@learnwithcoloring.co.uk
+                  hello@learnwithcoloring.com
                 </a>
               </div>
             </div>
@@ -267,7 +267,7 @@ export default function PressPage() {
           </h2>
           <p className="text-emerald-100 font-semibold mb-8 text-lg">
             Browse the full collection — 30+ names, 8+ celebrations, all
-            printed and delivered free across the UK.
+            printed and delivered free across the U.S.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

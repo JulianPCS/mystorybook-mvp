@@ -2,16 +2,16 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UK Delivery Information | Learn with Coloring",
+  title: "U.S. Shipping Information | Learn with Coloring",
   description:
-    "Free UK delivery on all personalised colouring books. Made to order in 1–2 days, dispatched with a tracking email, delivered in 3–5 business days in a protective rigid mailer.",
+    "Free U.S. shipping on all personalized coloring books. Made to order in 1–2 days, shipped with a tracking email, delivered in 3–5 business days in a protective rigid mailer.",
   keywords:
-    "personalised colouring book delivery UK, free delivery children's books, made to order books",
+    "personalized coloring book shipping US, free shipping children's books, made to order books",
 };
 
 const DELIVERY_OPTIONS = [
   {
-    name: "Standard UK Delivery",
+    name: "Standard U.S. Shipping",
     time: "3–5 business days",
     cost: "Free",
     costDetail: "included in the book price",
@@ -20,7 +20,7 @@ const DELIVERY_OPTIONS = [
     border: "border-emerald-200",
     badge: "bg-emerald-100 text-emerald-900",
     badgeLabel: "Available now",
-    note: "Covers the whole of the UK — England, Scotland, Wales, and Northern Ireland.",
+    note: "Covers the contiguous United States at no extra cost.",
   },
   {
     name: "Express / Next-Day Delivery",
@@ -39,23 +39,23 @@ const DELIVERY_OPTIONS = [
 const FAQS = [
   {
     q: "When does the delivery clock start?",
-    a: "Delivery time begins once your book has been dispatched — not from when you place your order. Please allow 1–2 business days for production first. Your total wait from order to doorstep is typically 4–7 business days.",
+    a: "Delivery time begins once your book has been shipped — not from when you place your order. Please allow 1–2 business days for production first. Your total wait from order to doorstep is typically 4–7 business days.",
   },
   {
     q: "Will I receive confirmation when my book is sent?",
-    a: "Yes. We email you a tracking link the moment your book is dispatched. If you don't see it within 3 business days of ordering, please check your spam folder and then get in touch.",
+    a: "Yes. We email you a tracking link the moment your book is shipped. If you don't see it within 3 business days of ordering, please check your spam folder and then get in touch.",
   },
   {
-    q: "Can I change my delivery address after ordering?",
-    a: "Contact us at hello@learnwithcoloring.co.uk as soon as possible. We can update your address if production has not yet started — so the sooner you reach us, the better.",
+    q: "Can I change my shipping address after ordering?",
+    a: "Contact us at hello@learnwithcoloring.com as soon as possible. We can update your address if production has not yet started — so the sooner you reach us, the better.",
   },
   {
-    q: "Do you deliver to Northern Ireland, Scotland, and Wales?",
-    a: "Absolutely — standard UK delivery covers every part of the United Kingdom at no extra cost.",
+    q: "Where in the U.S. do you ship?",
+    a: "Standard shipping currently covers the contiguous United States at no extra cost. We are working on additional options for Alaska, Hawaii, U.S. territories, and international addresses.",
   },
   {
     q: "Do you ship internationally?",
-    a: "Not yet. We are UK-only at this stage. International shipping is on our roadmap — sign up to the waitlist to be notified when it launches.",
+    a: "Not yet. We are U.S.-only at this stage. International shipping is on our roadmap — sign up to the waitlist to be notified when it launches.",
   },
 ];
 
@@ -66,14 +66,14 @@ export default function DeliveryPage() {
       <section className="bg-gradient-to-br from-emerald-50 via-white to-amber-50 pt-14 pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-900 text-sm font-bold px-4 py-1.5 rounded-full mb-6">
-            UK Delivery
+            U.S. Shipping
           </div>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-800 leading-tight mb-5">
             Delivered Safely{" "}
             <span className="text-emerald-700">to Your Door</span>
           </h1>
           <p className="text-gray-500 text-lg sm:text-xl font-semibold max-w-2xl mx-auto mb-10">
-            Every book is made to order and shipped free across the UK. Here is
+            Every book is made to order and shipped free across the U.S. Here is
             everything you need to know about how and when your book will arrive.
           </p>
           <Link
@@ -89,10 +89,10 @@ export default function DeliveryPage() {
       <section className="py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-800 text-center mb-3">
-            Delivery Options
+            Shipping Options
           </h2>
           <p className="text-gray-500 font-semibold text-center mb-10">
-            Simple and straightforward — free delivery is included as standard
+            Simple and straightforward — free shipping is included as standard
             on every order.
           </p>
 
@@ -131,10 +131,10 @@ export default function DeliveryPage() {
             <span className="text-2xl flex-shrink-0">⏱️</span>
             <div>
               <p className="font-black text-gray-800 mb-1">
-                Made to order — allow 1–2 days production time before dispatch
+                Made to order — allow 1–2 days production time before shipping
               </p>
               <p className="text-gray-600 font-semibold text-sm leading-relaxed">
-                Because every book is personalised with your child&apos;s name,
+                Because every book is personalized with your child&apos;s name,
                 each one is printed individually before it can be sent. Production
                 takes 1–2 business days. Your total wait from order to doorstep
                 is typically{" "}
@@ -161,7 +161,7 @@ export default function DeliveryPage() {
                 Every book is shipped in a rigid cardboard mailer specifically
                 designed to prevent bending and damage in transit. No flimsy
                 envelopes — your child&apos;s book arrives flat and in perfect
-                condition, ready to colour straight away.
+                condition, ready to color straight away.
               </p>
             </div>
             <div className="bg-white border-2 border-emerald-200 rounded-3xl p-7">
@@ -170,7 +170,7 @@ export default function DeliveryPage() {
                 Tracking Link by Email
               </h3>
               <p className="text-gray-600 font-semibold leading-relaxed">
-                The moment your book is dispatched, we email you a tracking link
+                The moment your book is shipped, we email you a tracking link
                 so you can follow its journey. You can also visit{" "}
                 <Link
                   href="/track"
@@ -188,12 +188,12 @@ export default function DeliveryPage() {
             <span className="text-2xl flex-shrink-0">🌍</span>
             <div>
               <p className="font-black text-gray-800 mb-1">
-                UK only — international shipping not yet available
+                U.S. only — international shipping not yet available
               </p>
               <p className="text-gray-600 font-semibold text-sm leading-relaxed">
-                We currently ship exclusively within the United Kingdom.
+                We currently ship exclusively within the United States.
                 International delivery is on our roadmap and we hope to launch it
-                soon. If you are based outside the UK,{" "}
+                soon. If you are based outside the U.S.,{" "}
                 <Link
                   href="/contact"
                   className="text-emerald-800 font-black hover:underline"
@@ -211,7 +211,7 @@ export default function DeliveryPage() {
       <section className="py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-black text-gray-800 text-center mb-3">
-            Delivery Questions
+            Shipping Questions
           </h2>
           <p className="text-gray-500 font-semibold text-center mb-10">
             Quick answers to the questions we hear most often.
@@ -239,8 +239,8 @@ export default function DeliveryPage() {
             Ready to Order?
           </h2>
           <p className="text-emerald-100 font-semibold mb-8 text-lg">
-            Find the perfect personalised colouring book for your child — free
-            UK delivery included on every order.
+            Find the perfect personalized coloring book for your child — free
+            U.S. shipping included on every order.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

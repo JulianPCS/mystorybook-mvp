@@ -58,8 +58,8 @@ export default function Footer() {
               className="h-9 w-auto brightness-0 invert mb-4"
             />
             <p className="text-sm leading-relaxed text-gray-400 mb-6">
-              Personalised colouring books that make every child the star of their own story.
-              Printed and shipped in the UK.
+              Personalized coloring books that make every child the star of their own story.
+              Printed and shipped in the U.S.
             </p>
             <div className="flex gap-3">
               {SOCIAL.map((s) => (
@@ -85,7 +85,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 { label: "How It Works",        href: "/why" },
-                { label: "Delivery &amp; Shipping",  href: "/delivery" },
+                { label: "Shipping &amp; Delivery",  href: "/delivery" },
                 { label: "Returns Policy",       href: "/returns" },
                 { label: "Frequently Asked Questions", href: "/faq" },
                 { label: "Contact Us",           href: "/contact" },
@@ -111,7 +111,7 @@ export default function Footer() {
               {[
                 { label: "Our Story",          href: "/about" },
                 { label: "The Process",        href: "/process" },
-                { label: "Why Colouring?",     href: "/why" },
+                { label: "Why Coloring?",     href: "/why" },
                 { label: "Each Book Explained", href: "/books" },
                 { label: "Press &amp; Media",      href: "/press" },
               ].map((l) => (
@@ -197,7 +197,7 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="border-t border-gray-800">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-600">
-          <span>© {new Date().getFullYear()} Learn with Coloring. All rights reserved. Made with care in the UK.</span>
+          <span>© {new Date().getFullYear()} Learn with Coloring. All rights reserved. Made with care in the U.S.</span>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-gray-400 transition-colors">Terms of Use</Link>

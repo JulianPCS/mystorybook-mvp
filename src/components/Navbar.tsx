@@ -126,12 +126,12 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Why Colouring */}
+          {/* Why Coloring */}
           <Link
             href="/why"
             className="text-gray-600 hover:text-emerald-800 px-3 py-2 rounded-xl hover:bg-emerald-50 transition-colors whitespace-nowrap"
           >
-            Why Colouring?
+            Why Coloring?
           </Link>
 
           {/* Create CTA */}
@@ -227,7 +227,7 @@ export default function Navbar() {
             className="flex items-center gap-2 text-gray-700 font-semibold py-2.5 px-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-900 transition-colors"
             onClick={() => setMenuOpen(false)}
           >
-            Why Colouring?
+            Why Coloring?
           </Link>
 
           <div className="mt-2 pt-2 border-t border-emerald-50 flex flex-col gap-2">
@@ -236,7 +236,7 @@ export default function Navbar() {
               className="block bg-purple-500 text-white text-center font-black py-3 rounded-xl"
               onClick={() => setMenuOpen(false)}
             >
-              ✨ Create Your Book — £30
+              ✨ Create Your Book — $30
             </Link>
             <Link
               href="/books"

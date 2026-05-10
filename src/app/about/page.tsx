@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Our Story — Why Learn with Coloring Exists | Learn with Coloring",
   description:
-    "Learn with Coloring was born from a family moment. Our founder searched everywhere for a personalised colouring book that reflected real names from diverse UK families — and couldn't find one. So they made it.",
+    "Learn with Coloring was born from a family moment. Our founder searched everywhere for a personalized coloring book that reflected real names from diverse U.S. families — and couldn't find one. So they made it.",
 };
 
 const VALUES = [
@@ -24,7 +24,7 @@ const VALUES = [
     border: "border-amber-200",
     accent: "text-amber-700",
     body:
-      "Our books are built around the real, rich diversity of British family life — Muslim families, South Asian families, African families, mixed families. Names like Maryam, Zainab, Idris, and Priya belong on bookshelves just as much as any other.",
+      "Our books are built around the real, rich diversity of American family life — Muslim families, South Asian families, African families, mixed families. Names like Maryam, Zainab, Idris, and Priya belong on bookshelves just as much as any other.",
   },
   {
     emoji: "✏️",
@@ -33,7 +33,7 @@ const VALUES = [
     border: "border-purple-200",
     accent: "text-purple-700",
     body:
-      "We use premium matte paper, child-safe inks, and work with a trusted UK printer. Every illustration is reviewed before anything goes to print. These are books worth keeping.",
+      "We use premium matte paper, child-safe inks, and work with a trusted U.S. printer. Every illustration is reviewed before anything goes to print. These are books worth keeping.",
   },
 ];
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
             Our Story
           </h1>
           <p className="text-gray-500 text-lg sm:text-xl font-semibold max-w-2xl mx-auto">
-            Learn with Coloring started not in a boardroom, but in a living room — watching a child colour and wondering why their name wasn&apos;t on the page.
+            Learn with Coloring started not in a boardroom, but in a living room — watching a child color and wondering why their name wasn&apos;t on the page.
           </p>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </p>
 
           <p className="text-gray-600 font-semibold text-lg leading-relaxed mb-6">
-            Then there&apos;s the five-year-old. If you&apos;ve ever watched a five-year-old colour, you&apos;ll know it&apos;s something close to meditation for them — total focus, total absorption, and total pride when they show you the finished page. This one loves drawing more than almost anything else. And it was this child, and a particular afternoon with a colouring book, that started all of this.
+            Then there&apos;s the five-year-old. If you&apos;ve ever watched a five-year-old color, you&apos;ll know it&apos;s something close to meditation for them — total focus, total absorption, and total pride when they show you the finished page. This one loves drawing more than almost anything else. And it was this child, and a particular afternoon with a coloring book, that started all of this.
           </p>
 
           {/* Pull quote */}
@@ -75,11 +75,11 @@ export default function AboutPage() {
           </blockquote>
 
           <p className="text-gray-600 font-semibold text-lg leading-relaxed mb-6">
-            I wanted to give each of them something truly personal — not a generic gift, but something that said: <em>this was made for you, specifically</em>. A personalised colouring book felt perfect. So I went looking for one. I searched for books with Arabic names, with Muslim names, with the kinds of names that appear in our family and in families like ours across Britain. Names like Maryam, Zainab, Idris, Dawud. I found plenty of books with Olivers and Emilys. I found very little else — and what I did find was either low quality, poorly illustrated, or so generic that the &ldquo;personalisation&rdquo; was little more than a font swap on the cover.
+            I wanted to give each of them something truly personal — not a generic gift, but something that said: <em>this was made for you, specifically</em>. A personalized coloring book felt perfect. So I went looking for one. I searched for books with Arabic names, with Muslim names, with the kinds of names that appear in our family and in families like ours across America. Names like Maryam, Zainab, Idris, Dawud. I found plenty of books with Olivers and Emilys. I found very little else — and what I did find was either low quality, poorly illustrated, or so generic that the &ldquo;personalization&rdquo; was little more than a font swap on the cover.
           </p>
 
           <p className="text-gray-600 font-semibold text-lg leading-relaxed mb-8">
-            My eldest niece or nephew — now ten — was five when I first had this idea. I remember watching them colour back then, and I thought: by the time anything is ready, they&apos;ll have outgrown it. But they became my first tester. They sat with the early designs and gave the kind of honest, unfiltered feedback that only a child can. The two-year-olds are the reason we made sure the books work for younger children too — simple, bold shapes that small hands can explore. Every age, every name, every family deserves a book that feels like it was made for them. So that&apos;s what we set out to build.
+            My eldest niece or nephew — now ten — was five when I first had this idea. I remember watching them color back then, and I thought: by the time anything is ready, they&apos;ll have outgrown it. But they became my first tester. They sat with the early designs and gave the kind of honest, unfiltered feedback that only a child can. The two-year-olds are the reason we made sure the books work for younger children too — simple, bold shapes that small hands can explore. Every age, every name, every family deserves a book that feels like it was made for them. So that&apos;s what we set out to build.
           </p>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               Where We Are Today
             </h2>
             <p className="text-gray-500 font-semibold text-lg max-w-2xl mx-auto">
-              Learn with Coloring is a small, independent UK company with a straightforward mission: every child should be able to find their name in a beautiful book.
+              Learn with Coloring is a small, independent U.S. company with a straightforward mission: every child should be able to find their name in a beautiful book.
             </p>
           </div>
 
@@ -122,14 +122,14 @@ export default function AboutPage() {
               Learn with Coloring is a very small operation — at the moment, it is largely just me. I am not a publisher or a professional illustrator. I am an aunt and uncle figure who got frustrated by a gap in the market and decided to do something about it.
             </p>
             <p className="text-gray-600 font-semibold leading-relaxed mb-4">
-              Every book in this collection has been thought through carefully — the illustrations, the name placement, the paper, the packaging. I work with talented illustrators and a UK printer I trust. Nothing goes out until I&apos;m happy with it.
+              Every book in this collection has been thought through carefully — the illustrations, the name placement, the paper, the packaging. I work with talented illustrators and a U.S. printer I trust. Nothing goes out until I&apos;m happy with it.
             </p>
             <p className="text-gray-600 font-semibold leading-relaxed mb-6">
               If you have a name you&apos;d love to see in the collection, or a suggestion, I genuinely want to hear from you. This company exists because families like yours deserve better than what was already out there.
             </p>
             <div className="border-t border-emerald-200 pt-6">
               <p className="text-gray-800 font-black text-lg">The Founder</p>
-              <p className="text-emerald-900 font-bold text-sm">Learn with Coloring, UK</p>
+              <p className="text-emerald-900 font-bold text-sm">Learn with Coloring, U.S.</p>
             </div>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function AboutPage() {
             Find Their Book
           </h2>
           <p className="text-emerald-100 font-semibold mb-8 text-lg">
-            Browse our full collection of personalised colouring books — names, festivals, and milestones.
+            Browse our full collection of personalized coloring books — names, festivals, and milestones.
           </p>
           <Link
             href="/books"

@@ -206,10 +206,10 @@ export default function CookiesPage() {
         <p className="text-gray-600 font-semibold leading-relaxed mt-3">
           Email:{" "}
           <a
-            href="mailto:hello@learnwithcoloring.co.uk"
+            href="mailto:hello@learnwithcoloring.com"
             className="underline hover:text-gray-800 transition-colors"
           >
-            hello@learnwithcoloring.co.uk
+            hello@learnwithcoloring.com
           </a>
         </p>
         <p className="text-gray-600 font-semibold leading-relaxed mt-4">
@@ -227,14 +227,14 @@ export default function CookiesPage() {
         {/* Footer note */}
         <div className="mt-14 pt-8 border-t border-gray-100">
           <p className="text-gray-400 text-sm font-semibold">
-            For more information about cookies and your rights, visit the{" "}
+            For more information about online privacy and data security, visit the{" "}
             <a
-              href="https://ico.org.uk/for-the-public/online/cookies/"
+              href="https://www.ftc.gov/business-guidance/privacy-security"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-gray-600 transition-colors"
             >
-              ICO&apos;s guidance on cookies
+              FTC privacy and security guidance
             </a>
             .
           </p>

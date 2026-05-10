@@ -44,9 +44,9 @@ function BooksContent() {
     : "Find Your Child's Book";
 
   const pageSubtitle = gender === "female"
-    ? "Beautiful personalised colouring books for girls"
+    ? "Beautiful personalized coloring books for girls"
     : gender === "male"
-    ? "Beautiful personalised colouring books for boys"
+    ? "Beautiful personalized coloring books for boys"
     : "Every child deserves a book made just for them";
 
   return (

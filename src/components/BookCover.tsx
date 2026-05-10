@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const COLOUR_MAP: Record<string, string> = {
+const COLOR_MAP: Record<string, string> = {
   "bg-teal-100": "#ccfbf1", "bg-teal-200": "#99f6e4", "bg-teal-300": "#5eead4",
   "bg-teal-400": "#2dd4bf", "bg-blue-200": "#bfdbfe", "bg-blue-300": "#93c5fd",
   "bg-purple-200": "#e9d5ff", "bg-purple-300": "#d8b4fe",
@@ -31,7 +31,7 @@ const SIZE_MAP = {
 
 export default function BookCover({ name, emoji, accent, coverImage, size = "md", isOccasion = false }: BookCoverProps) {
   const s = SIZE_MAP[size];
-  const bgColor = COLOUR_MAP[accent] ?? "#99f6e4";
+  const bgColor = COLOR_MAP[accent] ?? "#99f6e4";
 
   // Real AI-generated cover image
   if (coverImage) {
@@ -42,7 +42,7 @@ export default function BookCover({ name, emoji, accent, coverImage, size = "md"
       >
         <Image
           src={coverImage}
-          alt={`${name}'s colouring book cover`}
+          alt={`${name}'s coloring book cover`}
           fill
           className="object-cover"
           sizes={`${s.w}px`}
@@ -64,7 +64,7 @@ export default function BookCover({ name, emoji, accent, coverImage, size = "md"
         ✦ ✦ ✦
       </div>
       <div style={{ fontSize: s.label }} className="text-white/80 font-bold uppercase tracking-widest">
-        {isOccasion ? "A Special Book" : "My Colouring Book"}
+        {isOccasion ? "A Special Book" : "My Coloring Book"}
       </div>
       <div style={{ fontSize: s.emoji }} className="drop-shadow-sm leading-none">{emoji}</div>
       <div style={{ fontSize: s.text }} className="font-black text-white text-center drop-shadow leading-tight px-1">
@@ -75,7 +75,7 @@ export default function BookCover({ name, emoji, accent, coverImage, size = "md"
       <div className="absolute bottom-8 left-2 w-2 h-2 bg-white/30 rounded-full" />
       <div className="absolute bottom-8 right-2 w-3 h-3 bg-white/20 rotate-45" />
       <div className="text-white/70 text-[9px] font-bold tracking-wider uppercase">
-        ✨ Personalised for you ✨
+        ✨ Personalized for you ✨
       </div>
     </div>
   );

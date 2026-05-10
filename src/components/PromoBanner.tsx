@@ -16,9 +16,9 @@ export default function PromoBanner() {
         <span className="hidden sm:block text-amber-700 font-bold">|</span>
         <span className="text-xs sm:text-sm font-semibold">
           Was{" "}
-          <span className="line-through text-amber-700 font-bold">£19.99</span>{" "}
+          <span className="line-through text-amber-700 font-bold">$19.99</span>{" "}
           — Now only{" "}
-          <span className="font-black text-base sm:text-lg">£9.99</span>{" "}
+          <span className="font-black text-base sm:text-lg">$9.99</span>{" "}
           per book
         </span>
         <Link

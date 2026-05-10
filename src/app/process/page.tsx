@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "How Every Book Is Made — The Process | Learn with Coloring",
   description:
-    "From choosing a name to delivery at your door — see exactly how each personalised colouring book is created, reviewed, printed, and shipped. Premium quality, every time.",
+    "From choosing a name to shipping to your door — see exactly how each personalized coloring book is created, reviewed, printed, and shipped. Premium quality, every time.",
 };
 
 const STEPS = [
@@ -39,7 +39,7 @@ const STEPS = [
     accent: "text-purple-700",
     emoji: "📖",
     body:
-      "Personalisation doesn&apos;t stop at the cover. The child&apos;s name appears inside the book — in chapter headings, woven into illustrations, and across the pages throughout. When they open it, they know immediately: this one is mine.",
+      "Personalization doesn&apos;t stop at the cover. The child&apos;s name appears inside the book — in chapter headings, woven into illustrations, and across the pages throughout. When they open it, they know immediately: this one is mine.",
   },
   {
     number: "04",
@@ -50,7 +50,7 @@ const STEPS = [
     accent: "text-rose-700",
     emoji: "✅",
     body:
-      "Before anything goes to print, every book is reviewed carefully — illustration quality, name placement, page layout, and colouring lines. If something isn&apos;t right, it goes back. We would rather take longer than send out something we&apos;re not proud of.",
+      "Before anything goes to print, every book is reviewed carefully — illustration quality, name placement, page layout, and coloring lines. If something isn&apos;t right, it goes back. We would rather take longer than send out something we&apos;re not proud of.",
   },
   {
     number: "05",
@@ -61,7 +61,7 @@ const STEPS = [
     accent: "text-green-700",
     emoji: "🖨️",
     body:
-      "We print on A4 premium matte paper — thick enough for crayons and felt tips without bleed-through, with a finish that feels quality in small hands. All inks are child-safe. Printing is done entirely in the UK by a printer we trust and have worked with personally.",
+      "We print on 8.5 x 11 inch premium matte paper — thick enough for crayons and markers without bleed-through, with a finish that feels quality in small hands. All inks are child-safe. Printing is done entirely in the U.S. by a printer we trust and have worked with personally.",
   },
   {
     number: "06",
@@ -72,16 +72,16 @@ const STEPS = [
     accent: "text-indigo-700",
     emoji: "📦",
     body:
-      "Each book is carefully packaged to arrive in perfect condition — no bent corners, no damage in transit. We ship across the UK and take care to ensure the book looks exactly as it should when it lands on your doorstep, ready to gift.",
+      "Each book is carefully packaged to arrive in perfect condition — no bent corners, no damage in transit. We ship across the U.S. and take care to ensure the book looks exactly as it should when it lands on your doorstep, ready to gift.",
   },
 ];
 
 const SPECS = [
   { label: "Page Count", value: "32 pages", icon: "📄" },
-  { label: "Format", value: "A4", icon: "📐" },
+  { label: "Format", value: "8.5 x 11 in", icon: "📐" },
   { label: "Paper", value: "Premium matte", icon: "✨" },
   { label: "Inks", value: "Child-safe throughout", icon: "🎨" },
-  { label: "Printing", value: "UK printer", icon: "🇬🇧" },
+  { label: "Printing", value: "U.S. printer", icon: "🇺🇸" },
   { label: "Ages", value: "3–8 years", icon: "👶" },
 ];
 
@@ -171,7 +171,7 @@ export default function ProcessPage() {
           {/* Reassurance note */}
           <div className="mt-10 bg-white border-2 border-emerald-200 rounded-3xl p-7 sm:p-9 text-center">
             <p className="text-gray-600 font-semibold leading-relaxed text-lg mb-2">
-              We never compromise on materials. Child-safe inks, premium paper, and UK production aren&apos;t selling points — they&apos;re the baseline.
+              We never compromise on materials. Child-safe inks, premium paper, and U.S. production aren&apos;t selling points — they&apos;re the baseline.
             </p>
             <p className="text-emerald-900 font-black text-sm">
               Every book is reviewed before it goes to print. Every time.

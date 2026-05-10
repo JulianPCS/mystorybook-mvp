@@ -22,30 +22,30 @@ export default function PrivacyPage() {
       <div className="max-w-3xl mx-auto px-6 py-12">
         <p className="text-gray-600 font-semibold leading-relaxed">
           Your privacy matters to us. This policy explains what personal data Learn with Coloring
-          collects, why we collect it, how we use it, and what rights you have under UK data
-          protection law. Please read it carefully.
+          collects, why we collect it, how we use it, and the choices you have about your
+          information. Please read it carefully.
         </p>
 
         {/* 1. Who We Are */}
         <h2 className="text-xl font-black text-gray-800 mt-10 mb-3">1. Who We Are</h2>
         <p className="text-gray-600 font-semibold leading-relaxed">
-          Learn with Coloring is a UK-based company that creates personalised colouring books for
+          Learn with Coloring is a U.S.-based company that creates personalized coloring books for
           children. Our website is{" "}
           <a
-            href="https://learnwithcoloring.co.uk"
+            href="https://learnwithcoloring.com"
             className="underline hover:text-gray-800 transition-colors"
           >
-            learnwithcoloring.co.uk
+            learnwithcoloring.com
           </a>
           . We are the data controller for the personal data you provide to us.
         </p>
         <p className="text-gray-600 font-semibold leading-relaxed mt-3">
           You can contact us at any time by emailing{" "}
           <a
-            href="mailto:hello@learnwithcoloring.co.uk"
+            href="mailto:hello@learnwithcoloring.com"
             className="underline hover:text-gray-800 transition-colors"
           >
-            hello@learnwithcoloring.co.uk
+            hello@learnwithcoloring.com
           </a>
           .
         </p>
@@ -61,7 +61,7 @@ export default function PrivacyPage() {
             {
               term: "Name",
               detail:
-                "Your name or your child's name, used to personalise your coloring book and address communications to you.",
+                "Your name or your child's name, used to personalize your coloring book and address communications to you.",
             },
             {
               term: "Email address",
@@ -71,12 +71,12 @@ export default function PrivacyPage() {
             {
               term: "Book preferences",
               detail:
-                "Information about the personalisation you request (such as a child's name and chosen theme), used solely to produce your book.",
+                "Information about the personalization you request (such as a child's name and chosen theme), used solely to produce your book.",
             },
             {
               term: "Order information",
               detail:
-                "If you place an order, we collect the details necessary to fulfil and deliver it, including a delivery address.",
+                "If you place an order, we collect the details necessary to fulfill and deliver it, including a shipping address.",
             },
           ].map(({ term, detail }) => (
             <li key={term} className="flex gap-3">
@@ -100,8 +100,8 @@ export default function PrivacyPage() {
         <ul className="mt-4 flex flex-col gap-3">
           {[
             "To manage your waitlist signup and notify you when our books become available.",
-            "To fulfil your order — producing, printing, and dispatching your personalised coloring book.",
-            "To send you transactional emails related to your order (order confirmation, dispatch notification, delivery updates).",
+            "To fulfill your order — producing, printing, and shipping your personalized coloring book.",
+            "To send you transactional emails related to your order (order confirmation, shipping notification, tracking updates).",
             "To improve our website and service, based on how visitors use the site.",
             "To send you marketing communications, if you have given your consent to receive them.",
           ].map((item) => (
@@ -117,18 +117,17 @@ export default function PrivacyPage() {
           4. Legal Basis for Processing
         </h2>
         <p className="text-gray-600 font-semibold leading-relaxed">
-          Under the UK GDPR, we must have a lawful basis for processing your personal data. We rely
-          on the following:
+          We use personal data only where we have a legitimate reason to do so. The main reasons are:
         </p>
         <ul className="mt-4 flex flex-col gap-3">
           {[
             {
-              term: "Contract",
+              term: "Order fulfillment",
               detail:
-                "Where processing is necessary to fulfil an order you have placed or to take steps at your request before entering a contract.",
+                "Where processing is necessary to fulfill an order you have placed or to take steps at your request before entering a contract.",
             },
             {
-              term: "Legitimate interests",
+              term: "Business operations",
               detail:
                 "For operational activities such as managing our waitlist, improving our website, and preventing fraud — provided these interests are not overridden by your rights.",
             },
@@ -138,9 +137,9 @@ export default function PrivacyPage() {
                 "For optional marketing communications. You can withdraw your consent at any time by emailing us or clicking the unsubscribe link in any marketing email.",
             },
             {
-              term: "Legal obligation",
+              term: "Legal compliance",
               detail:
-                "Where we are required to retain data to comply with UK law (for example, financial record-keeping requirements).",
+                "Where we are required to retain data to comply with applicable record-keeping, tax, accounting, or consumer protection requirements.",
             },
           ].map(({ term, detail }) => (
             <li key={term} className="flex gap-3">
@@ -169,7 +168,7 @@ export default function PrivacyPage() {
             {
               term: "Order data",
               detail:
-                "Retained for 7 years from the date of purchase in accordance with HMRC record-keeping requirements under UK law.",
+                "Retained for up to 7 years from the date of purchase where needed for tax, accounting, customer service, or legal record-keeping purposes.",
             },
             {
               term: "Marketing consent records",
@@ -197,8 +196,8 @@ export default function PrivacyPage() {
         </p>
         <ul className="mt-4 flex flex-col gap-3">
           {[
-            "Print partners, who receive only the personalisation details needed to produce your book.",
-            "Delivery partners, who receive your name and delivery address to dispatch your order.",
+            "Print partners, who receive only the personalization details needed to produce your book.",
+            "Shipping partners, who receive your name and shipping address to ship your order.",
             "Email service providers, used to send transactional and marketing communications.",
           ].map((item) => (
             <li key={item} className="flex gap-3">
@@ -209,43 +208,43 @@ export default function PrivacyPage() {
         </ul>
         <p className="text-gray-600 font-semibold leading-relaxed mt-4">
           All third-party processors are contractually required to keep your data confidential and to
-          use it only for the purposes we specify. We do not transfer your data outside the UK or
-          European Economic Area without appropriate safeguards in place.
+          use it only for the purposes we specify. Some service providers may process data in other
+          locations, but they are required to protect it and use it only for the services they provide to us.
         </p>
 
         {/* 7. Your Rights */}
         <h2 className="text-xl font-black text-gray-800 mt-10 mb-3">7. Your Rights</h2>
         <p className="text-gray-600 font-semibold leading-relaxed">
-          Under the UK GDPR, you have the following rights in relation to your personal data:
+          Depending on where you live, you may have rights or choices in relation to your personal data:
         </p>
         <ul className="mt-4 flex flex-col gap-3">
           {[
             {
-              term: "Right of access",
+              term: "Access",
               detail: "You can request a copy of the personal data we hold about you.",
             },
             {
-              term: "Right to rectification",
+              term: "Correction",
               detail:
                 "You can ask us to correct any inaccurate or incomplete data we hold about you.",
             },
             {
-              term: "Right to erasure",
+              term: "Deletion",
               detail:
                 'You can ask us to delete your personal data where there is no compelling reason for us to continue processing it (the "right to be forgotten").',
             },
             {
-              term: "Right to data portability",
+              term: "Portability",
               detail:
                 "You can request that we provide your data in a structured, commonly used, and machine-readable format.",
             },
             {
-              term: "Right to object",
+              term: "Opt out",
               detail:
-                "You can object to our processing of your data where we rely on legitimate interests as our legal basis.",
+                "You can unsubscribe from marketing emails at any time.",
             },
             {
-              term: "Right to restrict processing",
+              term: "Restriction",
               detail:
                 "You can ask us to pause the processing of your data in certain circumstances, for example while a complaint is being investigated.",
             },
@@ -261,12 +260,12 @@ export default function PrivacyPage() {
         <p className="text-gray-600 font-semibold leading-relaxed mt-4">
           To exercise any of these rights, please email us at{" "}
           <a
-            href="mailto:hello@learnwithcoloring.co.uk"
+            href="mailto:hello@learnwithcoloring.com"
             className="underline hover:text-gray-800 transition-colors"
           >
-            hello@learnwithcoloring.co.uk
+            hello@learnwithcoloring.com
           </a>
-          . We will respond within one calendar month.
+          . We will respond as soon as reasonably possible and in line with applicable law.
         </p>
 
         {/* 8. Cookies */}
@@ -292,30 +291,29 @@ export default function PrivacyPage() {
         <p className="text-gray-600 font-semibold leading-relaxed mt-3">
           Email:{" "}
           <a
-            href="mailto:hello@learnwithcoloring.co.uk"
+            href="mailto:hello@learnwithcoloring.com"
             className="underline hover:text-gray-800 transition-colors"
           >
-            hello@learnwithcoloring.co.uk
+            hello@learnwithcoloring.com
           </a>
         </p>
         <p className="text-gray-600 font-semibold leading-relaxed mt-4">
-          If you are not satisfied with how we handle your data or your complaint, you have the right
-          to lodge a complaint with the UK&apos;s supervisory authority:
+          If you are not satisfied with how we handle your data or your complaint, please contact us
+          first so we can try to resolve it. You can also review consumer privacy and security
+          guidance from the Federal Trade Commission:
         </p>
         <p className="text-gray-600 font-semibold leading-relaxed mt-3">
-          <span className="font-black text-gray-800">Information Commissioner&apos;s Office (ICO)</span>
+          <span className="font-black text-gray-800">Federal Trade Commission</span>
           <br />
           Website:{" "}
           <a
-            href="https://ico.org.uk"
+            href="https://www.ftc.gov/business-guidance/privacy-security"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-gray-800 transition-colors"
           >
-            ico.org.uk
+            ftc.gov/privacy-security
           </a>
-          <br />
-          Helpline: 0303 123 1113
         </p>
 
         {/* Footer note */}

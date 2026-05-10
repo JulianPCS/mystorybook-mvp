@@ -42,7 +42,7 @@ export default function SamplePages() {
             What&apos;s Inside? ✨
           </h2>
           <p className="text-gray-500 font-semibold">
-            32 beautifully illustrated pages, ready to colour
+            32 beautifully illustrated pages, ready to color
           </p>
         </div>
 

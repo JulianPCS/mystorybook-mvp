@@ -50,7 +50,7 @@ create index if not exists signups_created_at_idx on public.signups (created_at 
 create index if not exists page_events_event_type_idx on public.page_events (event_type);
 
 
--- Personalised book orders (Create Your Book flow)
+-- Personalized book orders (Create Your Book flow)
 create table if not exists public.custom_orders (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz default now() not null,

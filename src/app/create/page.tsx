@@ -1,8 +1,8 @@
 import CreateBookWizard from "@/components/create/CreateBookWizard";
 
 export const metadata = {
-  title: "Create Your Personalised Colouring Book",
-  description: "Design a truly unique colouring book personalised for your child — cover character, pages, and name.",
+  title: "Create Your Personalized Coloring Book",
+  description: "Design a truly unique coloring book personalized for your child — cover character, pages, and name.",
 };
 
 export default function CreatePage() {

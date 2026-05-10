@@ -87,7 +87,7 @@ export default function AvatarBuilder({ gender, avatar, background, onChange, on
           onChange={(v) => onChange({ ...avatar, skin: v })}
         />
         <ColorSwatch
-          label="Hair Colour"
+          label="Hair Color"
           swatches={HAIR_COLORS}
           selected={avatar.hair}
           onChange={(v) => onChange({ ...avatar, hair: v })}
@@ -114,7 +114,7 @@ export default function AvatarBuilder({ gender, avatar, background, onChange, on
         </div>
 
         <ColorSwatch
-          label="Clothing Colour"
+          label="Clothing Color"
           swatches={CLOTHING_COLORS}
           selected={avatar.clothing}
           onChange={(v) => onChange({ ...avatar, clothing: v })}

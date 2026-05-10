@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Track Your Order | Learn with Coloring",
   description:
-    "Track your personalised colouring book order. Understand the production and delivery timeline, find your tracking email, and contact us if something looks wrong.",
+    "Track your personalized coloring book order. Understand the production and delivery timeline, find your tracking email, and contact us if something looks wrong.",
   keywords:
-    "track order personalised book, colouring book delivery timeline UK, order status",
+    "track order personalized book, coloring book delivery timeline US, order status",
 };
 
 const TIMELINE_STEPS = [
@@ -24,14 +24,14 @@ const TIMELINE_STEPS = [
     icon: "🖨️",
     label: "In Production",
     description:
-      "Your personalised book is being printed with your child's name. Each book is made individually — just for them.",
+      "Your personalized book is being printed with your child's name. Each book is made individually — just for them.",
     timing: "Day 1–2",
     teal: true,
   },
   {
     step: 3,
     icon: "📦",
-    label: "Dispatched",
+    label: "Shipped",
     description:
       "Your book has been packed in a protective rigid mailer and handed to the courier. We email you a tracking link at this exact point — check your inbox.",
     timing: "Day 2–3",
@@ -42,7 +42,7 @@ const TIMELINE_STEPS = [
     icon: "🚚",
     label: "Out for Delivery",
     description:
-      "Your book is on its way. Use the tracking link from your dispatch email to follow its journey in real time.",
+      "Your book is on its way. Use the tracking link from your shipping email to follow its journey in real time.",
     timing: "Day 3–6",
     teal: false,
   },
@@ -72,7 +72,7 @@ export default function TrackPage() {
           </h1>
           <p className="text-gray-500 text-lg sm:text-xl font-semibold max-w-2xl mx-auto">
             Your tracking link is sent by email the moment your book is
-            dispatched. Here is what to expect at every step of the journey —
+            shipped. Here is what to expect at every step of the journey —
             from order to doorstep.
           </p>
         </div>
@@ -85,14 +85,14 @@ export default function TrackPage() {
             <span className="text-4xl flex-shrink-0">📧</span>
             <div>
               <p className="font-black text-gray-800 text-lg mb-1">
-                Check your dispatch email first
+                Check your shipping email first
               </p>
               <p className="text-gray-600 font-semibold leading-relaxed">
-                When your book is dispatched, we send a tracking link to the
+                When your book is shipped, we send a tracking link to the
                 email address you used at checkout. Check your inbox and spam
                 folder for an email from{" "}
                 <span className="text-emerald-800 font-black">
-                  hello@learnwithcoloring.co.uk
+                  hello@learnwithcoloring.com
                 </span>
                 . If you cannot find it and it has been more than 3 business
                 days since ordering, please{" "}
@@ -191,7 +191,7 @@ export default function TrackPage() {
 
           <p className="text-center text-gray-500 font-semibold text-sm mt-8">
             All timings are estimates in business days (Monday–Friday, excluding
-            UK public holidays).
+            U.S. federal holidays).
           </p>
         </div>
       </section>
@@ -206,7 +206,7 @@ export default function TrackPage() {
             </h2>
             <p className="text-gray-600 font-semibold leading-relaxed mb-4">
               If it has been more than 7 business days since you placed your
-              order and you have not received a dispatch email or your book,
+              order and you have not received a shipping email or your book,
               please get in touch. We will investigate and resolve it quickly.
             </p>
             <p className="text-gray-500 font-semibold text-sm mb-6">
@@ -214,10 +214,10 @@ export default function TrackPage() {
               approximate order date — that is all we need to look it up.
             </p>
             <a
-              href="mailto:hello@learnwithcoloring.co.uk"
+              href="mailto:hello@learnwithcoloring.com"
               className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
             >
-              hello@learnwithcoloring.co.uk
+              hello@learnwithcoloring.com
             </a>
           </div>
         </div>
@@ -230,8 +230,8 @@ export default function TrackPage() {
             Haven&apos;t Ordered Yet?
           </h2>
           <p className="text-emerald-100 font-semibold mb-8 text-lg">
-            Browse our collection of personalised colouring books — free UK
-            delivery included on every single order.
+            Browse our collection of personalized coloring books — free U.S.
+            shipping included on every single order.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -244,7 +244,7 @@ export default function TrackPage() {
               href="/delivery"
               className="inline-block border-2 border-white text-white font-black text-lg px-8 py-4 rounded-2xl hover:-translate-y-0.5 transition-all duration-200"
             >
-              Delivery Information
+              Shipping Information
             </Link>
           </div>
         </div>

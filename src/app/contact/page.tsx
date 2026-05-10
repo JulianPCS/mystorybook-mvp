@@ -4,15 +4,15 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Us | Learn with Coloring",
   description:
-    "Get in touch with the Learn with Coloring team. We're based in the UK and respond to all enquiries within 24 hours.",
+    "Get in touch with the Learn with Coloring team. We're based in the U.S. and respond to all inquiries within 24 hours.",
   keywords:
-    "contact learn with coloring, personalised colouring book help, customer support UK",
+    "contact learn with coloring, personalized coloring book help, customer support US",
 };
 
 const SUBJECTS = [
   "Select a subject…",
-  "Order enquiry",
-  "Delivery question",
+  "Order inquiry",
+  "Shipping question",
   "Returns & refunds",
   "My child's name isn't listed",
   "Gift orders",
@@ -68,10 +68,10 @@ export default function ContactPage() {
                   <span className="font-black">Note:</span> Our contact form is
                   coming very soon. In the meantime, please email us directly at{" "}
                   <a
-                    href="mailto:hello@learnwithcoloring.co.uk"
+                    href="mailto:hello@learnwithcoloring.com"
                     className="underline hover:text-amber-800 transition-colors"
                   >
-                    hello@learnwithcoloring.co.uk
+                    hello@learnwithcoloring.com
                   </a>{" "}
                   and we&apos;ll get back to you promptly.
                 </p>
@@ -182,10 +182,10 @@ export default function ContactPage() {
                 The quickest way to reach us right now.
               </p>
               <a
-                href="mailto:hello@learnwithcoloring.co.uk"
+                href="mailto:hello@learnwithcoloring.com"
                 className="text-emerald-800 font-black hover:text-emerald-900 transition-colors break-all"
               >
-                hello@learnwithcoloring.co.uk
+                hello@learnwithcoloring.com
               </a>
             </div>
 
@@ -198,7 +198,7 @@ export default function ContactPage() {
                 Response time
               </h3>
               <p className="text-gray-500 font-semibold text-sm leading-relaxed">
-                We reply to every enquiry{" "}
+                We reply to every inquiry{" "}
                 <span className="text-gray-700 font-black">
                   within 24 hours
                 </span>{" "}
@@ -210,15 +210,15 @@ export default function ContactPage() {
             {/* Location card */}
             <div className="bg-white border-2 border-emerald-100 rounded-3xl p-6">
               <div className="w-10 h-10 bg-emerald-50 border-2 border-emerald-200 rounded-2xl flex items-center justify-center text-xl mb-4">
-                🇬🇧
+                🇺🇸
               </div>
               <h3 className="font-black text-gray-800 text-lg mb-1">
-                Based in the UK
+                Based in the U.S.
               </h3>
               <p className="text-gray-500 font-semibold text-sm leading-relaxed">
-                We&apos;re a small UK-based team passionate about creating
-                meaningful books for British families. Every book is printed and
-                shipped from within the UK.
+                We&apos;re a small U.S.-based team passionate about creating
+                meaningful books for American families. Every book is printed and
+                shipped from within the U.S.
               </p>
             </div>
 

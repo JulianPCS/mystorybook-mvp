@@ -4,27 +4,27 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Why Coloring? The Science Behind Learning Through Art | Learn with Coloring",
   description:
-    "Discover the scientifically proven educational benefits of colouring for children aged 3–8. From fine motor skills to emotional regulation — the research is clear.",
+    "Discover the scientifically proven educational benefits of coloring for children aged 3–8. From fine motor skills to emotional regulation — the research is clear.",
 };
 
 const STATS = [
-  { value: "68%", label: "improvement in fine motor skills after regular colouring practice", source: "American Journal of Occupational Therapy" },
-  { value: "30min", label: "of colouring daily shown to reduce anxiety in children by up to 45%", source: "Art Therapy Journal, 2021" },
-  { value: "2×", label: "faster pre-writing skill development vs. children who don't colour regularly", source: "Early Childhood Education Journal" },
-  { value: "3–8", label: "the golden years — when colouring has the greatest developmental impact", source: "Child Development Research" },
+  { value: "68%", label: "improvement in fine motor skills after regular coloring practice", source: "American Journal of Occupational Therapy" },
+  { value: "30min", label: "of coloring daily shown to reduce anxiety in children by up to 45%", source: "Art Therapy Journal, 2021" },
+  { value: "2×", label: "faster pre-writing skill development vs. children who don't color regularly", source: "Early Childhood Education Journal" },
+  { value: "3–8", label: "the golden years — when coloring has the greatest developmental impact", source: "Child Development Research" },
 ];
 
 const BENEFITS = [
   {
     emoji: "✏️",
     title: "Fine Motor Skills & Pre-Writing",
-    colour: "teal",
+    color: "teal",
     bg: "bg-emerald-50",
     border: "border-emerald-200",
     accent: "text-emerald-900",
     badge: "bg-emerald-100 text-emerald-900",
-    summary: "Colouring is one of the best pre-writing exercises children can do.",
-    detail: "Gripping a crayon, applying controlled pressure, and staying within lines directly trains the small muscles of the hand and wrist. Research from the American Journal of Occupational Therapy shows that children who colour regularly develop pencil grip and hand strength significantly faster — giving them a head start when they begin writing letters.",
+    summary: "Coloring is one of the best pre-writing exercises children can do.",
+    detail: "Gripping a crayon, applying controlled pressure, and staying within lines directly trains the small muscles of the hand and wrist. Research from the American Journal of Occupational Therapy shows that children who color regularly develop pencil grip and hand strength significantly faster — giving them a head start when they begin writing letters.",
     studies: [
       "Marr, D. et al. (2003). Fine motor activities in Head Start. American Journal of Occupational Therapy.",
       "Case-Smith, J. (1995). The relationships among sensorimotor components, fine motor skill, and functional performance in preschool children. American Journal of Occupational Therapy.",
@@ -33,28 +33,28 @@ const BENEFITS = [
   {
     emoji: "🧠",
     title: "Brain Development & Cognitive Growth",
-    colour: "purple",
+    color: "purple",
     bg: "bg-purple-50",
     border: "border-purple-200",
     accent: "text-purple-700",
     badge: "bg-purple-100 text-purple-700",
-    summary: "Colouring simultaneously activates both hemispheres of the brain.",
-    detail: "The logical left hemisphere handles structure — keeping within lines, choosing sequences of colours. The creative right hemisphere drives imagination and colour choice. This bilateral activation strengthens neural pathways and is associated with improved problem-solving, pattern recognition, and even early mathematical thinking. A 2019 study in Frontiers in Psychology found that structured art activities significantly increased cognitive flexibility in children aged 4–7.",
+    summary: "Coloring simultaneously activates both hemispheres of the brain.",
+    detail: "The logical left hemisphere handles structure — keeping within lines, choosing sequences of colors. The creative right hemisphere drives imagination and color choice. This bilateral activation strengthens neural pathways and is associated with improved problem-solving, pattern recognition, and even early mathematical thinking. A 2019 study in Frontiers in Psychology found that structured art activities significantly increased cognitive flexibility in children aged 4–7.",
     studies: [
-      "Özsoy, S. (2012). The effect of drawing on the development of cognitive skills. Procedia – Social and Behavioural Sciences.",
+      "Özsoy, S. (2012). The effect of drawing on the development of cognitive skills. Procedia – Social and Behavioral Sciences.",
       "Zhao, M. et al. (2019). Art activities and cognitive flexibility in early childhood. Frontiers in Psychology.",
     ],
   },
   {
     emoji: "🎯",
     title: "Focus, Attention & Concentration",
-    colour: "amber",
+    color: "amber",
     bg: "bg-amber-50",
     border: "border-amber-200",
     accent: "text-amber-700",
     badge: "bg-amber-100 text-amber-700",
-    summary: "Colouring is one of the few screen-free activities that genuinely trains sustained attention.",
-    detail: "Unlike passive screen time, colouring requires a child to maintain focus on a single task for an extended period. Studies show it activates the prefrontal cortex — the area responsible for executive function, planning, and impulse control. Children who engage in regular colouring activities demonstrate longer attention spans and better self-regulation in classroom settings.",
+    summary: "Coloring is one of the few screen-free activities that genuinely trains sustained attention.",
+    detail: "Unlike passive screen time, coloring requires a child to maintain focus on a single task for an extended period. Studies show it activates the prefrontal cortex — the area responsible for executive function, planning, and impulse control. Children who engage in regular coloring activities demonstrate longer attention spans and better self-regulation in classroom settings.",
     studies: [
       "Diamond, A. (2013). Executive functions. Annual Review of Psychology.",
       "Russ, S.W. & Wallace, C.E. (2013). Pretend play and creative processes. American Journal of Play.",
@@ -62,14 +62,14 @@ const BENEFITS = [
   },
   {
     emoji: "🌈",
-    title: "Colour Recognition & Language",
-    colour: "rose",
+    title: "Color Recognition & Language",
+    color: "rose",
     bg: "bg-rose-50",
     border: "border-rose-200",
     accent: "text-rose-700",
     badge: "bg-rose-100 text-rose-700",
-    summary: "Colouring is a natural, engaging way to expand a child's vocabulary.",
-    detail: "When a child colours, they naturally learn the names of colours, shades, and descriptive language — \"light blue\", \"dark green\", \"bright yellow\". This builds a rich vocabulary foundation. Research in early childhood education confirms that hands-on colour activities improve colour discrimination, naming accuracy, and descriptive language use — all key literacy precursors.",
+    summary: "Coloring is a natural, engaging way to expand a child's vocabulary.",
+    detail: "When a child colors, they naturally learn the names of colors, shades, and descriptive language — \"light blue\", \"dark green\", \"bright yellow\". This builds a rich vocabulary foundation. Research in early childhood education confirms that hands-on color activities improve color discrimination, naming accuracy, and descriptive language use — all key literacy precursors.",
     studies: [
       "Jalongo, M.R. (2000). Early childhood language arts. Allyn & Bacon.",
       "Neuman, S.B. & Roskos, K. (1992). Literacy objects as cultural tools. Reading Research Quarterly.",
@@ -78,22 +78,22 @@ const BENEFITS = [
   {
     emoji: "💛",
     title: "Emotional Regulation & Wellbeing",
-    colour: "green",
+    color: "green",
     bg: "bg-green-50",
     border: "border-green-200",
     accent: "text-green-700",
     badge: "bg-green-100 text-green-700",
-    summary: "Colouring has a measurable calming effect — for children and adults alike.",
-    detail: "Art therapy research consistently shows that colouring activates the brain's relaxation response, lowering cortisol levels and reducing anxiety. For young children who may struggle to articulate emotions, colouring provides a healthy, non-verbal outlet. A landmark 2021 study in the Art Therapy Journal found that just 20–30 minutes of colouring significantly reduced self-reported anxiety in children aged 5–10.",
+    summary: "Coloring has a measurable calming effect — for children and adults alike.",
+    detail: "Art therapy research consistently shows that coloring activates the brain's relaxation response, lowering cortisol levels and reducing anxiety. For young children who may struggle to articulate emotions, coloring provides a healthy, non-verbal outlet. A landmark 2021 study in the Art Therapy Journal found that just 20–30 minutes of coloring significantly reduced self-reported anxiety in children aged 5–10.",
     studies: [
-      "Curry, N.A. & Kasser, T. (2005). Can colouring mandalas reduce anxiety? Art Therapy: Journal of the American Art Therapy Association.",
-      "Drake, J.E. et al. (2021). Colouring as a brief art-based intervention to improve mood. Art Therapy.",
+      "Curry, N.A. & Kasser, T. (2005). Can coloring mandalas reduce anxiety? Art Therapy: Journal of the American Art Therapy Association.",
+      "Drake, J.E. et al. (2021). Coloring as a brief art-based intervention to improve mood. Art Therapy.",
     ],
   },
   {
     emoji: "🤝",
     title: "Cultural Identity & Belonging",
-    colour: "indigo",
+    color: "indigo",
     bg: "bg-indigo-50",
     border: "border-indigo-200",
     accent: "text-indigo-700",
@@ -115,7 +115,7 @@ const AGES = [
     border: "border-pink-200",
     points: [
       "Develops basic grip and hand control",
-      "Introduces colour naming",
+      "Introduces color naming",
       "Encourages mark-making — the first step to writing",
     ],
   },
@@ -127,7 +127,7 @@ const AGES = [
     points: [
       "Builds sustained focus (critical for school readiness)",
       "Improves within-the-lines precision",
-      "Strengthens colour recognition and vocabulary",
+      "Strengthens color recognition and vocabulary",
     ],
   },
   {
@@ -153,12 +153,12 @@ export default function WhyColoringPage() {
             🔬 Evidence-Based Learning
           </div>
           <h1 className="text-4xl sm:text-5xl font-black text-gray-800 leading-tight mb-5">
-            Why Colouring Is One of the{" "}
+            Why Coloring Is One of the{" "}
             <span className="text-emerald-700">Best Things</span>{" "}
             Your Child Can Do
           </h1>
           <p className="text-gray-500 text-lg sm:text-xl font-semibold max-w-2xl mx-auto mb-10">
-            It looks like simple fun — but the science shows colouring is a powerhouse activity for children&apos;s development, from brain growth to emotional wellbeing.
+            It looks like simple fun — but the science shows coloring is a powerhouse activity for children&apos;s development, from brain growth to emotional wellbeing.
           </p>
           <Link
             href="/books"
@@ -236,7 +236,7 @@ export default function WhyColoringPage() {
               What Your Child Gains at Every Age
             </h2>
             <p className="text-gray-500 font-semibold text-lg">
-              The benefits of colouring evolve as your child grows.
+              The benefits of coloring evolve as your child grows.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -258,19 +258,19 @@ export default function WhyColoringPage() {
         </div>
       </section>
 
-      {/* ── Personalisation note ── */}
+      {/* ── Personalization note ── */}
       <section className="py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="bg-emerald-50 border-2 border-emerald-200 rounded-3xl p-8 sm:p-10 text-center">
             <div className="text-5xl mb-5">💡</div>
             <h2 className="text-2xl sm:text-3xl font-black text-gray-800 mb-4">
-              Why Personalisation Multiplies the Benefits
+              Why Personalization Multiplies the Benefits
             </h2>
             <p className="text-gray-600 font-semibold leading-relaxed mb-4">
-              Generic colouring books are great. But when a child sees <em>their own name</em> on the cover, their favourite festival, or a character that looks like them — engagement skyrockets.
+              Generic coloring books are great. But when a child sees <em>their own name</em> on the cover, their favorite festival, or a character that looks like them — engagement skyrockets.
             </p>
             <p className="text-gray-600 font-semibold leading-relaxed mb-4">
-              Child psychologists confirm that personalised materials increase motivation and time-on-task. More time colouring means more fine motor practice, more focus training, and more emotional benefit.
+              Child psychologists confirm that personalized materials increase motivation and time-on-task. More time coloring means more fine motor practice, more focus training, and more emotional benefit.
             </p>
             <p className="text-gray-500 text-sm font-bold italic">
               &ldquo;Children learn best when they see themselves in the materials in front of them.&rdquo;
@@ -284,10 +284,10 @@ export default function WhyColoringPage() {
       <section className="py-16 px-4 sm:px-6 bg-emerald-700">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl font-black text-white mb-3">
-            Give Them the Gift of Learning Through Colour 🎨
+            Give Them the Gift of Learning Through Color 🎨
           </h2>
           <p className="text-emerald-100 font-semibold mb-8 text-lg">
-            A personalised colouring book that&apos;s fun, meaningful, and genuinely good for them.
+            A personalized coloring book that&apos;s fun, meaningful, and genuinely good for them.
           </p>
           <Link
             href="/books"

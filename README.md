@@ -1,6 +1,6 @@
-# MyStoryBook — Personalised Children's Colouring Books
+# MyStoryBook — Personalized Children's Coloring Books
 
-Fake-door MVP to validate demand for personalised children's colouring books targeting UK parents.
+Fake-door MVP to validate demand for personalized children's coloring books targeting U.S. parents.
 
 ## Stack
 - **Next.js 14** (App Router, TypeScript)

@@ -58,7 +58,7 @@ function StandardBackCover({ name }: { name: string }) {
             This book belongs to {name}
           </p>
           <p className="text-[10px] leading-relaxed text-cream/75">
-            A personalised colouring keepsake, made with care in the UK.
+            A personalized coloring keepsake, made with care in the U.S.
           </p>
         </div>
         <div className="h-6 w-20 rounded bg-white/90 border border-gold-100" />
@@ -137,9 +137,9 @@ export default function StepReview({ name, generatedCoverUrl, pages, onSubmit }:
 
       {/* Price callout */}
       <div className="bg-gold-50 border border-gold-200 rounded-2xl p-4 text-center space-y-1">
-        <p className="text-2xl font-extrabold text-emerald-900">£30</p>
+        <p className="text-2xl font-extrabold text-emerald-900">$30</p>
         <p className="text-sm text-emerald-700">
-          Personalised A4 colouring book · Printed &amp; delivered to your door · UK free delivery
+          Personalized 8.5 x 11 inch coloring book · Printed &amp; delivered to your door · free U.S. shipping
         </p>
       </div>
 
@@ -181,7 +181,7 @@ export default function StepReview({ name, generatedCoverUrl, pages, onSubmit }:
           disabled={loading}
           className="w-full bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 disabled:opacity-60 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md"
         >
-          {loading ? "Reserving your book…" : `Reserve ${name}'s Book — £30`}
+          {loading ? "Reserving your book…" : `Reserve ${name}'s Book — $30`}
         </button>
 
         <p className="text-xs text-center text-gray-400">

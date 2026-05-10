@@ -112,14 +112,14 @@ export default function CheckoutModal({
           <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3 mb-3">
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="flex items-baseline gap-2">
-                <span className="text-2xl font-black text-gray-900">£9.99</span>
-                <span className="text-base text-gray-400 line-through font-semibold">£19.99</span>
+                <span className="text-2xl font-black text-gray-900">$9.99</span>
+                <span className="text-base text-gray-400 line-through font-semibold">$19.99</span>
               </div>
               <span className="bg-amber-400 text-gray-900 text-xs font-black px-2 py-0.5 rounded uppercase tracking-wide">
                 50% Off
               </span>
             </div>
-            <p className="text-xs text-amber-700 font-semibold mt-1">Launch offer · incl. UK delivery</p>
+            <p className="text-xs text-amber-700 font-semibold mt-1">Launch offer · incl. U.S. shipping</p>
           </div>
 
           {/* Counter */}

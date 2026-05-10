@@ -4,26 +4,26 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Returns and Refund Policy | Learn with Coloring",
   description:
-    "Our returns policy for personalised children's colouring books. Honest, fair, and written in plain English. Damaged or wrong items replaced or refunded, no quibbles.",
+    "Our returns policy for personalized children's coloring books. Honest, fair, and written in plain English. Damaged or wrong items replaced or refunded, no hassle.",
   keywords:
-    "personalised book returns policy, refund colouring book UK, damaged book replacement",
+    "personalized book returns policy, refund coloring book US, damaged book replacement",
 };
 
 const POLICIES = [
   {
     icon: "🎨",
-    title: "Personalised Items — Change of Mind",
+    title: "Personalized Items — Change of Mind",
     bg: "bg-gray-50",
     border: "border-gray-200",
-    headingColour: "text-gray-800",
+    headingColor: "text-gray-800",
     body: [
-      "Because every book is printed specifically for your child — with their name woven through the pages — we are unable to accept returns for change of mind. This is standard practice for personalised, made-to-order goods and is covered under UK consumer law.",
+      "Because every book is printed specifically for your child — with their name woven through the pages — we are unable to accept returns for change of mind. This is standard practice for personalized, customized, made-to-order products.",
       "We encourage you to double-check the name spelling and book selection before you complete your order. If you have any questions beforehand, please get in touch — we are happy to help before you commit.",
     ],
     checklist: null,
     cta: {
       label: "Ask us anything first",
-      href: "mailto:hello@learnwithcoloring.co.uk",
+      href: "mailto:hello@learnwithcoloring.com",
     },
   },
   {
@@ -31,10 +31,10 @@ const POLICIES = [
     title: "Damaged or Defective Book",
     bg: "bg-emerald-50",
     border: "border-emerald-200",
-    headingColour: "text-emerald-900",
+    headingColor: "text-emerald-900",
     body: [
       "If your book arrives damaged — whether that is a production defect, a printing error, or damage that happened in transit — we will make it right. No argument, no hassle.",
-      "Email us at hello@learnwithcoloring.co.uk within 7 days of receiving your order and include:",
+      "Email us at hello@learnwithcoloring.com within 7 days of receiving your order and include:",
     ],
     checklist: [
       "Your order reference or the name used on the book",
@@ -48,10 +48,10 @@ const POLICIES = [
     title: "Wrong Item Received",
     bg: "bg-amber-50",
     border: "border-amber-200",
-    headingColour: "text-amber-700",
+    headingColor: "text-amber-700",
     body: [
       "If you received a book with the wrong name or the wrong title, that is entirely on us and we will fix it immediately.",
-      "Email hello@learnwithcoloring.co.uk with your order details and a photo of what arrived. We will dispatch the correct book at no extra cost, or issue a full refund if you prefer.",
+      "Email hello@learnwithcoloring.com with your order details and a photo of what arrived. We will ship the correct book at no extra cost, or issue a full refund if you prefer.",
     ],
     checklist: null,
     cta: null,
@@ -61,7 +61,7 @@ const POLICIES = [
     title: "Waitlist and Pre-Launch Orders",
     bg: "bg-green-50",
     border: "border-green-200",
-    headingColour: "text-green-700",
+    headingColor: "text-green-700",
     body: [
       "We are currently in our launch phase and collecting waitlist sign-ups. No payment is taken at the point of registration, so refunds do not apply at this stage.",
       "Once we open for orders, our full returns policy applies from the very first purchase. You will be in safe hands.",
@@ -103,7 +103,7 @@ export default function ReturnsPage() {
               <div className="flex items-center gap-3 mb-5">
                 <span className="text-3xl">{policy.icon}</span>
                 <h2
-                  className={`text-xl sm:text-2xl font-black ${policy.headingColour}`}
+                  className={`text-xl sm:text-2xl font-black ${policy.headingColor}`}
                 >
                   {policy.title}
                 </h2>
@@ -165,10 +165,10 @@ export default function ReturnsPage() {
               We aim to respond to every email within one business day.
             </p>
             <a
-              href="mailto:hello@learnwithcoloring.co.uk"
+              href="mailto:hello@learnwithcoloring.com"
               className="inline-block bg-emerald-700 hover:bg-emerald-800 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-emerald-200"
             >
-              hello@learnwithcoloring.co.uk
+              hello@learnwithcoloring.com
             </a>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function ReturnsPage() {
             Ready to Find the Perfect Book?
           </h2>
           <p className="text-emerald-100 font-semibold mb-8 text-lg">
-            Explore our range of personalised colouring books — made with care,
+            Explore our range of personalized coloring books — made with care,
             delivered with confidence.
           </p>
           <Link

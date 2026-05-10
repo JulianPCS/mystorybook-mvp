@@ -77,16 +77,16 @@ function buildIslamicPrompt(config: CoverConfig): string {
   return `Create a luxurious Islamic children's coloring book cover in a rich ${colorScheme} palette, inspired by premium Ramadan storybooks and elegant mosque architecture. Magical, warm, educational, highly professional.
 
 Main title in large ornate gold typography: "${name.toUpperCase()}'S"
-Subtitle: "FIRST COLOURING BOOK"
-Badge: "Fun & Easy Colouring Pages for Little Muslims"
+Subtitle: "FIRST COLORING BOOK"
+Badge: "Fun & Easy Coloring Pages for Little Muslims"
 Age badge: "Ages 4–6 Years"
-Tagline: "Learn • Colour • Grow"
+Tagline: "Learn • Color • Grow"
 
-Scene: ${char}, sitting on the floor colouring inside an open Islamic coloring book. Pages show mosque sketches, crescent moons, arabesque patterns. Background: ${bgTheme}. Grand Islamic arch framing the composition. Hanging crescent moon and stars. Two glowing ornate Ramadan lanterns on both sides. Rich geometric Islamic border patterns. Coloured pencils and a small lantern near the child.
+Scene: ${char}, sitting on the floor coloring inside an open Islamic coloring book. Pages show mosque sketches, crescent moons, arabesque patterns. Background: ${bgTheme}. Grand Islamic arch framing the composition. Hanging crescent moon and stars. Two glowing ornate Ramadan lanterns on both sides. Rich geometric Islamic border patterns. Colored pencils and a small lantern near the child.
 
 Style: Premium Pixar-inspired children's book art, soft painterly rendering, warm cinematic lighting, ${colorScheme} scheme, symmetrical, magical, high-end KDP publishing quality, ornamental borders, embossed gold typography.
 
-Mood: Spiritual, cosy, educational, wonder-filled.
+Mood: Spiritual, cozy, educational, wonder-filled.
 
 Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
 
@@ -96,19 +96,19 @@ Negative: photorealistic, blurry text, distorted anatomy, extra fingers, waterma
 function buildEverydayPrompt(config: CoverConfig): string {
   const { name, gender, skin, colorScheme, bgTheme } = config;
   const char = universalCharacterDesc(gender, skin, colorScheme, "everyday");
-  return `Create a premium personalised children's colouring book cover in a ${colorScheme} palette. Elegant, joyful, polished, giftable, and suitable for a high-quality UK family brand.
+  return `Create a premium personalized children's coloring book cover in a ${colorScheme} palette. Elegant, joyful, polished, giftable, and suitable for a high-quality US family brand.
 
 Main title in bold friendly gold typography: "${name.toUpperCase()}'S"
-Subtitle: "FIRST COLOURING BOOK"
-Badge: "Fun & Easy Colouring Pages"
+Subtitle: "FIRST COLORING BOOK"
+Badge: "Fun & Easy Coloring Pages"
 Age badge: "Ages 4–6 Years"
-Tagline: "Learn • Colour • Grow"
+Tagline: "Learn • Color • Grow"
 
-Scene: ${char}, happily colouring inside an open book filled with simple illustrations. Background setting: ${bgTheme}. The environment feels cosy, bright, polished and inviting. Natural light fills the scene. Coloured pencils, crayons, and open books sit neatly near the child. Use a clean illustrated border themed only to the selected everyday setting.
+Scene: ${char}, happily coloring inside an open book filled with simple illustrations. Background setting: ${bgTheme}. The environment feels cozy, bright, polished and inviting. Natural light fills the scene. Colored pencils, crayons, and open books sit neatly near the child. Use a clean illustrated border themed only to the selected everyday setting.
 
-Style: Premium storybook illustration, soft painterly rendering, bright warm lighting, ${colorScheme} colour scheme, balanced symmetrical composition, high-end publishing quality, clean readable typography with a tasteful gold emboss effect.
+Style: Premium storybook illustration, soft painterly rendering, bright warm lighting, ${colorScheme} color scheme, balanced symmetrical composition, high-end publishing quality, clean readable typography with a tasteful gold emboss effect.
 
-Mood: Joyful, cosy, educational, warm, approachable.
+Mood: Joyful, cozy, educational, warm, approachable.
 
 Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
 
@@ -118,17 +118,17 @@ Negative: Islamic architecture, mosque, minaret, dome skyline, mihrab arch, arab
 function buildFantasyPrompt(config: CoverConfig): string {
   const { name, gender, skin, colorScheme, bgTheme } = config;
   const char = universalCharacterDesc(gender, skin, colorScheme, "fantasy");
-  return `Create a luxurious fantasy children's colouring book cover in a ${colorScheme} palette. Magical, cinematic, polished, giftable, and suitable for a high-quality UK family brand.
+  return `Create a luxurious fantasy children's coloring book cover in a ${colorScheme} palette. Magical, cinematic, polished, giftable, and suitable for a high-quality US family brand.
 
 Main title in large premium fairytale gold typography: "${name.toUpperCase()}'S"
-Subtitle: "FIRST COLOURING BOOK"
-Badge: "Fun & Easy Colouring Pages"
+Subtitle: "FIRST COLORING BOOK"
+Badge: "Fun & Easy Coloring Pages"
 Age badge: "Ages 4–6 Years"
-Tagline: "Learn • Colour • Grow"
+Tagline: "Learn • Color • Grow"
 
-Scene: ${char}, wide-eyed with wonder, holding an open colouring book filled with fantastical illustrations. Background setting: ${bgTheme}. The cover must visually commit to this selected fantasy setting. The scene feels magical, grand, premium and awe-inspiring. Glowing light, soft sparkles, and magical particles fill the air. Use a refined decorative border themed only to the selected fantasy setting.
+Scene: ${char}, wide-eyed with wonder, holding an open coloring book filled with fantastical illustrations. Background setting: ${bgTheme}. The cover must visually commit to this selected fantasy setting. The scene feels magical, grand, premium and awe-inspiring. Glowing light, soft sparkles, and magical particles fill the air. Use a refined decorative border themed only to the selected fantasy setting.
 
-Style: Premium storybook art, soft painterly rendering, dramatic cinematic lighting with glowing magical effects, ${colorScheme} colour scheme, symmetrical composition, high-end publishing quality, tasteful embossed gold typography.
+Style: Premium storybook art, soft painterly rendering, dramatic cinematic lighting with glowing magical effects, ${colorScheme} color scheme, symmetrical composition, high-end publishing quality, tasteful embossed gold typography.
 
 Mood: Wonder-filled, adventurous, magical, exciting, imaginative.
 
