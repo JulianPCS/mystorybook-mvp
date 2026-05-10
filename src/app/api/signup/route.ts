@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { child_name, parent_email, book_slug, utm_source, utm_campaign, utm_medium } = body;
+    const { child_name, parent_name, parent_email, book_slug, utm_source, utm_campaign, utm_medium } = body;
 
     if (!child_name || !parent_email || !book_slug) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -12,6 +12,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await supabase.from("signups").insert({
       child_name: child_name.trim(),
+      parent_name: parent_name?.trim() || null,
       parent_email: parent_email.trim().toLowerCase(),
       book_slug: book_slug.trim(),
       utm_source: utm_source || null,

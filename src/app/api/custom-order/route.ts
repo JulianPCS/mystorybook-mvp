@@ -6,6 +6,7 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const {
       child_name,
+      parent_name,
       parent_email,
       gender,
       skin,
@@ -21,6 +22,7 @@ export async function POST(req: NextRequest) {
 
     const { error } = await supabase.from("custom_orders").insert({
       child_name: child_name.trim(),
+      parent_name: parent_name?.trim() || null,
       parent_email: parent_email.trim().toLowerCase(),
       gender: gender || null,
       cover_options: { skin, color_scheme, bg_theme },

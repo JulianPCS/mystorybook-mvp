@@ -26,6 +26,7 @@ export default function CheckoutModal({
 }: CheckoutModalProps) {
   const router = useRouter();
   const [name, setName] = useState(childName);
+  const [parentName, setParentName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -58,6 +59,7 @@ export default function CheckoutModal({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           child_name: name.trim(),
+          parent_name: parentName.trim(),
           parent_email: email.trim().toLowerCase(),
           book_slug: bookSlug,
           utm_source: utmSource,
@@ -140,6 +142,20 @@ export default function CheckoutModal({
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Maryam"
+              required
+              className="w-full border-2 border-emerald-100 rounded-2xl px-4 py-3 text-gray-800 font-semibold focus:outline-none focus:border-emerald-500 transition-colors"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-1">
+              Your First Name
+            </label>
+            <input
+              type="text"
+              value={parentName}
+              onChange={(e) => setParentName(e.target.value)}
+              placeholder="e.g. Sarah"
               required
               className="w-full border-2 border-emerald-100 rounded-2xl px-4 py-3 text-gray-800 font-semibold focus:outline-none focus:border-emerald-500 transition-colors"
             />

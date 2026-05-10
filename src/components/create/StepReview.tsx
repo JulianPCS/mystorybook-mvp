@@ -8,16 +8,21 @@ type Props = {
   name: string;
   generatedCoverUrl: string | null;
   pages: string[];
-  onSubmit: (email: string) => Promise<void>;
+  onSubmit: (parentName: string, email: string) => Promise<void>;
 };
 
 export default function StepReview({ name, generatedCoverUrl, pages, onSubmit }: Props) {
+  const [parentName, setParentName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!parentName.trim()) {
+      setError("Please enter your first name.");
+      return;
+    }
     if (!email.trim()) {
       setError("Please enter your email address.");
       return;
@@ -25,7 +30,7 @@ export default function StepReview({ name, generatedCoverUrl, pages, onSubmit }:
     setError("");
     setLoading(true);
     try {
-      await onSubmit(email.trim());
+      await onSubmit(parentName.trim(), email.trim());
     } catch {
       setError("Something went wrong. Please try again.");
       setLoading(false);
@@ -98,18 +103,33 @@ export default function StepReview({ name, generatedCoverUrl, pages, onSubmit }:
 
       {/* Order form */}
       <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-1.5">
-          <label htmlFor="parent-email" className="block text-sm font-semibold text-gray-700">
-            Your email address
-          </label>
-          <input
-            id="parent-email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
-          />
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div className="space-y-1.5">
+            <label htmlFor="parent-name" className="block text-sm font-semibold text-gray-700">
+              Your first name
+            </label>
+            <input
+              id="parent-name"
+              type="text"
+              value={parentName}
+              onChange={(e) => setParentName(e.target.value)}
+              placeholder="e.g. Sarah"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            />
+          </div>
+          <div className="space-y-1.5">
+            <label htmlFor="parent-email" className="block text-sm font-semibold text-gray-700">
+              Your email address
+            </label>
+            <input
+              id="parent-email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@example.com"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent"
+            />
+          </div>
         </div>
 
         {error && <p className="text-sm text-red-500">{error}</p>}

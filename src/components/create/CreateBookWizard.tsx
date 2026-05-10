@@ -77,12 +77,13 @@ export default function CreateBookWizard() {
     return true;
   }
 
-  async function handleSubmit(email: string) {
+  async function handleSubmit(parentName: string, email: string) {
     const res = await fetch("/api/custom-order", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         child_name: config.cover.name.trim(),
+        parent_name: parentName,
         parent_email: email,
         gender: config.cover.gender,
         skin: config.cover.skin,
