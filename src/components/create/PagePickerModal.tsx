@@ -45,7 +45,7 @@ function PageThumb({ page, selected }: { page: ColoringPage; selected: boolean }
         <p className="text-[11px] font-semibold text-gray-700 leading-tight">{page.title}</p>
       </div>
       {selected && (
-        <div className="absolute top-1.5 right-1.5 w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center shadow">
+        <div className="absolute top-1.5 right-1.5 w-5 h-5 bg-emerald-800 rounded-full flex items-center justify-center shadow">
           <span className="text-white text-[10px] font-bold">✓</span>
         </div>
       )}
@@ -85,7 +85,7 @@ export default function PagePickerModal({ currentPageId, onSelect, onClose }: Pr
               onClick={() => setActiveCategory(c.key)}
               className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 activeCategory === c.key
-                  ? "bg-purple-500 text-white"
+                  ? "bg-emerald-800 text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -106,8 +106,8 @@ export default function PagePickerModal({ currentPageId, onSelect, onClose }: Pr
                   onClick={() => { onSelect(page.id); onClose(); }}
                   className={`relative rounded-xl overflow-hidden border-2 text-left transition-all ${
                     isCurrent
-                      ? "border-purple-500 ring-2 ring-purple-200"
-                      : "border-transparent hover:border-purple-300"
+                      ? "border-emerald-800 ring-2 ring-gold-200"
+                      : "border-transparent hover:border-gold-300"
                   }`}
                 >
                   <PageThumb page={page} selected={isCurrent} />

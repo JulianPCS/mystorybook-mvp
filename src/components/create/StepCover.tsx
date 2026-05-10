@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export type CoverOptions = {
   name: string;
@@ -95,6 +95,11 @@ const BG_THEME_GROUPS: BgGroup[] = [
 
 const ALL_BG_THEMES = BG_THEME_GROUPS.flatMap((g) => g.themes);
 
+function withPreviewRetryParam(url: string, attempt: number) {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}previewReady=${attempt}-${Date.now()}`;
+}
+
 // Derive the group label from the actual selected theme (not the active tab)
 function getBgGroupForTheme(bgTheme: string): "Islamic" | "Everyday" | "Fantasy" {
   for (const group of BG_THEME_GROUPS) {
@@ -108,21 +113,106 @@ function getBgGroupForTheme(bgTheme: string): "Islamic" | "Everyday" | "Fantasy"
 export default function StepCover({ options, generatedCoverUrl, onChange, onCoverGenerated, onNext }: Props) {
   const [generating, setGenerating] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [readyCoverSrc, setReadyCoverSrc] = useState<string | null>(null);
+  const [imageLoadError, setImageLoadError] = useState("");
+  const [previewRetryNonce, setPreviewRetryNonce] = useState(0);
   const [error, setError] = useState("");
   const [generationsUsed, setGenerationsUsed] = useState(0);
   const [activeBgGroup, setActiveBgGroup] = useState(0);
 
-  const LOADING_MESSAGES = [
-    "Sketching your character…",
-    "Painting the background…",
-    "Placing the lanterns and details…",
-    "Almost there — polishing the cover…",
-  ];
   const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
 
   const nameLen = options.name.length;
   const nameTooLong = nameLen > NAME_MAX;
   const canGenerate = options.name.trim().length >= 2 && !nameTooLong && generationsUsed < 2;
+  const childName = options.name.trim();
+  const currentBgLabel = ALL_BG_THEMES.find((t) => t.value === options.bgTheme)?.label ?? "your scene";
+  const selectedColor = COLOR_SCHEMES.find((c) => c.value === options.colorScheme)?.label ?? "cover";
+  const loadingStages = [
+    {
+      title: `Illustrating ${childName || "your child's"} character`,
+      detail: "Refining the expression, outfit, and storybook pose.",
+    },
+    {
+      title: `Composing the ${currentBgLabel.toLowerCase()} scene`,
+      detail: "Layering the setting so it matches your chosen world.",
+    },
+    {
+      title: `Balancing ${selectedColor.toLowerCase()} and gold`,
+      detail: "Tuning the palette, title space, and premium cover finish.",
+    },
+    {
+      title: "Adding keepsake details",
+      detail: "Placing pencils, page details, highlights, and tiny finishing touches.",
+    },
+    {
+      title: "Preparing your private preview",
+      detail: "The artwork is nearly ready; we are checking the image file.",
+    },
+  ];
+  const activeLoadingStage = loadingStages[loadingMsgIdx % loadingStages.length];
+  const isCoverPreparing = generating || Boolean(generatedCoverUrl && !imageLoaded && !imageLoadError);
+
+  useEffect(() => {
+    if (!isCoverPreparing) return;
+
+    const msgInterval = window.setInterval(() => {
+      setLoadingMsgIdx((i) => i + 1);
+    }, 3800);
+
+    return () => window.clearInterval(msgInterval);
+  }, [isCoverPreparing]);
+
+  useEffect(() => {
+    if (!generatedCoverUrl) {
+      setImageLoaded(false);
+      setReadyCoverSrc(null);
+      setImageLoadError("");
+      return;
+    }
+
+    let cancelled = false;
+    let retryTimer: number | undefined;
+    let attempt = 0;
+    const maxAttempts = 18;
+
+    setImageLoaded(false);
+    setReadyCoverSrc(null);
+    setImageLoadError("");
+
+    const loadPreview = () => {
+      attempt += 1;
+      const probe = new window.Image();
+      const previewSrc = attempt === 1 ? generatedCoverUrl : withPreviewRetryParam(generatedCoverUrl, attempt);
+
+      probe.onload = () => {
+        if (cancelled) return;
+        setReadyCoverSrc(previewSrc);
+        setImageLoaded(true);
+        setImageLoadError("");
+      };
+
+      probe.onerror = () => {
+        if (cancelled) return;
+
+        if (attempt >= maxAttempts) {
+          setImageLoadError("The cover was created, but the preview image is taking longer than expected to appear.");
+          return;
+        }
+
+        retryTimer = window.setTimeout(loadPreview, Math.min(2500 + attempt * 350, 6000));
+      };
+
+      probe.src = previewSrc;
+    };
+
+    loadPreview();
+
+    return () => {
+      cancelled = true;
+      if (retryTimer) window.clearTimeout(retryTimer);
+    };
+  }, [generatedCoverUrl, previewRetryNonce]);
 
   function handleNameChange(raw: string) {
     // Strip leading/trailing spaces on paste but allow mid-typing spaces
@@ -133,14 +223,9 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
   async function handleGenerate() {
     if (!canGenerate || generating) return;
     setGenerating(true);
-    setImageLoaded(false);
+    setImageLoadError("");
     setError("");
     setLoadingMsgIdx(0);
-
-    // Cycle through loading messages every 7s
-    const msgInterval = setInterval(() => {
-      setLoadingMsgIdx((i) => Math.min(i + 1, LOADING_MESSAGES.length - 1));
-    }, 7000);
 
     try {
       const res = await fetch("/api/generate-cover", {
@@ -165,12 +250,9 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
     } catch {
       setError("Something went wrong. Please try again.");
     } finally {
-      clearInterval(msgInterval);
       setGenerating(false);
     }
   }
-
-  const currentBgLabel = ALL_BG_THEMES.find((t) => t.value === options.bgTheme)?.label ?? "None";
 
   return (
     <div className="space-y-8">
@@ -195,7 +277,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
             className={`w-full px-4 py-3 rounded-xl border text-gray-800 text-base placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:border-transparent ${
               nameTooLong
                 ? "border-red-300 focus:ring-red-400"
-                : "border-gray-200 focus:ring-purple-400"
+                : "border-gray-200 focus:ring-emerald-700"
             }`}
           />
           {nameTooLong && (
@@ -209,7 +291,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
             <button
               onClick={() => onChange({ ...options, gender: "girl" })}
               className={`px-6 text-sm font-semibold transition-all ${
-                options.gender === "girl" ? "bg-pink-500 text-white" : "bg-white text-gray-600 hover:bg-gray-50"
+                options.gender === "girl" ? "bg-emerald-800 text-white" : "bg-white text-gray-600 hover:bg-cream"
               }`}
             >
               👧 Girl
@@ -217,7 +299,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
             <button
               onClick={() => onChange({ ...options, gender: "boy" })}
               className={`px-6 text-sm font-semibold transition-all ${
-                options.gender === "boy" ? "bg-blue-500 text-white" : "bg-white text-gray-600 hover:bg-gray-50"
+                options.gender === "boy" ? "bg-emerald-800 text-white" : "bg-white text-gray-600 hover:bg-cream"
               }`}
             >
               👦 Boy
@@ -240,7 +322,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
               <div
                 className={`w-9 h-9 rounded-full border-2 transition-all ${
                   options.skin === s.value
-                    ? "border-purple-500 scale-110 shadow-md"
+                    ? "border-emerald-800 scale-110 shadow-md"
                     : "border-transparent hover:scale-105 hover:border-gray-300"
                 }`}
                 style={{ backgroundColor: SKIN_SWATCHES[s.value] }}
@@ -265,7 +347,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
               <div
                 className={`w-9 h-9 rounded-full border-2 transition-all ${
                   options.colorScheme === c.value
-                    ? "border-purple-500 scale-110 shadow-md"
+                    ? "border-emerald-800 scale-110 shadow-md"
                     : "border-transparent hover:scale-105 hover:border-gray-300"
                 }`}
                 style={{ backgroundColor: c.swatch }}
@@ -281,7 +363,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         <div className="flex items-center justify-between">
           <p className="text-sm font-semibold text-gray-700">Background Scene</p>
           {options.bgTheme && (
-            <span className="text-xs text-purple-600 font-medium">{currentBgLabel}</span>
+            <span className="text-xs text-emerald-800 font-medium">{currentBgLabel}</span>
           )}
         </div>
 
@@ -293,7 +375,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
               onClick={() => setActiveBgGroup(i)}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition-all ${
                 activeBgGroup === i
-                  ? "bg-purple-500 text-white"
+                  ? "bg-emerald-800 text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -311,8 +393,8 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
               onClick={() => onChange({ ...options, bgTheme: bg.value })}
               className={`flex items-center gap-2 px-3 py-2.5 rounded-xl border text-xs font-semibold transition-all text-left ${
                 options.bgTheme === bg.value
-                  ? "border-purple-500 bg-purple-50 text-purple-700"
-                  : "border-gray-200 bg-white text-gray-600 hover:border-purple-300 hover:bg-purple-50/50"
+                  ? "border-emerald-800 bg-cream text-emerald-900"
+                  : "border-gray-200 bg-white text-gray-600 hover:border-gold-300 hover:bg-cream/70"
               }`}
             >
               <span className="text-lg flex-shrink-0">{bg.emoji}</span>
@@ -327,7 +409,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         <button
           onClick={handleGenerate}
           disabled={!canGenerate || generating}
-          className="w-full bg-purple-600 hover:bg-purple-700 active:bg-purple-800 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md flex items-center justify-center gap-2"
+          className="w-full bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 disabled:opacity-40 disabled:cursor-not-allowed text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md flex items-center justify-center gap-2"
         >
           {generating ? (
             <>
@@ -335,12 +417,12 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
               </svg>
-              Creating {options.name.trim() || "your"}&apos;s cover&hellip;
+              Creating {childName}&apos;s cover&hellip;
             </>
           ) : generatedCoverUrl ? (
-            "✨ Regenerate Cover"
+            "Refresh Cover Preview"
           ) : (
-            "✨ Generate My Cover Preview"
+            "Generate My Cover Preview"
           )}
         </button>
 
@@ -363,54 +445,118 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         )}
       </div>
 
-      {/* Loading skeleton — visible while generating OR while image is loading after generation */}
-      {(generating || (generatedCoverUrl && !imageLoaded)) && (
+      {/* Loading skeleton — visible while generating OR while the generated image URL becomes ready */}
+      {isCoverPreparing && (
         <div className="space-y-4">
-          <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
+            <span className="text-[11px] uppercase tracking-[0.18em] text-emerald-700">Private preview</span>
+          </div>
           <div className="relative max-w-xs mx-auto">
-            {/* Book-shaped shimmer */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[2/3] bg-gradient-to-br from-purple-50 via-purple-100 to-indigo-100 animate-pulse" />
-            {/* Overlay card */}
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-gold-200/70 via-white to-emerald-100/80 blur-sm" />
+            <div className="relative rounded-[1.6rem] overflow-hidden shadow-2xl border border-gold-200/80 aspect-[2/3] bg-[#fbf6ea]">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(253,230,138,0.45),transparent_34%),linear-gradient(145deg,rgba(6,78,59,0.09),transparent_42%)]" />
+              <div className="relative h-full p-5 flex flex-col">
+                <div className="flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-emerald-900/70">
+                  <span>Learn with Coloring</span>
+                  <span className="h-7 w-7 rounded-full border border-gold-300 bg-white/75 shadow-inner" />
+                </div>
+                <div className="mt-8 mx-auto h-32 w-24 rounded-t-full rounded-b-[1.4rem] bg-white/80 shadow-inner relative overflow-hidden border border-white">
+                  <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-gold-100 to-transparent" />
+                  <div className="absolute left-1/2 top-8 h-12 w-12 -translate-x-1/2 rounded-full bg-gold-100/90 shadow-sm animate-pulse" />
+                  <div className="absolute left-1/2 bottom-6 h-12 w-16 -translate-x-1/2 rounded-t-full bg-emerald-100 animate-pulse" />
+                  <div className="absolute left-5 bottom-5 h-7 w-2 rounded-full bg-gold-200 animate-pulse" />
+                  <div className="absolute right-5 bottom-5 h-7 w-2 rounded-full bg-gold-200 animate-pulse" />
+                </div>
+                <div className="mt-auto space-y-3">
+                  {[0, 1, 2].map((row) => (
+                    <div key={row} className="h-2 rounded-full bg-white/70 overflow-hidden border border-white/70">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-emerald-700 via-gold-300 to-emerald-300 animate-pulse"
+                        style={{ width: `${64 + row * 11}%` }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4">
-              <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-5 shadow-lg text-center w-full">
-                <div className="text-4xl mb-3 animate-bounce">✨</div>
-                <p className="text-sm font-bold text-gray-800 mb-1">{LOADING_MESSAGES[loadingMsgIdx]}</p>
-                <p className="text-xs text-gray-400">This takes about 20–30 seconds</p>
-                {/* Progress dots */}
-                <div className="flex justify-center gap-1.5 mt-3">
-                  {LOADING_MESSAGES.map((_, i) => (
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-5 py-5 shadow-xl text-center w-full border border-gold-100">
+                <div className="mx-auto mb-4 h-12 w-12 rounded-full bg-emerald-900 p-1 shadow-lg">
+                  <div className="h-full w-full rounded-full border border-gold-300 flex items-center justify-center text-gold-200 font-display text-xl">
+                    L
+                  </div>
+                </div>
+                <p className="font-display text-lg font-bold text-emerald-950 mb-1" aria-live="polite">
+                  {activeLoadingStage.title}
+                </p>
+                <p className="text-xs text-gray-500 min-h-[32px] leading-relaxed">{activeLoadingStage.detail}</p>
+                <div className="mt-4 h-2 rounded-full bg-cream overflow-hidden border border-gold-100">
+                  <div
+                    className="h-full rounded-full bg-gradient-to-r from-emerald-900 via-gold-400 to-emerald-600 transition-all duration-700"
+                    style={{ width: `${28 + (loadingMsgIdx % loadingStages.length) * 15}%` }}
+                  />
+                </div>
+                <div className="grid grid-cols-5 gap-1.5 mt-3">
+                  {loadingStages.map((stage, i) => (
                     <div
-                      key={i}
+                      key={stage.title}
                       className={`h-1.5 rounded-full transition-all duration-500 ${
-                        i <= loadingMsgIdx ? "bg-purple-500 w-4" : "bg-gray-200 w-1.5"
+                        i === loadingMsgIdx % loadingStages.length ? "bg-emerald-800" : "bg-gold-100"
                       }`}
                     />
                   ))}
                 </div>
+                <p className="text-[11px] text-gray-400 mt-3">
+                  This usually takes 20–30 seconds. We will keep checking the preview.
+                </p>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Cover preview — hidden until image fully loads */}
-      {generatedCoverUrl && (
-        <div className={imageLoaded ? "space-y-4" : "hidden"}>
-          <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
-          <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white max-w-xs mx-auto">
-            <Image
-              src={generatedCoverUrl}
-              alt={`${options.name}'s coloring book cover`}
-              width={400}
-              height={600}
-              className="w-full"
-              unoptimized
-              onLoad={() => setImageLoaded(true)}
-            />
-            <div className="absolute inset-0 flex items-end justify-center pb-3 pointer-events-none">
-              <span className="text-white/50 text-[11px] font-bold tracking-widest uppercase bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">
-                Preview — Order to unlock full quality
-              </span>
+      {imageLoadError && generatedCoverUrl && (
+        <div className="max-w-xs mx-auto rounded-2xl border border-amber-200 bg-amber-50 px-4 py-4 text-center shadow-sm">
+          <p className="text-sm font-semibold text-amber-800">{imageLoadError}</p>
+          <button
+            onClick={() => setPreviewRetryNonce((n) => n + 1)}
+            className="mt-3 rounded-xl bg-amber-500 px-4 py-2 text-xs font-bold text-white hover:bg-amber-600 transition-colors"
+          >
+            Try loading preview again
+          </button>
+        </div>
+      )}
+
+      {/* Cover preview — shown only after the image file has loaded successfully */}
+      {generatedCoverUrl && !generating && imageLoaded && readyCoverSrc && (
+        <div className="space-y-4">
+          <div className="flex items-center justify-between">
+            <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
+            <span className="text-[11px] uppercase tracking-[0.18em] text-emerald-700">Curated proof</span>
+          </div>
+          <div className="relative max-w-xs mx-auto">
+            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-gold-200/70 via-white to-emerald-100/80 blur-sm" />
+            <div className="relative rounded-[1.6rem] overflow-hidden shadow-2xl border border-gold-200 bg-white">
+              <Image
+                src={readyCoverSrc}
+                alt={`${options.name}'s coloring book cover`}
+                width={400}
+                height={600}
+                className="w-full"
+                unoptimized
+                onLoad={() => setImageLoaded(true)}
+                onError={() => {
+                  setImageLoaded(false);
+                  setReadyCoverSrc(null);
+                  setImageLoadError("The cover was created, but the preview image is taking longer than expected to appear.");
+                }}
+              />
+              <div className="absolute inset-x-3 bottom-3 flex items-end justify-center pointer-events-none">
+                <span className="text-white/90 text-[10px] font-bold tracking-[0.14em] uppercase bg-emerald-950/55 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+                  Preview proof
+                </span>
+              </div>
             </div>
           </div>
           <p className="text-xs text-center text-gray-400">
@@ -418,7 +564,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
           </p>
           <button
             onClick={onNext}
-            className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md"
+            className="w-full bg-emerald-800 hover:bg-emerald-900 text-white font-bold py-4 rounded-2xl text-base transition-all shadow-md"
           >
             Choose Pages →
           </button>

@@ -15,9 +15,10 @@ export default function StepPages({ pages, onPageChange }: Props) {
 
   return (
     <div className="space-y-6">
-      <div className="text-center space-y-1">
-        <p className="text-sm text-gray-500">
-          We&apos;ve suggested a starter set based on your character. Swap any page to customise your book.
+      <div className="rounded-2xl border border-gold-100 bg-white/70 px-5 py-4 shadow-sm">
+        <p className="font-display text-xl font-bold text-emerald-950">Curate the first pages</p>
+        <p className="mt-1 text-sm text-gray-500">
+          We&apos;ve suggested a starter set. Each numbered slot becomes part of the final book layout.
         </p>
       </div>
 
@@ -37,8 +38,8 @@ export default function StepPages({ pages, onPageChange }: Props) {
         })}
       </div>
 
-      <p className="text-xs text-center text-gray-400">
-        Hover a page and click &ldquo;Swap&rdquo; to choose a different one
+      <p className="text-xs text-center text-gray-400 leading-relaxed">
+        Page numbers show the order your child will see them in. Swap any page to refine the collection.
       </p>
 
       {/* Swap modal */}

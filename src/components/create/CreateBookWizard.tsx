@@ -22,6 +22,13 @@ function reducer(state: BookConfig, action: Action): BookConfig {
   switch (action.type) {
     case "SET_COVER": {
       const genderChanged = action.cover.gender !== state.cover.gender;
+      const coverChanged =
+        action.cover.name !== state.cover.name ||
+        action.cover.gender !== state.cover.gender ||
+        action.cover.skin !== state.cover.skin ||
+        action.cover.colorScheme !== state.cover.colorScheme ||
+        action.cover.bgTheme !== state.cover.bgTheme;
+
       return {
         ...state,
         cover: action.cover,
@@ -30,11 +37,8 @@ function reducer(state: BookConfig, action: Action): BookConfig {
             ? [...DEFAULT_GIRL_PAGES]
             : [...DEFAULT_BOY_PAGES]
           : state.pages,
-        // Clear generated cover if name or gender changes
-        generatedCoverUrl:
-          action.cover.name !== state.cover.name || genderChanged
-            ? null
-            : state.generatedCoverUrl,
+        // Clear generated cover whenever a visual cover choice changes.
+        generatedCoverUrl: coverChanged ? null : state.generatedCoverUrl,
       };
     }
     case "SET_COVER_URL":
@@ -99,13 +103,13 @@ export default function CreateBookWizard() {
         <div className="flex items-center justify-between mb-3">
           {STEPS.map((s, i) => (
             <div key={s.id} className="flex items-center flex-1">
-              <div className={`flex items-center gap-2 ${i <= step ? "text-purple-600" : "text-gray-300"}`}>
+              <div className={`flex items-center gap-2 ${i <= step ? "text-emerald-800" : "text-gray-300"}`}>
                 <div
                   className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2 transition-all ${
                     i < step
-                      ? "bg-purple-500 border-purple-500 text-white"
+                      ? "bg-emerald-800 border-emerald-800 text-white"
                       : i === step
-                      ? "border-purple-500 text-purple-600 bg-white"
+                      ? "border-emerald-800 text-emerald-800 bg-white"
                       : "border-gray-200 text-gray-300 bg-white"
                   }`}
                 >
@@ -114,7 +118,7 @@ export default function CreateBookWizard() {
                 <span className="text-xs font-semibold hidden sm:block">{s.label}</span>
               </div>
               {i < STEPS.length - 1 && (
-                <div className={`flex-1 h-0.5 mx-2 transition-all ${i < step ? "bg-purple-400" : "bg-gray-200"}`} />
+                <div className={`flex-1 h-0.5 mx-2 transition-all ${i < step ? "bg-emerald-700" : "bg-gray-200"}`} />
               )}
             </div>
           ))}
@@ -171,7 +175,7 @@ export default function CreateBookWizard() {
           </button>
           <button
             onClick={() => setStep((s) => s + 1)}
-            className="flex-1 sm:flex-none sm:px-8 py-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white font-bold transition-all shadow-sm"
+            className="flex-1 sm:flex-none sm:px-8 py-3 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white font-bold transition-all shadow-sm"
           >
             Review Book →
           </button>

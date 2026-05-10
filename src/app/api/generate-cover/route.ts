@@ -16,6 +16,61 @@ function characterDesc(gender: "boy" | "girl", skin: string, colorScheme: string
     : `a cute Muslim girl with large expressive kawaii-style eyes and a warm smile, wearing a ${color} hijab and a cream modest dress, with ${skin} skin tone`;
 }
 
+function universalCharacterDesc(gender: "boy" | "girl", skin: string, colorScheme: string, mood: "everyday" | "fantasy") {
+  const color = colorScheme.split(" ")[0];
+  const outfit =
+    mood === "fantasy"
+      ? gender === "boy"
+        ? `a refined ${color} storybook coat with subtle gold trim, soft boots, and no religious clothing`
+        : `a refined ${color} storybook dress or cloak with subtle gold trim, soft shoes, and no religious clothing`
+      : gender === "boy"
+        ? `a smart ${color} jumper, neat trousers, and comfortable shoes`
+        : `a smart ${color} dress or cardigan, comfortable shoes, and simple hair accessories`;
+
+  return gender === "boy"
+    ? `a sweet young boy with large expressive storybook eyes, a warm smile, natural hair, ${skin} skin tone, wearing ${outfit}`
+    : `a sweet young girl with large expressive storybook eyes, a warm smile, natural hair, ${skin} skin tone, wearing ${outfit}`;
+}
+
+function normalizeBgGroup(bgGroup: CoverConfig["bgGroup"], bgTheme: string): CoverConfig["bgGroup"] {
+  const theme = bgTheme.toLowerCase();
+
+  if (
+    theme.includes("ice kingdom") ||
+    theme.includes("enchanted castle") ||
+    theme.includes("starship") ||
+    theme.includes("underwater kingdom") ||
+    theme.includes("magical glowing forest") ||
+    theme.includes("jungle adventure") ||
+    theme.includes("candy land") ||
+    theme.includes("cloud kingdom")
+  ) {
+    return "Fantasy";
+  }
+
+  if (
+    theme.includes("blooming garden") ||
+    theme.includes("living room") ||
+    theme.includes("sunny park") ||
+    theme.includes("sandy beach") ||
+    theme.includes("school classroom") ||
+    theme.includes("magical library")
+  ) {
+    return "Everyday";
+  }
+
+  if (
+    theme.includes("islamic") ||
+    theme.includes("ramadan") ||
+    theme.includes("mosque") ||
+    theme.includes("minaret")
+  ) {
+    return "Islamic";
+  }
+
+  return bgGroup ?? "Everyday";
+}
+
 function buildIslamicPrompt(config: CoverConfig): string {
   const { name, gender, skin, colorScheme, bgTheme } = config;
   const char = characterDesc(gender, skin, colorScheme);
@@ -40,8 +95,8 @@ Negative: photorealistic, blurry text, distorted anatomy, extra fingers, waterma
 
 function buildEverydayPrompt(config: CoverConfig): string {
   const { name, gender, skin, colorScheme, bgTheme } = config;
-  const char = characterDesc(gender, skin, colorScheme);
-  return `Create a charming, warm children's coloring book cover in a ${colorScheme} palette. Professional, joyful, educational — suitable for Amazon KDP publishing.
+  const char = universalCharacterDesc(gender, skin, colorScheme, "everyday");
+  return `Create a premium personalised children's colouring book cover in a ${colorScheme} palette. Elegant, joyful, polished, giftable, and suitable for a high-quality UK family brand.
 
 Main title in bold friendly gold typography: "${name.toUpperCase()}'S"
 Subtitle: "FIRST COLOURING BOOK"
@@ -49,37 +104,37 @@ Badge: "Fun & Easy Colouring Pages"
 Age badge: "Ages 4–6 Years"
 Tagline: "Learn • Colour • Grow"
 
-Scene: ${char}, happily colouring inside an open book filled with simple illustrations. Background setting: ${bgTheme}. The environment feels cosy, cheerful and inviting. Bright natural lighting fills the scene. Coloured pencils, crayons, and open books as props near the child. Decorative illustrated border framing the cover.
+Scene: ${char}, happily colouring inside an open book filled with simple illustrations. Background setting: ${bgTheme}. The environment feels cosy, bright, polished and inviting. Natural light fills the scene. Coloured pencils, crayons, and open books sit neatly near the child. Use a clean illustrated border themed only to the selected everyday setting.
 
-Style: Premium Pixar-inspired children's book illustration, soft painterly rendering, bright warm lighting, ${colorScheme} colour scheme, symmetrical composition, high-end publishing quality, clean readable typography with gold emboss effect.
+Style: Premium storybook illustration, soft painterly rendering, bright warm lighting, ${colorScheme} colour scheme, balanced symmetrical composition, high-end publishing quality, clean readable typography with a tasteful gold emboss effect.
 
 Mood: Joyful, cosy, educational, warm, approachable.
 
 Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
 
-Negative: Islamic architecture, minarets, mosques, Arabic calligraphy, photorealistic, blurry text, distorted anatomy, watermark, random text, poor typography, dark or scary elements.`;
+Negative: Islamic architecture, mosque, minaret, dome skyline, mihrab arch, arabesque patterns, Arabic calligraphy, Arabic text, hijab, kufi, thobe, abaya, Ramadan lanterns, crescent moon motifs, religious symbols, photorealistic, blurry text, distorted anatomy, watermark, random text, poor typography, dark or scary elements.`;
 }
 
 function buildFantasyPrompt(config: CoverConfig): string {
   const { name, gender, skin, colorScheme, bgTheme } = config;
-  const char = characterDesc(gender, skin, colorScheme);
-  return `Create a magical, enchanting children's coloring book cover in a ${colorScheme} palette. Whimsical, adventurous, and highly professional for Amazon KDP publishing.
+  const char = universalCharacterDesc(gender, skin, colorScheme, "fantasy");
+  return `Create a luxurious fantasy children's colouring book cover in a ${colorScheme} palette. Magical, cinematic, polished, giftable, and suitable for a high-quality UK family brand.
 
-Main title in large ornate gold typography: "${name.toUpperCase()}'S"
+Main title in large premium fairytale gold typography: "${name.toUpperCase()}'S"
 Subtitle: "FIRST COLOURING BOOK"
 Badge: "Fun & Easy Colouring Pages"
 Age badge: "Ages 4–6 Years"
 Tagline: "Learn • Colour • Grow"
 
-Scene: ${char}, wide-eyed with wonder, holding an open colouring book filled with fantastical illustrations. Background setting: ${bgTheme}. The scene feels truly magical, epic and awe-inspiring. Glowing light, sparkles, and magical particles fill the air. Illustrated decorative border framing the cover, themed to match the setting.
+Scene: ${char}, wide-eyed with wonder, holding an open colouring book filled with fantastical illustrations. Background setting: ${bgTheme}. The cover must visually commit to this selected fantasy setting. The scene feels magical, grand, premium and awe-inspiring. Glowing light, soft sparkles, and magical particles fill the air. Use a refined decorative border themed only to the selected fantasy setting.
 
-Style: Premium Pixar-inspired children's book art, soft painterly rendering, dramatic cinematic lighting with glowing magical effects, ${colorScheme} colour scheme, symmetrical composition, high-end KDP quality, ornate embossed gold typography.
+Style: Premium storybook art, soft painterly rendering, dramatic cinematic lighting with glowing magical effects, ${colorScheme} colour scheme, symmetrical composition, high-end publishing quality, tasteful embossed gold typography.
 
 Mood: Wonder-filled, adventurous, magical, exciting, imaginative.
 
 Technical: Portrait 8.5×11 inch, ultra high resolution, print-ready.
 
-Negative: Islamic architecture, minarets, photorealistic, blurry text, distorted anatomy, extra fingers, watermark, poor typography, horror elements, dark themes.`;
+Negative: Islamic architecture, mosque, minaret, dome skyline, mihrab arch, arabesque patterns, Arabic calligraphy, Arabic text, hijab, kufi, thobe, abaya, Ramadan lanterns, crescent moon motifs, religious symbols, photorealistic, blurry text, distorted anatomy, extra fingers, watermark, poor typography, horror elements, dark themes.`;
 }
 
 function buildPrompt(config: CoverConfig): string {
@@ -102,7 +157,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const prompt = buildPrompt({ name, gender, skin, colorScheme, bgTheme, bgGroup: bgGroup ?? "Islamic" });
+    const resolvedBgGroup = normalizeBgGroup(bgGroup, bgTheme);
+    const prompt = buildPrompt({ name, gender, skin, colorScheme, bgTheme, bgGroup: resolvedBgGroup });
 
     const koalaRes = await fetch("https://koala.sh/api/image-generation/", {
       method: "POST",
