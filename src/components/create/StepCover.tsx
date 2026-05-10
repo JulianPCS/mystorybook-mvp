@@ -95,8 +95,19 @@ const BG_THEME_GROUPS: BgGroup[] = [
 
 const ALL_BG_THEMES = BG_THEME_GROUPS.flatMap((g) => g.themes);
 
+// Derive the group label from the actual selected theme (not the active tab)
+function getBgGroupForTheme(bgTheme: string): "Islamic" | "Everyday" | "Fantasy" {
+  for (const group of BG_THEME_GROUPS) {
+    if (group.themes.some((t) => t.value === bgTheme)) {
+      return group.label as "Islamic" | "Everyday" | "Fantasy";
+    }
+  }
+  return "Islamic";
+}
+
 export default function StepCover({ options, generatedCoverUrl, onChange, onCoverGenerated, onNext }: Props) {
   const [generating, setGenerating] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [error, setError] = useState("");
   const [generationsUsed, setGenerationsUsed] = useState(0);
   const [activeBgGroup, setActiveBgGroup] = useState(0);
@@ -104,7 +115,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
   const LOADING_MESSAGES = [
     "Sketching your character…",
     "Painting the background…",
-    "Adding the finishing touches…",
+    "Placing the lanterns and details…",
     "Almost there — polishing the cover…",
   ];
   const [loadingMsgIdx, setLoadingMsgIdx] = useState(0);
@@ -122,6 +133,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
   async function handleGenerate() {
     if (!canGenerate || generating) return;
     setGenerating(true);
+    setImageLoaded(false);
     setError("");
     setLoadingMsgIdx(0);
 
@@ -140,7 +152,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
           skin: options.skin,
           colorScheme: options.colorScheme,
           bgTheme: options.bgTheme,
-          bgGroup: BG_THEME_GROUPS[activeBgGroup].label,
+          bgGroup: getBgGroupForTheme(options.bgTheme),
         }),
       });
 
@@ -351,38 +363,39 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
         )}
       </div>
 
-      {/* Loading skeleton */}
-      {generating && (
+      {/* Loading skeleton — visible while generating OR while image is loading after generation */}
+      {(generating || (generatedCoverUrl && !imageLoaded)) && (
         <div className="space-y-4">
           <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
           <div className="relative max-w-xs mx-auto">
-            {/* Book-shaped shimmer skeleton */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[2/3] bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 animate-pulse">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent animate-[shimmer_1.5s_infinite]" style={{ backgroundSize: "200% 100%" }} />
-              {/* Skeleton content hints */}
-              <div className="absolute inset-0 flex flex-col items-center justify-between p-6 pointer-events-none">
-                <div className="w-3/4 h-6 bg-gray-300/60 rounded-full mt-4" />
-                <div className="w-16 h-16 bg-gray-300/60 rounded-full" />
-                <div className="space-y-2 w-full">
-                  <div className="w-1/2 h-3 bg-gray-300/60 rounded-full mx-auto" />
-                  <div className="w-1/3 h-3 bg-gray-300/60 rounded-full mx-auto" />
+            {/* Book-shaped shimmer */}
+            <div className="rounded-2xl overflow-hidden shadow-xl border-4 border-white aspect-[2/3] bg-gradient-to-br from-purple-50 via-purple-100 to-indigo-100 animate-pulse" />
+            {/* Overlay card */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 px-4">
+              <div className="bg-white/95 backdrop-blur-sm rounded-2xl px-6 py-5 shadow-lg text-center w-full">
+                <div className="text-4xl mb-3 animate-bounce">✨</div>
+                <p className="text-sm font-bold text-gray-800 mb-1">{LOADING_MESSAGES[loadingMsgIdx]}</p>
+                <p className="text-xs text-gray-400">This takes about 20–30 seconds</p>
+                {/* Progress dots */}
+                <div className="flex justify-center gap-1.5 mt-3">
+                  {LOADING_MESSAGES.map((_, i) => (
+                    <div
+                      key={i}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        i <= loadingMsgIdx ? "bg-purple-500 w-4" : "bg-gray-200 w-1.5"
+                      }`}
+                    />
+                  ))}
                 </div>
-              </div>
-            </div>
-            {/* Wand icon overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="bg-white/90 backdrop-blur-sm rounded-2xl px-5 py-4 shadow-lg text-center">
-                <div className="text-3xl mb-2 animate-bounce">✨</div>
-                <p className="text-sm font-bold text-gray-700">{LOADING_MESSAGES[loadingMsgIdx]}</p>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Cover preview */}
-      {!generating && generatedCoverUrl && (
-        <div className="space-y-4">
+      {/* Cover preview — hidden until image fully loads */}
+      {generatedCoverUrl && (
+        <div className={imageLoaded ? "space-y-4" : "hidden"}>
           <p className="text-sm font-semibold text-gray-700">Your cover preview</p>
           <div className="relative rounded-2xl overflow-hidden shadow-xl border-4 border-white max-w-xs mx-auto">
             <Image
@@ -392,6 +405,7 @@ export default function StepCover({ options, generatedCoverUrl, onChange, onCove
               height={600}
               className="w-full"
               unoptimized
+              onLoad={() => setImageLoaded(true)}
             />
             <div className="absolute inset-0 flex items-end justify-center pb-3 pointer-events-none">
               <span className="text-white/50 text-[11px] font-bold tracking-widest uppercase bg-black/20 px-3 py-1 rounded-full backdrop-blur-sm">
